@@ -1,3 +1,9 @@
 
 # Riptide artifacts (cloud-synced)
 .humanlayer/tasks/
+
+# Python / runtime artifacts (DB and data/ hold raw dumps)
+.venv/
+__pycache__/
+*.db
+data/

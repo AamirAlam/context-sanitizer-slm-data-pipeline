@@ -1,17 +1,1634 @@
 {
   "schemaVersion": 2,
   "project": "context-sanitizer-slm-data-pipeline",
-  "revision": null,
-  "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "revision": "6d395a349ce90073abd92eabb07f19727907576e",
+  "sourceHash": "d8f893dfd3473c2636a75233f6b77876fb4cfb13313bf0594f6bd4fd7f5a7500",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
     "confidenceScale": "0..1"
   },
-  "nodes": [],
-  "edges": [],
+  "nodes": [
+    {
+      "id": "file:labelpipe/__init__.py",
+      "type": "file",
+      "label": "labelpipe/__init__.py",
+      "path": "labelpipe/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "file:labelpipe/cli.py",
+      "type": "file",
+      "label": "labelpipe/cli.py",
+      "path": "labelpipe/cli.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "2871068dd16039993da590fab91a3871fae8210c460944abf64c180d746d494a"
+    },
+    {
+      "id": "file:labelpipe/dataset.py",
+      "type": "file",
+      "label": "labelpipe/dataset.py",
+      "path": "labelpipe/dataset.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "9a9edc35c76c066f2bfa6e9d298f457b047a126f62952e3b01ff695a464d00c1"
+    },
+    {
+      "id": "file:labelpipe/db.py",
+      "type": "file",
+      "label": "labelpipe/db.py",
+      "path": "labelpipe/db.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "5d6d0ee9564ec43491199c74a13ded40f736aa63cbb1a267c3c50aaf0d989f11"
+    },
+    {
+      "id": "file:labelpipe/intake.py",
+      "type": "file",
+      "label": "labelpipe/intake.py",
+      "path": "labelpipe/intake.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "34c1e7977202f2f0b932f400d2b31ecc8b66808d5f9a975e3ca22a8f3c49677e"
+    },
+    {
+      "id": "file:labelpipe/parse.py",
+      "type": "file",
+      "label": "labelpipe/parse.py",
+      "path": "labelpipe/parse.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "15081c09fce82e3a8a0c94fd4202f67d16145acee532fe7e17b88c04e8fbb8c3"
+    },
+    {
+      "id": "file:labelpipe/propose.py",
+      "type": "file",
+      "label": "labelpipe/propose.py",
+      "path": "labelpipe/propose.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "3335c8ee3cc83f62c02d56b6a9b5a6c0cd4b2d18ed26f8f8d920e47bc5c63ff6"
+    },
+    {
+      "id": "file:labelpipe/review/__init__.py",
+      "type": "file",
+      "label": "labelpipe/review/__init__.py",
+      "path": "labelpipe/review/__init__.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "file:labelpipe/review/api.py",
+      "type": "file",
+      "label": "labelpipe/review/api.py",
+      "path": "labelpipe/review/api.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "408a3dc4f69e54d372d0a4c030275efc1340d8bd6229c5e6735eb4c62d003059"
+    },
+    {
+      "id": "file:labelpipe/runner.py",
+      "type": "file",
+      "label": "labelpipe/runner.py",
+      "path": "labelpipe/runner.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "ffe8c170c5a38c7548261bd5de099d8bacbe48b1ca64abbff176d539e1779579"
+    },
+    {
+      "id": "file:labelpipe/scan.py",
+      "type": "file",
+      "label": "labelpipe/scan.py",
+      "path": "labelpipe/scan.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "dc4c918c0a23284a9a86ba99ae7ff3fd64f158eac07a6031cd63bc21a936e600"
+    },
+    {
+      "id": "file:labelpipe/schema.py",
+      "type": "file",
+      "label": "labelpipe/schema.py",
+      "path": "labelpipe/schema.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1a6a3bfc0d8f3c3d84a406059181f911aacd691a0433cec9437178eec6d3aa12"
+    },
+    {
+      "id": "file:tests/test_end_to_end.py",
+      "type": "file",
+      "label": "tests/test_end_to_end.py",
+      "path": "tests/test_end_to_end.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "7f308da1095ad201b4b7f0971a924afa6c7bfad4eaaa05e0f6f98a91155bcaf6"
+    },
+    {
+      "id": "file:tests/test_offsets.py",
+      "type": "file",
+      "label": "tests/test_offsets.py",
+      "path": "tests/test_offsets.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "1557ed57752b6ea453ae223c0f05ff420df08326ed1ea531548a47f91230d2d2"
+    },
+    {
+      "id": "package:pypi:fastapi",
+      "type": "package",
+      "label": "fastapi",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "b42613df6c488946c00003b4cfa45c6d1811c950f4ebea51f292524b1d8e7e28"
+    },
+    {
+      "id": "package:pypi:fastapi.responses",
+      "type": "package",
+      "label": "fastapi.responses",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "0f39b2e2c576cd6a194b7da7a0c8a2cc4eeff7b18b065726a7252098f679c545"
+    },
+    {
+      "id": "package:pypi:fastapi.testclient",
+      "type": "package",
+      "label": "fastapi.testclient",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "738e72dd5f055498288740c1f61f1c7d1cf6177db5e8c0ad5a9fa9744f4badf6"
+    },
+    {
+      "id": "package:pypi:presidio_analyzer",
+      "type": "package",
+      "label": "presidio_analyzer",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "f5b554fabfdcddbf88c92e4d2f0e3206a6fb8577ee2163b6bb0e390411bea190"
+    },
+    {
+      "id": "package:pypi:presidio_analyzer.nlp_engine",
+      "type": "package",
+      "label": "presidio_analyzer.nlp_engine",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "7a94a1aedb88bc40191c252570621708888d98b73a3e23bf594b043d472c59ea"
+    },
+    {
+      "id": "package:pypi:presidio_analyzer.predefined_recognizers",
+      "type": "package",
+      "label": "presidio_analyzer.predefined_recognizers",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "7c947c20ea3d3971a00df590a6877996b02b872514678cb4d3fc440216d65128"
+    },
+    {
+      "id": "package:pypi:pydantic",
+      "type": "package",
+      "label": "pydantic",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "58f6ef9a056cb5510180431e9462eca17724b13cde8deb37795f576f0a9280c9"
+    },
+    {
+      "id": "package:pypi:spacy",
+      "type": "package",
+      "label": "spacy",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "b6335f764fb4d8c079c76a879fc8132300a482818efbbcd8dcd464cc24fe79e9"
+    },
+    {
+      "id": "package:pypi:uvicorn",
+      "type": "package",
+      "label": "uvicorn",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "cacd6ef898afb468bc7a604cc11812d4d01e3c81ba841acced2b81f77f849ef9"
+    },
+    {
+      "id": "runtime:python:argparse",
+      "type": "runtime",
+      "label": "argparse",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "d2fa5186c8b054cafa49f3f491468bf28aeed4402b6552c06eee4ebb0020d629"
+    },
+    {
+      "id": "runtime:python:datetime",
+      "type": "runtime",
+      "label": "datetime",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "4686554b9c3e1fb149a0e7e021505618c951f789cfec438f14e8947c05848d41"
+    },
+    {
+      "id": "runtime:python:functools",
+      "type": "runtime",
+      "label": "functools",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "199b020f9c056c76b7a0f3aa15a89360d7a70c38bba044f7bee5d3def7351869"
+    },
+    {
+      "id": "runtime:python:getpass",
+      "type": "runtime",
+      "label": "getpass",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "fcda9cf1c279f955433784108d707b2f9677db72d6b562313ed2d4b3f384c90d"
+    },
+    {
+      "id": "runtime:python:hashlib",
+      "type": "runtime",
+      "label": "hashlib",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "77c0573ae65199003c1e54971c9c5faaa5fb7b2bf90715c1741b45eca6560e6c"
+    },
+    {
+      "id": "runtime:python:json",
+      "type": "runtime",
+      "label": "json",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "6f37f6a05e2fd9821d46f9c71a4ae5642cc4a8392959110f34947e4fecc47d62"
+    },
+    {
+      "id": "runtime:python:os",
+      "type": "runtime",
+      "label": "os",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "3806d26c0342f905b28f23c7de3c2705833ec1628f03e04e4b658f3914ba2b4c"
+    },
+    {
+      "id": "runtime:python:pathlib",
+      "type": "runtime",
+      "label": "pathlib",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "f80e30cf02d84c10bc9ec466758fee39c984c5b41f4d5ab280e2be46cd1c3c2a"
+    },
+    {
+      "id": "runtime:python:shutil",
+      "type": "runtime",
+      "label": "shutil",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "1f9c5b117bbaaa778431662f82c57f794f31f93c6cfe9d39cb1352cb0312ed70"
+    },
+    {
+      "id": "runtime:python:sqlite3",
+      "type": "runtime",
+      "label": "sqlite3",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "f6e23ec7339de058f541d44340d6972733f6db32bb2d1c41696df0e30af3c638"
+    },
+    {
+      "id": "runtime:python:typing",
+      "type": "runtime",
+      "label": "typing",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "476430c5e63eac951b3a752d292e03a660994a175e508c80f8615d9413eb18ea"
+    },
+    {
+      "id": "symbol:labelpipe/cli.py#function:main",
+      "type": "symbol",
+      "kind": "function",
+      "name": "main",
+      "label": "main",
+      "path": "labelpipe/cli.py",
+      "line": 8,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f583c61a40c09d3bfca9b3e6ef3e28a4f4dfaced58f9b895d0d76c0d77a8dd4c"
+    },
+    {
+      "id": "symbol:labelpipe/dataset.py#function:_spans",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_spans",
+      "label": "_spans",
+      "path": "labelpipe/dataset.py",
+      "line": 8,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "3ffe2a6f35df60111743392b196cec97c4a3908970e95d42550cfd7f4ab722e7"
+    },
+    {
+      "id": "symbol:labelpipe/dataset.py#function:export",
+      "type": "symbol",
+      "kind": "function",
+      "name": "export",
+      "label": "export",
+      "path": "labelpipe/dataset.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c20c8532a522936d94fd2278e3b2b3fcd98204c547b8ff69a94e6a6d19982683"
+    },
+    {
+      "id": "symbol:labelpipe/db.py#function:connect",
+      "type": "symbol",
+      "kind": "function",
+      "name": "connect",
+      "label": "connect",
+      "path": "labelpipe/db.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2bcb37d471de92c7670c853af9aabe618e537065c83eb4c0478e280a53e685a2"
+    },
+    {
+      "id": "symbol:labelpipe/intake.py#function:ingest",
+      "type": "symbol",
+      "kind": "function",
+      "name": "ingest",
+      "label": "ingest",
+      "path": "labelpipe/intake.py",
+      "line": 7,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "adc81e2bdfe9dd8365cbe7ec4aaaa9b44347895252b2459cd4dc6d50f754a5f1"
+    },
+    {
+      "id": "symbol:labelpipe/parse.py#function:parse",
+      "type": "symbol",
+      "kind": "function",
+      "name": "parse",
+      "label": "parse",
+      "path": "labelpipe/parse.py",
+      "line": 6,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8a45a6fb75068dba2943ecf9f5e211c9b83a7e6aa1265af875d84af3ff1da95e"
+    },
+    {
+      "id": "symbol:labelpipe/propose.py#class:Proposer",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Proposer",
+      "label": "Proposer",
+      "path": "labelpipe/propose.py",
+      "line": 6,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b453360e8f3e361e4fee57add680a412535c51a6852f8f3dc12ab2e8bf29b22a"
+    },
+    {
+      "id": "symbol:labelpipe/propose.py#class:StubProposer",
+      "type": "symbol",
+      "kind": "class",
+      "name": "StubProposer",
+      "label": "StubProposer",
+      "path": "labelpipe/propose.py",
+      "line": 12,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6f4429ae6bbe87fc0d49c6e6baa0b50fc11ee9478608f0c35b317f64007609e2"
+    },
+    {
+      "id": "symbol:labelpipe/propose.py#function:Proposer.propose",
+      "type": "symbol",
+      "kind": "function",
+      "name": "Proposer.propose",
+      "label": "Proposer.propose",
+      "path": "labelpipe/propose.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c63baeef419bb184b9a6863e8995513d0be4b6dbf6cbb657b89bd36c92f8866b"
+    },
+    {
+      "id": "symbol:labelpipe/propose.py#function:StubProposer.propose",
+      "type": "symbol",
+      "kind": "function",
+      "name": "StubProposer.propose",
+      "label": "StubProposer.propose",
+      "path": "labelpipe/propose.py",
+      "line": 16,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f29f6b8f178e20b1ca0959f6523b1726a53e64723d6d5fe04273c97ef9fcf636"
+    },
+    {
+      "id": "symbol:labelpipe/review/api.py#class:Decision",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Decision",
+      "label": "Decision",
+      "path": "labelpipe/review/api.py",
+      "line": 16,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "af627f76f43379b2c36876dda5939faed1c534d58bbf2af037353f5cd03ceede"
+    },
+    {
+      "id": "symbol:labelpipe/review/api.py#function:create_app",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app",
+      "label": "create_app",
+      "path": "labelpipe/review/api.py",
+      "line": 34,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
+    },
+    {
+      "id": "symbol:labelpipe/review/api.py#function:create_app.decide",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app.decide",
+      "label": "create_app.decide",
+      "path": "labelpipe/review/api.py",
+      "line": 57,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "35be0531a3f3cc623ef4522c682ccb235f7cf4302e03c9acbd4639782bb4ffe0"
+    },
+    {
+      "id": "symbol:labelpipe/review/api.py#function:create_app.index",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app.index",
+      "label": "create_app.index",
+      "path": "labelpipe/review/api.py",
+      "line": 40,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "20890ca260abab5c6d928aa5a013dcec5a253b2605be78cff6ec191cac79d534"
+    },
+    {
+      "id": "symbol:labelpipe/review/api.py#function:create_app.next_record",
+      "type": "symbol",
+      "kind": "function",
+      "name": "create_app.next_record",
+      "label": "create_app.next_record",
+      "path": "labelpipe/review/api.py",
+      "line": 44,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0ab99452543864f597b804020dfbc4bbb6159f8d2b8920ac5942f02c4f8e42ca"
+    },
+    {
+      "id": "symbol:labelpipe/review/api.py#function:segments",
+      "type": "symbol",
+      "kind": "function",
+      "name": "segments",
+      "label": "segments",
+      "path": "labelpipe/review/api.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "634e8d9d9ab26e6f27b574d50aa98d90348f2f6976c8490c5b948b9f1fae08e2"
+    },
+    {
+      "id": "symbol:labelpipe/runner.py#function:_check",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_check",
+      "label": "_check",
+      "path": "labelpipe/runner.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "59a9042474ef0cde8cd68797cf22d9226d3e05422b6743d97041457d3dd16857"
+    },
+    {
+      "id": "symbol:labelpipe/runner.py#function:run",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run",
+      "label": "run",
+      "path": "labelpipe/runner.py",
+      "line": 14,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
+    },
+    {
+      "id": "symbol:labelpipe/runner.py#function:run.advance",
+      "type": "symbol",
+      "kind": "function",
+      "name": "run.advance",
+      "label": "run.advance",
+      "path": "labelpipe/runner.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ad3cd4d81aeac425ccd5b354b5fc5c3d77843a17c8f6929e0a1467d39f0393e6"
+    },
+    {
+      "id": "symbol:labelpipe/scan.py#function:analyzer",
+      "type": "symbol",
+      "kind": "function",
+      "name": "analyzer",
+      "label": "analyzer",
+      "path": "labelpipe/scan.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4c4760d47e6cbe9dcc830b013ab2445c8dfdcabae178d1d94ab05c3692784360"
+    },
+    {
+      "id": "symbol:labelpipe/scan.py#function:scan",
+      "type": "symbol",
+      "kind": "function",
+      "name": "scan",
+      "label": "scan",
+      "path": "labelpipe/scan.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "831a638ee26b16b0d1b9eb690c0301f6c63a5f7c340cdda795d5903c7e5dff2d"
+    },
+    {
+      "id": "symbol:labelpipe/schema.py#class:Record",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Record",
+      "label": "Record",
+      "path": "labelpipe/schema.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "8cf31771bc087955d85c75dfcb6304a39cd9ac9411ededa480e32e9a44b188fc"
+    },
+    {
+      "id": "symbol:labelpipe/schema.py#class:Span",
+      "type": "symbol",
+      "kind": "class",
+      "name": "Span",
+      "label": "Span",
+      "path": "labelpipe/schema.py",
+      "line": 7,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "51bf81430b58fc42aae93ff6e785c63afae5629178c8b7ad05f7d3853700e363"
+    },
+    {
+      "id": "symbol:tests/test_end_to_end.py#function:assert_no_secret",
+      "type": "symbol",
+      "kind": "function",
+      "name": "assert_no_secret",
+      "label": "assert_no_secret",
+      "path": "tests/test_end_to_end.py",
+      "line": 16,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "dab24aea0230041a1e66885f9ea18a2cbfea794d01d0e4b53e1c2baef266c6a9"
+    },
+    {
+      "id": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_secret_never_leaves_server",
+      "label": "test_secret_never_leaves_server",
+      "path": "tests/test_end_to_end.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c77a7438639b4f0540eb011ffb29d1dc01a12770213dfa37966b4747e6838bbf"
+    },
+    {
+      "id": "symbol:tests/test_offsets.py#function:test_offsets_round_trip_in_code_points",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_offsets_round_trip_in_code_points",
+      "label": "test_offsets_round_trip_in_code_points",
+      "path": "tests/test_offsets.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f374d2191c86bc6b4be1de231e2d4e8545005c688026b00920801fd296e3d638"
+    }
+  ],
+  "edges": [
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/cli.py#function:main",
+      "target": "symbol:labelpipe/dataset.py#function:export",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/dataset.py#function:export"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/cli.py#function:main",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/db.py#function:connect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/cli.py#function:main",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/intake.py#function:ingest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/cli.py#function:main",
+      "target": "symbol:labelpipe/review/api.py#function:create_app",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/cli.py#function:main",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/dataset.py#function:_spans",
+      "target": "symbol:labelpipe/schema.py#class:Span",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/dataset.py#function:export",
+      "target": "symbol:labelpipe/dataset.py#function:_spans",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/dataset.py#function:export",
+      "target": "symbol:labelpipe/schema.py#class:Record",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/db.py#function:connect",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/propose.py#function:StubProposer.propose",
+      "target": "symbol:labelpipe/schema.py#class:Span",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:create_app",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:create_app.next_record",
+      "target": "symbol:labelpipe/review/api.py#function:segments",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/propose.py#class:StubProposer",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/propose.py#function:Proposer.propose",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/propose.py#function:Proposer.propose",
+        "symbol:labelpipe/propose.py#function:StubProposer.propose"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/runner.py#function:_check",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/runner.py#function:run.advance",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/scan.py#function:scan",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/schema.py#class:Span",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/scan.py#function:scan",
+      "target": "symbol:labelpipe/scan.py#function:analyzer",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "target": "symbol:labelpipe/dataset.py#function:export",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/dataset.py#function:export"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/db.py#function:connect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/intake.py#function:ingest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "target": "symbol:labelpipe/review/api.py#function:create_app",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "target": "symbol:tests/test_end_to_end.py#function:assert_no_secret",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_offsets.py#function:test_offsets_round_trip_in_code_points",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/db.py#function:connect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_offsets.py#function:test_offsets_round_trip_in_code_points",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/intake.py#function:ingest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_offsets.py#function:test_offsets_round_trip_in_code_points",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_offsets.py#function:test_offsets_round_trip_in_code_points",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.index",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/review/api.py#function:create_app.index"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_offsets.py#function:test_offsets_round_trip_in_code_points",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/cli.py",
+      "target": "symbol:labelpipe/cli.py#function:main",
+      "line": 8,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/dataset.py",
+      "target": "symbol:labelpipe/dataset.py#function:_spans",
+      "line": 8,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/dataset.py",
+      "target": "symbol:labelpipe/dataset.py#function:export",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/db.py",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/intake.py",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "line": 7,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/parse.py",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "line": 6,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/propose.py",
+      "target": "symbol:labelpipe/propose.py#class:Proposer",
+      "line": 6,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/propose.py",
+      "target": "symbol:labelpipe/propose.py#class:StubProposer",
+      "line": 12,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/propose.py",
+      "target": "symbol:labelpipe/propose.py#function:Proposer.propose",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/propose.py",
+      "target": "symbol:labelpipe/propose.py#function:StubProposer.propose",
+      "line": 16,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/review/api.py",
+      "target": "symbol:labelpipe/review/api.py#class:Decision",
+      "line": 16,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/review/api.py",
+      "target": "symbol:labelpipe/review/api.py#function:create_app",
+      "line": 34,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/review/api.py",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.decide",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/review/api.py",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.index",
+      "line": 40,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/review/api.py",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.next_record",
+      "line": 44,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/review/api.py",
+      "target": "symbol:labelpipe/review/api.py#function:segments",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/runner.py",
+      "target": "symbol:labelpipe/runner.py#function:_check",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/runner.py",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "line": 14,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/runner.py",
+      "target": "symbol:labelpipe/runner.py#function:run.advance",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/scan.py",
+      "target": "symbol:labelpipe/scan.py#function:analyzer",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/scan.py",
+      "target": "symbol:labelpipe/scan.py#function:scan",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/schema.py",
+      "target": "symbol:labelpipe/schema.py#class:Record",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/schema.py",
+      "target": "symbol:labelpipe/schema.py#class:Span",
+      "line": 7,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_end_to_end.py",
+      "target": "symbol:tests/test_end_to_end.py#function:assert_no_secret",
+      "line": 16,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_end_to_end.py",
+      "target": "symbol:tests/test_end_to_end.py#function:test_secret_never_leaves_server",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_offsets.py",
+      "target": "symbol:tests/test_offsets.py#function:test_offsets_round_trip_in_code_points",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/cli.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": ".",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/cli.py",
+      "target": "file:labelpipe/review/api.py",
+      "specifier": ".review.api",
+      "line": 22,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/cli.py",
+      "target": "package:pypi:uvicorn",
+      "specifier": "uvicorn",
+      "line": 21,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/cli.py",
+      "target": "runtime:python:argparse",
+      "specifier": "argparse",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/cli.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/cli.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/dataset.py",
+      "target": "file:labelpipe/schema.py",
+      "specifier": ".schema",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/dataset.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/db.py",
+      "target": "runtime:python:sqlite3",
+      "specifier": "sqlite3",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/intake.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/intake.py",
+      "target": "runtime:python:getpass",
+      "specifier": "getpass",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/intake.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/intake.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/parse.py",
+      "target": "package:pypi:spacy",
+      "specifier": "spacy",
+      "line": 1,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/propose.py",
+      "target": "file:labelpipe/schema.py",
+      "specifier": ".schema",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/propose.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "file:labelpipe/db.py",
+      "specifier": "..db",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "package:pypi:fastapi",
+      "specifier": "fastapi",
+      "line": 7,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "package:pypi:fastapi.responses",
+      "specifier": "fastapi.responses",
+      "line": 8,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 9,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "file:labelpipe/parse.py",
+      "specifier": ".parse",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "file:labelpipe/propose.py",
+      "specifier": ".propose",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "file:labelpipe/scan.py",
+      "specifier": ".scan",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "file:labelpipe/schema.py",
+      "specifier": ".schema",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/scan.py",
+      "target": "file:labelpipe/parse.py",
+      "specifier": ".parse",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/scan.py",
+      "target": "package:pypi:presidio_analyzer",
+      "specifier": "presidio_analyzer",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/scan.py",
+      "target": "package:pypi:presidio_analyzer.nlp_engine",
+      "specifier": "presidio_analyzer.nlp_engine",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/scan.py",
+      "target": "package:pypi:presidio_analyzer.predefined_recognizers",
+      "specifier": "presidio_analyzer.predefined_recognizers",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/scan.py",
+      "target": "runtime:python:functools",
+      "specifier": "functools",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/schema.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/schema.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/schema.py",
+      "target": "runtime:python:typing",
+      "specifier": "typing",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_end_to_end.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": "labelpipe",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_end_to_end.py",
+      "target": "file:labelpipe/review/api.py",
+      "specifier": "labelpipe.review.api",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_end_to_end.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_end_to_end.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 55,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_end_to_end.py",
+      "target": "runtime:python:shutil",
+      "specifier": "shutil",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_offsets.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": "labelpipe",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_offsets.py",
+      "target": "file:labelpipe/parse.py",
+      "specifier": "labelpipe.parse",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    }
+  ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 0
+    "unresolvedCalls": 89
   }
 }
