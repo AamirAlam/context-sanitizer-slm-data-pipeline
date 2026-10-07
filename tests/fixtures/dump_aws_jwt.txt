@@ -1,0 +1,4 @@
+2026-10-07T10:02:11Z ERROR billing-worker s3 upload denied
+  env: aws_access_key_id = AKIAIOSFODNN7EXAMPLE region=us-east-1
+  session cookie id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_XgL0n3I9PlFUP0THsR8U
+2026-10-07T10:02:12Z WARN billing-worker giving up after 3 attempts

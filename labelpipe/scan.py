@@ -1,4 +1,8 @@
+import re
 from functools import lru_cache
+
+from detect_secrets.core.scan import _process_line_based_plugins
+from detect_secrets.settings import default_settings
 
 from presidio_analyzer import AnalyzerEngine, Pattern, PatternRecognizer
 from presidio_analyzer.nlp_engine import SpacyNlpEngine
@@ -29,16 +33,46 @@ def analyzer() -> AnalyzerEngine:
     return a
 
 
+TOKEN_TAIL = re.compile(r"[\w.~+/=-]*")
+
+
+def secrets(text: str) -> list[dict]:
+    """detect-secrets plugins in-process; verification (network) is never run."""
+    starts, pos = [], 0  # line-start index: code-point offset of each line
+    for line in text.splitlines(keepends=True):
+        starts.append(pos)
+        pos += len(line)
+    lines = text.splitlines()
+    with default_settings() as s:
+        # verification only runs when this filter is configured; make sure it never is
+        s.disable_filters("detect_secrets.filters.common.is_ignored_due_to_verification_policies")
+        # ponytail: private but stable (1.5.x) line scanner; public scan_file would need raw text on disk
+        found = list(_process_line_based_plugins(list(enumerate(lines, 1)), filename="raw"))
+    out = []
+    for f in found:
+        line = lines[f.line_number - 1]
+        for m in re.finditer(re.escape(f.secret_value), line):
+            # plugins may return only a prefix (ghp, JWT header.payload.): extend to the token's end
+            end = TOKEN_TAIL.match(line, m.end()).end()
+            base = starts[f.line_number - 1]
+            out.append({"entity_type": f.type.upper().replace(" ", "_"),
+                        "start": base + m.start(), "end": base + end, "score": 1.0, "secret": True})
+    return out
+
+
 def scan(text: str) -> list[dict]:
-    """Redaction spans as code-point offsets into text; overlapping hits merged into one span."""
-    hits = sorted(analyzer().analyze(text=text, language="en"), key=lambda r: (r.start, -r.end))
+    """Redaction spans as code-point offsets into text; overlapping hits merged into one span
+    covering all of them, typed by the secret scanner when it is involved (secret wins)."""
+    hits = [{"entity_type": r.entity_type, "start": r.start, "end": r.end, "score": r.score, "secret": False}
+            for r in analyzer().analyze(text=text, language="en")] + secrets(text)
+    hits.sort(key=lambda h: (h["start"], -h["end"], not h["secret"], -h["score"], h["entity_type"]))
     merged: list[dict] = []
-    for r in hits:
-        if merged and r.start < merged[-1]["end"]:
+    for h in hits:
+        if merged and h["start"] < merged[-1]["end"]:
             m = merged[-1]
-            m["end"] = max(m["end"], r.end)
-            if r.score > m["score"]:
-                m["entity_type"], m["score"] = r.entity_type, r.score
+            m["end"] = max(m["end"], h["end"])
+            if (h["secret"], h["score"]) > (m["secret"], m["score"]):
+                m.update(entity_type=h["entity_type"], score=h["score"], secret=h["secret"])
         else:
-            merged.append({"entity_type": r.entity_type, "start": r.start, "end": r.end, "score": r.score})
-    return merged
+            merged.append(dict(h))
+    return [{k: m[k] for k in ("entity_type", "start", "end", "score")} for m in merged]

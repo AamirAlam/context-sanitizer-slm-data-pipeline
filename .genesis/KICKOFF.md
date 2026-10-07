@@ -4,11 +4,11 @@
 
 - objective: Build a privacy-preserving, human-in-the-loop data-labeling pipeline that ingests raw incident/log dumps, redacts secrets and PII, and emits a versioned, audit-stamped, character-offset-anchored labeled dataset for training and evaluating a 1.5B context-distillation SLM.
 - phase/status: build/active
-- active task: IMPL-3 — Validation gate, candidate checks, and adjudication loop (outline Phase 3)
+- active task: IMPL-4 — Offline secret scanner merged with Presidio, secret span wins on overlap (outline Phase 4)
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: validation:pass, suite:pass, independent-review:pending
+- gates: scan:pass, suite:pass, independent-review:pending
 - recent failures: none
 
 ## Resume
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: d862e34f61ccee3a35e7b8478247e1579ab6ee3867ebdf929d50219de3afd36c. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: eb43a933db29ee8f7623b6f0c8677fa5b7b3950e7b300cd039c6637ebd28949a. Use --since only after receiving that full packet; kickoff is not the packet.
+- KNOWLEDGE-71d8f624: IMPL-4 accepted by human
+- DECISION-5c3235cc: PII/secret scan = Presidio + offline secret scanner
 - KNOWLEDGE-c785b927: IMPL-3 manual check passed
-- KNOWLEDGE-15b01f8d: IMPL-2 manual check passed
-- DECISION-3ac08160: Pydantic per-record validation; Pandera dataset-gate later
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.
