@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T20:17:58.578Z"
+    "updated_at": "2026-10-07T20:24:09.297Z"
   },
   "policy": {
     "ponytail": "full",
@@ -388,6 +388,15 @@
       "source": "human confirmation 2026-10-08",
       "tags": [],
       "recorded_at": "2026-10-07T20:17:03.784Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-1819586d",
+      "title": "IMPL-5 manual check passed",
+      "text": "Aamir Alam confirmed reveal of a redaction works with authorization, is redacted again on reload, and is audit-logged (outline Phase 5 manual verification).",
+      "source": "human confirmation 2026-10-08",
+      "tags": [],
+      "recorded_at": "2026-10-07T20:24:08.815Z",
       "paths": []
     }
   ],
@@ -822,16 +831,28 @@
           "kind": "command",
           "command": "uv run pytest tests/test_unredacted.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-5-unredacted-ad5d4c5f-d4ea-4362-a7c8-d79601934182.json",
+            "hash": "67b50212b4c02f54d9a38438d0fdfa155c697ac2ad30d3287f1b11550677e826",
+            "source_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e",
+            "config_hash": "e415d4d291736d403d7ca3715a3e6d0601d700d0a8791a3f83f54a3d05545113",
+            "observed_at": "2026-10-07T20:20:59.285Z"
+          }
         },
         {
           "id": "suite",
           "kind": "command",
           "command": "uv run pytest",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-5-suite-79b62d9f-4b98-4c71-97ba-62213586e31b.json",
+            "hash": "32c04901380b6444c1c09a7a39d82b124f45ea5ccbc916f7df63f1263699a3fd",
+            "source_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e",
+            "config_hash": "e415d4d291736d403d7ca3715a3e6d0601d700d0a8791a3f83f54a3d05545113",
+            "observed_at": "2026-10-07T20:21:00.937Z"
+          }
         },
         {
           "id": "independent-review",
@@ -1168,6 +1189,54 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-07T20:14:56.474Z"
+    },
+    {
+      "id": "ad5d4c5f-d4ea-4362-a7c8-d79601934182",
+      "task": "IMPL-5",
+      "kind": "gate",
+      "command": "uv run pytest tests/test_unredacted.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 72598,
+      "child_pid": 72720,
+      "started_at": "2026-10-07T20:20:58.130Z",
+      "status": "passed",
+      "before_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e",
+      "config_hash": "e415d4d291736d403d7ca3715a3e6d0601d700d0a8791a3f83f54a3d05545113",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:20:59.285Z"
+    },
+    {
+      "id": "79b62d9f-4b98-4c71-97ba-62213586e31b",
+      "task": "IMPL-5",
+      "kind": "gate",
+      "command": "uv run pytest",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 72598,
+      "child_pid": 73142,
+      "started_at": "2026-10-07T20:20:59.516Z",
+      "status": "passed",
+      "before_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e",
+      "config_hash": "e415d4d291736d403d7ca3715a3e6d0601d700d0a8791a3f83f54a3d05545113",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:21:00.937Z"
     }
   ],
   "authorizations": [],
@@ -1175,11 +1244,11 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T20:17:58.539Z",
+    "at": "2026-10-07T20:24:09.259Z",
     "revision": {
-      "commit": "95268c98b1f6011eccd9c53a68eef9cf2c690b64",
+      "commit": "51979a1a528e2c7482654a5fec0dd6f99fa2880f",
       "dirty": true,
-      "source_hash": "d2af89c2b8ad64766fa502a6a4c17d50bca095f7014689aaff311ce9cc33d2a9"
+      "source_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e"
     },
     "active_task": "IMPL-5",
     "next_action": "Run the task pre-flight."
