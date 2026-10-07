@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T20:10:50.776Z"
+    "updated_at": "2026-10-07T20:11:45.941Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,7 +25,7 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "IMPL-3",
+    "active_task": "IMPL-4",
     "blocker": null,
     "next_action": "Run the task pre-flight."
   },
@@ -595,7 +595,7 @@
     {
       "id": "IMPL-3",
       "outcome": "Validation gate, candidate checks, and adjudication loop (outline Phase 3)",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -644,8 +644,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-3-independent-review-9a132057-0a4b-4967-9345-76c1c45c1a99.json",
+            "hash": "a7ca0b17746b2d1b1f3ceb64138b95bc7678d87b5e1484b2278aa12eb5084a69",
+            "source_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+            "config_hash": "65ee0080d294c2e78192e02e788702047e3e7637304c37d72bc03f3411238acb",
+            "observed_at": "2026-10-07T20:11:45.226Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -654,7 +660,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.141Z",
-      "updated_at": "2026-10-07T19:27:17.141Z",
+      "updated_at": "2026-10-07T20:11:45.670Z",
       "base_manifest": {
         ".gitignore": "39377c8d8297a4f2fdb8b0c04f14919ad78e9e3ace7713bfdf38ddff77f1b989",
         ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
@@ -688,7 +694,7 @@
     {
       "id": "IMPL-4",
       "outcome": "Offline secret scanner merged with Presidio, secret span wins on overlap (outline Phase 4)",
-      "state": "queued",
+      "state": "active",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -733,7 +739,40 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.220Z",
-      "updated_at": "2026-10-07T19:27:17.220Z"
+      "updated_at": "2026-10-07T19:27:17.220Z",
+      "base_manifest": {
+        ".gitignore": "39377c8d8297a4f2fdb8b0c04f14919ad78e9e3ace7713bfdf38ddff77f1b989",
+        ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "e9bf19698b57858910e23d09f91a0f32591b4513a26d4bffd2b58f7719a7ee89",
+        "labelpipe/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/audit.py": "7671c2e222c8bf477a404f5768ea850df49a66a20b820d4a2181d9d59042ed40",
+        "labelpipe/checks.py": "72359d60f670ef4e87851b0b35c4023c28e7f630bf0137313a905e3d44d39646",
+        "labelpipe/cli.py": "18337fd6a747c1983f02b14182930eb6071be39932967ef4ff9961e8084cc8aa",
+        "labelpipe/dataset.py": "32036f604c990f00dc041fb4f59543fe060fe527460ddc673c655e92223c2788",
+        "labelpipe/db.py": "ebe089b9d7c21900aef8bebef75403399f319b80c513c42944ad5becf3da4144",
+        "labelpipe/intake.py": "831ac74b4774741039819134ea2fbe96055ae2fd110773f4ba78bf71348b7550",
+        "labelpipe/parse.py": "3b94cdc0b7958a38ad06e0cf7e8fb1fb570a762e971290321d824752a0403940",
+        "labelpipe/propose.py": "5316ee459cf0f5792e92bff91038850603d2541ae9395bc71d65129ac965b7e3",
+        "labelpipe/review/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/review/api.py": "46331d9209b4734f6e5bfb658d7eed9bda085baa5431752e2dd7ac3ebd18c820",
+        "labelpipe/review/ui/index.html": "13704aac3df0e56975531038731b00454ff459590630b11d1413b814337c8bb8",
+        "labelpipe/runner.py": "6dfc64e4e4f0431fec29afedc1d48d8bbd1259b643e4a6ec1ff713fa32a55bdf",
+        "labelpipe/scan.py": "9830043f4364d46fa14a415571abc0ccdee2d59af8cd44dff297945a0286d81b",
+        "labelpipe/schema.py": "4677a5ed13d5f16f48ef8b2a19a9174d2666423d4a8c2ea92ae6eb95fb064dba",
+        "labelpipe/validate.py": "4e09f6c7e761cbdd5c439369be758c68cf6dca1435697d7f49d21c7babd67c31",
+        "pyproject.toml": "90bb22eb51d2bf21c9d3e33c35a74cb089d9d2d72fcb5f39a6456d01d8f64f64",
+        "tests/conftest.py": "a7530be0d0684d3c7541d9a7f22aaabea7d7ab2d5f0436dcb88a319b3e34c16b",
+        "tests/fixtures/dump_with_secret.txt": "8d80ae551f41ca023918a0997afbb830382eea0f0061c02479220221fac63008",
+        "tests/test_adjudication_loop.py": "0e8f094624b08977d908c8ed2acc82b5a3e0e390e0c378031e38e1ee8abe4596",
+        "tests/test_audit.py": "253b3dfa0d787cff31dcde1a5e207b85c1efc5dc6c54e18caf4980d5ed41e582",
+        "tests/test_end_to_end.py": "e22fe1cc8f473bd86016e2861342c1659cca19761bb53a02f0b7b327ada6323a",
+        "tests/test_offsets.py": "baa5840b8b327c7c3bdedb399ac2833781898ab033df7d51f0f68b6d48b472d2",
+        "tests/test_review_actions.py": "22196edb9b0ece85bae67c71d540658481850552518e270a2b7c604bac9b5247",
+        "tests/test_validation.py": "d43a12e78d1b90701debaff9d0e04d22887c94db6b714a976fcbf37d915af5ff",
+        "uv.lock": "a19708dbf74dc17da94ebba66b9e7e744e4d0b5b9fa01bea9d32267923f990e1"
+      }
     },
     {
       "id": "IMPL-5",
@@ -854,6 +893,15 @@
       "task": "IMPL-2",
       "human": "Aamir Alam",
       "reason": "Reviewed Phase 2 diff (df5407f); tests and manual rewrite/audit check pass",
+      "revision": null
+    },
+    {
+      "id": "9a132057-0a4b-4967-9345-76c1c45c1a99",
+      "at": "2026-10-07T20:11:45.226Z",
+      "action": "approve",
+      "task": "IMPL-3",
+      "human": "Aamir Alam",
+      "reason": "Reviewed Phase 3 diff (fc98b91); tests and manual adjudication check pass",
       "revision": null
     }
   ],
@@ -1008,13 +1056,13 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T20:10:50.741Z",
+    "at": "2026-10-07T20:11:45.904Z",
     "revision": {
-      "commit": "ee5e1dc84a10c84f8f942adbc9404814b3943d57",
+      "commit": "fc98b913c633591cb63c1b281a9fc47a72c3a556",
       "dirty": true,
       "source_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc"
     },
-    "active_task": "IMPL-3",
+    "active_task": "IMPL-4",
     "next_action": "Run the task pre-flight."
   },
   "legacy": null
