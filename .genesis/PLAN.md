@@ -42,15 +42,15 @@
 
 ### IMPL-5 — Server-side authorized, audited view_unredacted access (outline Phase 5)
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-11, AC-6
 - scope: not bounded
-- gates: unredacted: uv run pytest tests/test_unredacted.py, suite: uv run pytest, independent-review: pending
+- gates: unredacted: uv run pytest tests/test_unredacted.py, suite: uv run pytest, independent-review: pass
 - next: Run the task pre-flight.
 
 ### IMPL-6 — Versioned thread-grouped dataset export: DVC + HF splits, no cross-split leakage (outline Phase 6)
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-10, NFR-6, AC-5
 - scope: not bounded
 - gates: dataset: uv run pytest tests/test_dataset.py, suite: uv run pytest, independent-review: pending

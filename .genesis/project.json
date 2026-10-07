@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T20:24:09.297Z"
+    "updated_at": "2026-10-07T20:25:01.711Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,7 +25,7 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "IMPL-5",
+    "active_task": "IMPL-6",
     "blocker": null,
     "next_action": "Run the task pre-flight."
   },
@@ -813,7 +813,7 @@
     {
       "id": "IMPL-5",
       "outcome": "Server-side authorized, audited view_unredacted access (outline Phase 5)",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -859,8 +859,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-5-independent-review-ab0bc009-bc17-4edb-b579-1ea180fc64ea.json",
+            "hash": "f94132b90e2921d9152076977d9d08068bed2214665d134f7702b804e68af8de",
+            "source_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e",
+            "config_hash": "e415d4d291736d403d7ca3715a3e6d0601d700d0a8791a3f83f54a3d05545113",
+            "observed_at": "2026-10-07T20:25:00.905Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -869,7 +875,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.297Z",
-      "updated_at": "2026-10-07T19:27:17.297Z",
+      "updated_at": "2026-10-07T20:25:01.406Z",
       "base_manifest": {
         ".gitignore": "39377c8d8297a4f2fdb8b0c04f14919ad78e9e3ace7713bfdf38ddff77f1b989",
         ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
@@ -909,7 +915,7 @@
     {
       "id": "IMPL-6",
       "outcome": "Versioned thread-grouped dataset export: DVC + HF splits, no cross-split leakage (outline Phase 6)",
-      "state": "queued",
+      "state": "active",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -954,7 +960,43 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.378Z",
-      "updated_at": "2026-10-07T19:27:17.378Z"
+      "updated_at": "2026-10-07T19:27:17.378Z",
+      "base_manifest": {
+        ".gitignore": "39377c8d8297a4f2fdb8b0c04f14919ad78e9e3ace7713bfdf38ddff77f1b989",
+        ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "e9bf19698b57858910e23d09f91a0f32591b4513a26d4bffd2b58f7719a7ee89",
+        "labelpipe/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/audit.py": "9cf799b9538532b73994b5464a29c6d1cbac0b6d91e7ab0e8e1a42c8004ff0ed",
+        "labelpipe/checks.py": "72359d60f670ef4e87851b0b35c4023c28e7f630bf0137313a905e3d44d39646",
+        "labelpipe/cli.py": "18337fd6a747c1983f02b14182930eb6071be39932967ef4ff9961e8084cc8aa",
+        "labelpipe/dataset.py": "32036f604c990f00dc041fb4f59543fe060fe527460ddc673c655e92223c2788",
+        "labelpipe/db.py": "ebe089b9d7c21900aef8bebef75403399f319b80c513c42944ad5becf3da4144",
+        "labelpipe/intake.py": "831ac74b4774741039819134ea2fbe96055ae2fd110773f4ba78bf71348b7550",
+        "labelpipe/parse.py": "3b94cdc0b7958a38ad06e0cf7e8fb1fb570a762e971290321d824752a0403940",
+        "labelpipe/propose.py": "5316ee459cf0f5792e92bff91038850603d2541ae9395bc71d65129ac965b7e3",
+        "labelpipe/review/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/review/api.py": "84618ec3cf5ac5927b14bf9431952354d22362d827784e53625022e0df096cdd",
+        "labelpipe/review/ui/index.html": "a23b9facff46e7586c7959201597a65b8a0b4b3ac82dc00244157c0ee53a4976",
+        "labelpipe/runner.py": "6dfc64e4e4f0431fec29afedc1d48d8bbd1259b643e4a6ec1ff713fa32a55bdf",
+        "labelpipe/scan.py": "02d8ac43c613dd7787b24eb28d322f91866280fd73bdb0b354923056c2247ec3",
+        "labelpipe/schema.py": "4677a5ed13d5f16f48ef8b2a19a9174d2666423d4a8c2ea92ae6eb95fb064dba",
+        "labelpipe/validate.py": "4e09f6c7e761cbdd5c439369be758c68cf6dca1435697d7f49d21c7babd67c31",
+        "pyproject.toml": "cfe5f31fd89b40043404d52e758c030554422e24a23a7badb466f85ff5de0397",
+        "tests/conftest.py": "a7530be0d0684d3c7541d9a7f22aaabea7d7ab2d5f0436dcb88a319b3e34c16b",
+        "tests/fixtures/dump_aws_jwt.txt": "d68fbfbdf7472036bc74e3dab3c4553cd19fe07804c9f5e8f3720e12d453394f",
+        "tests/fixtures/dump_with_secret.txt": "8d80ae551f41ca023918a0997afbb830382eea0f0061c02479220221fac63008",
+        "tests/test_adjudication_loop.py": "0e8f094624b08977d908c8ed2acc82b5a3e0e390e0c378031e38e1ee8abe4596",
+        "tests/test_audit.py": "253b3dfa0d787cff31dcde1a5e207b85c1efc5dc6c54e18caf4980d5ed41e582",
+        "tests/test_end_to_end.py": "e22fe1cc8f473bd86016e2861342c1659cca19761bb53a02f0b7b327ada6323a",
+        "tests/test_offsets.py": "baa5840b8b327c7c3bdedb399ac2833781898ab033df7d51f0f68b6d48b472d2",
+        "tests/test_review_actions.py": "22196edb9b0ece85bae67c71d540658481850552518e270a2b7c604bac9b5247",
+        "tests/test_scan.py": "122286fc7b227ffbe66cfc8247ec6e4706922caf6893d8b472c276f7fdf62adc",
+        "tests/test_unredacted.py": "9ac7a7e58f97980716827cd7bdc274c19722c673bd30a02737facd898ed12ff7",
+        "tests/test_validation.py": "d43a12e78d1b90701debaff9d0e04d22887c94db6b714a976fcbf37d915af5ff",
+        "uv.lock": "963ef6821304bf00cef7b8db362bfe9833f8b108dac03ed473cac3e381784af8"
+      }
     }
   ],
   "learning_proposals": [],
@@ -994,6 +1036,15 @@
       "task": "IMPL-4",
       "human": "Aamir Alam",
       "reason": "Reviewed Phase 4 diff (95268c9); scan tests pass",
+      "revision": null
+    },
+    {
+      "id": "ab0bc009-bc17-4edb-b579-1ea180fc64ea",
+      "at": "2026-10-07T20:25:00.905Z",
+      "action": "approve",
+      "task": "IMPL-5",
+      "human": "Aamir Alam",
+      "reason": "Reviewed Phase 5 diff (54e9a4f); tests and manual reveal check pass",
       "revision": null
     }
   ],
@@ -1244,13 +1295,13 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T20:24:09.259Z",
+    "at": "2026-10-07T20:25:01.675Z",
     "revision": {
-      "commit": "51979a1a528e2c7482654a5fec0dd6f99fa2880f",
+      "commit": "54e9a4f297d08140bad7704641ed1e7f77138705",
       "dirty": true,
       "source_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e"
     },
-    "active_task": "IMPL-5",
+    "active_task": "IMPL-6",
     "next_action": "Run the task pre-flight."
   },
   "legacy": null
