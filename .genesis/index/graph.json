@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "context-sanitizer-slm-data-pipeline",
-  "revision": "6d395a349ce90073abd92eabb07f19727907576e",
-  "sourceHash": "d8f893dfd3473c2636a75233f6b77876fb4cfb13313bf0594f6bd4fd7f5a7500",
+  "revision": "7e5fa1f810d9263b4930de06d60b8efe7b41d19b",
+  "sourceHash": "77d9d6dd0c5db0df48c58704b74d311a7022418814313b29f1530b7c0a24ac80",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -18,6 +18,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "file:labelpipe/audit.py",
+      "type": "file",
+      "label": "labelpipe/audit.py",
+      "path": "labelpipe/audit.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "e046bcfecc6569bea12928f1b751f181c7d984883ff683ccdd76c9cc24031088"
     },
     {
       "id": "file:labelpipe/cli.py",
@@ -37,7 +47,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "9a9edc35c76c066f2bfa6e9d298f457b047a126f62952e3b01ff695a464d00c1"
+      "contentHash": "4e3873f6a3fbde5db1ec49d9ba20e7e39cbc28e19380f034d0747fdf83586c39"
     },
     {
       "id": "file:labelpipe/db.py",
@@ -47,7 +57,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "5d6d0ee9564ec43491199c74a13ded40f736aa63cbb1a267c3c50aaf0d989f11"
+      "contentHash": "3298bced80ed3dabe60f78d3ed82cb4a8f80b287a43a99d65090141877bfa939"
     },
     {
       "id": "file:labelpipe/intake.py",
@@ -97,7 +107,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "408a3dc4f69e54d372d0a4c030275efc1340d8bd6229c5e6735eb4c62d003059"
+      "contentHash": "199f85d2c751af3fd94b69e1bd89d3d9ad969fd7f1f512334c451c2dc61f1e84"
     },
     {
       "id": "file:labelpipe/runner.py",
@@ -107,7 +117,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "ffe8c170c5a38c7548261bd5de099d8bacbe48b1ca64abbff176d539e1779579"
+      "contentHash": "41a1550f99cf8f604b953096a1ce70f19a02ae8b65704e92b51201597b1ab80b"
     },
     {
       "id": "file:labelpipe/scan.py",
@@ -130,6 +140,26 @@
       "contentHash": "1a6a3bfc0d8f3c3d84a406059181f911aacd691a0433cec9437178eec6d3aa12"
     },
     {
+      "id": "file:tests/conftest.py",
+      "type": "file",
+      "label": "tests/conftest.py",
+      "path": "tests/conftest.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "3526bb33cf0257e02195e661f73a034519e69afc14e10ab8de2c4c928b5175b7"
+    },
+    {
+      "id": "file:tests/test_audit.py",
+      "type": "file",
+      "label": "tests/test_audit.py",
+      "path": "tests/test_audit.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "dabcc24004cb4feca67844981a7fdaf22eddd0f24575354eea4fdf2c08215234"
+    },
+    {
       "id": "file:tests/test_end_to_end.py",
       "type": "file",
       "label": "tests/test_end_to_end.py",
@@ -148,6 +178,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "1557ed57752b6ea453ae223c0f05ff420df08326ed1ea531548a47f91230d2d2"
+    },
+    {
+      "id": "file:tests/test_review_actions.py",
+      "type": "file",
+      "label": "tests/test_review_actions.py",
+      "path": "tests/test_review_actions.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "12b4a50381c2a06d8f633e4e6f270c371a1354ae1ff2aa92af5eee6eec88aa93"
     },
     {
       "id": "package:pypi:fastapi",
@@ -213,6 +253,15 @@
       "contentHash": "58f6ef9a056cb5510180431e9462eca17724b13cde8deb37795f576f0a9280c9"
     },
     {
+      "id": "package:pypi:pytest",
+      "type": "package",
+      "label": "pytest",
+      "ecosystem": "pypi",
+      "confidence": 0.85,
+      "extractor": "import",
+      "contentHash": "1a0b1d112a34c7a6c0fcf7af5669a0085e5cd71ddafc3857e11b255445ae4210"
+    },
+    {
       "id": "package:pypi:spacy",
       "type": "package",
       "label": "spacy",
@@ -276,6 +325,15 @@
       "contentHash": "77c0573ae65199003c1e54971c9c5faaa5fb7b2bf90715c1741b45eca6560e6c"
     },
     {
+      "id": "runtime:python:hmac",
+      "type": "runtime",
+      "label": "hmac",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "7f5c8705c58d1652c88156976f6d074854d6e0ac07b86e4edf3b18519f1e84cb"
+    },
+    {
       "id": "runtime:python:json",
       "type": "runtime",
       "label": "json",
@@ -330,6 +388,78 @@
       "contentHash": "476430c5e63eac951b3a752d292e03a660994a175e508c80f8615d9413eb18ea"
     },
     {
+      "id": "symbol:labelpipe/audit.py#class:AuditLog",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AuditLog",
+      "label": "AuditLog",
+      "path": "labelpipe/audit.py",
+      "line": 15,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b1ce5320afb3e8ceb3dfc44128792cf4d075ff44684b6b64834cd97d4acba107"
+    },
+    {
+      "id": "symbol:labelpipe/audit.py#class:AuditUnavailable",
+      "type": "symbol",
+      "kind": "class",
+      "name": "AuditUnavailable",
+      "label": "AuditUnavailable",
+      "path": "labelpipe/audit.py",
+      "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5a180ee034d3836994ee928dfe39c4c54a850c17676ec7ecaf80a70a2bac7e2c"
+    },
+    {
+      "id": "symbol:labelpipe/audit.py#function:AuditLog.__init__",
+      "type": "symbol",
+      "kind": "function",
+      "name": "AuditLog.__init__",
+      "label": "AuditLog.__init__",
+      "path": "labelpipe/audit.py",
+      "line": 16,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "1053833d9827c9521cbd38070d821047022b9f033f67fb39513f36c9cfdcb28c"
+    },
+    {
+      "id": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "type": "symbol",
+      "kind": "function",
+      "name": "AuditLog.append",
+      "label": "AuditLog.append",
+      "path": "labelpipe/audit.py",
+      "line": 24,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9693fb22821190eebaab2ffc809f56d2e2d5a3ae74f6e49a784f903a52b0bd5b"
+    },
+    {
+      "id": "symbol:labelpipe/audit.py#function:AuditLog.hmac",
+      "type": "symbol",
+      "kind": "function",
+      "name": "AuditLog.hmac",
+      "label": "AuditLog.hmac",
+      "path": "labelpipe/audit.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2911ace893de944fcffe438fa59f69e1d0855f8e8565065d3948eb9f7eed663a"
+    },
+    {
+      "id": "symbol:labelpipe/audit.py#function:from_env",
+      "type": "symbol",
+      "kind": "function",
+      "name": "from_env",
+      "label": "from_env",
+      "path": "labelpipe/audit.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ed11716bbf225e5864193bdf4e3c25b06f0952b8dd3433c3ad3e8f9ee5227b9d"
+    },
+    {
       "id": "symbol:labelpipe/cli.py#function:main",
       "type": "symbol",
       "kind": "function",
@@ -372,7 +502,7 @@
       "name": "connect",
       "label": "connect",
       "path": "labelpipe/db.py",
-      "line": 38,
+      "line": 41,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "2bcb37d471de92c7670c853af9aabe618e537065c83eb4c0478e280a53e685a2"
@@ -456,7 +586,7 @@
       "name": "Decision",
       "label": "Decision",
       "path": "labelpipe/review/api.py",
-      "line": 16,
+      "line": 21,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "af627f76f43379b2c36876dda5939faed1c534d58bbf2af037353f5cd03ceede"
@@ -468,7 +598,7 @@
       "name": "create_app",
       "label": "create_app",
       "path": "labelpipe/review/api.py",
-      "line": 34,
+      "line": 42,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
@@ -480,7 +610,7 @@
       "name": "create_app.decide",
       "label": "create_app.decide",
       "path": "labelpipe/review/api.py",
-      "line": 57,
+      "line": 66,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "35be0531a3f3cc623ef4522c682ccb235f7cf4302e03c9acbd4639782bb4ffe0"
@@ -492,7 +622,7 @@
       "name": "create_app.index",
       "label": "create_app.index",
       "path": "labelpipe/review/api.py",
-      "line": 40,
+      "line": 49,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "20890ca260abab5c6d928aa5a013dcec5a253b2605be78cff6ec191cac79d534"
@@ -504,7 +634,7 @@
       "name": "create_app.next_record",
       "label": "create_app.next_record",
       "path": "labelpipe/review/api.py",
-      "line": 44,
+      "line": 53,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0ab99452543864f597b804020dfbc4bbb6159f8d2b8920ac5942f02c4f8e42ca"
@@ -516,7 +646,7 @@
       "name": "segments",
       "label": "segments",
       "path": "labelpipe/review/api.py",
-      "line": 21,
+      "line": 29,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "634e8d9d9ab26e6f27b574d50aa98d90348f2f6976c8490c5b948b9f1fae08e2"
@@ -552,7 +682,7 @@
       "name": "run.advance",
       "label": "run.advance",
       "path": "labelpipe/runner.py",
-      "line": 22,
+      "line": 24,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ad3cd4d81aeac425ccd5b354b5fc5c3d77843a17c8f6929e0a1467d39f0393e6"
@@ -606,6 +736,78 @@
       "contentHash": "51bf81430b58fc42aae93ff6e785c63afae5629178c8b7ad05f7d3853700e363"
     },
     {
+      "id": "symbol:tests/conftest.py#function:audit_env",
+      "type": "symbol",
+      "kind": "function",
+      "name": "audit_env",
+      "label": "audit_env",
+      "path": "tests/conftest.py",
+      "line": 14,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "880b5c3238e99006ca65c24c4c2e7391a905c0eb8f4449ee59f9d7b82e490abd"
+    },
+    {
+      "id": "symbol:tests/conftest.py#function:pending",
+      "type": "symbol",
+      "kind": "function",
+      "name": "pending",
+      "label": "pending",
+      "path": "tests/conftest.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "37d597ef8db39ce794c16905f146e5e51b45e199605bf2a0e1b434ccd3688890"
+    },
+    {
+      "id": "symbol:tests/test_audit.py#function:test_audit_entry_holds_no_plaintext",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_audit_entry_holds_no_plaintext",
+      "label": "test_audit_entry_holds_no_plaintext",
+      "path": "tests/test_audit.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "86d29b41f19b10f57b7083c9ad4bb192ae6463bdfbe485fdd0c656c483e727ff"
+    },
+    {
+      "id": "symbol:tests/test_audit.py#function:test_log_is_append_only",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_log_is_append_only",
+      "label": "test_log_is_append_only",
+      "path": "tests/test_audit.py",
+      "line": 30,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "b58f5610a791d2363716d30c191d8e75f2dad85ade6fda311fb7999b44dd7025"
+    },
+    {
+      "id": "symbol:tests/test_audit.py#function:test_missing_key_fails_at_startup",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_missing_key_fails_at_startup",
+      "label": "test_missing_key_fails_at_startup",
+      "path": "tests/test_audit.py",
+      "line": 38,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "fc5479e96616d5a26cd7bea9bec19d3c8f2ff23c2b59961b9e00895abbdbf432"
+    },
+    {
+      "id": "symbol:tests/test_audit.py#function:test_unwritable_sink_refuses_action_and_persists_nothing",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_unwritable_sink_refuses_action_and_persists_nothing",
+      "label": "test_unwritable_sink_refuses_action_and_persists_nothing",
+      "path": "tests/test_audit.py",
+      "line": 19,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "cbb1ef970509c812f0710457e8caef357834fb9035a8273ea727a5d2e3d9fb7b"
+    },
+    {
       "id": "symbol:tests/test_end_to_end.py#function:assert_no_secret",
       "type": "symbol",
       "kind": "function",
@@ -640,9 +842,96 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f374d2191c86bc6b4be1de231e2d4e8545005c688026b00920801fd296e3d638"
+    },
+    {
+      "id": "symbol:tests/test_review_actions.py#function:body",
+      "type": "symbol",
+      "kind": "function",
+      "name": "body",
+      "label": "body",
+      "path": "tests/test_review_actions.py",
+      "line": 11,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7c39ef87e58d272d88a574a2fc44dbc8f3b62d36fe19567b50e4013a37e3a2e3"
+    },
+    {
+      "id": "symbol:tests/test_review_actions.py#function:test_each_action_persists_exactly_one_decision",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_each_action_persists_exactly_one_decision",
+      "label": "test_each_action_persists_exactly_one_decision",
+      "path": "tests/test_review_actions.py",
+      "line": 21,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "939fc7b93192f610c94642b63e5ad20e13d3221cbe3d3e2a9240ae20953d40b7"
+    },
+    {
+      "id": "symbol:tests/test_review_actions.py#function:test_invalid_decisions_rejected_without_side_effects",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_invalid_decisions_rejected_without_side_effects",
+      "label": "test_invalid_decisions_rejected_without_side_effects",
+      "path": "tests/test_review_actions.py",
+      "line": 56,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "06f484ef1c4575b75293d057f8461ebada586846726053ad1c5d63b087a9427c"
+    },
+    {
+      "id": "symbol:tests/test_review_actions.py#function:test_rewrite_exports_new_offsets_as_human",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_rewrite_exports_new_offsets_as_human",
+      "label": "test_rewrite_exports_new_offsets_as_human",
+      "path": "tests/test_review_actions.py",
+      "line": 36,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "39115498111ab94eb2fac3b79a65534669cf13decb02cb779c7763b5a1ca19c4"
+    },
+    {
+      "id": "symbol:tests/test_review_actions.py#function:test_skipped_record_is_requeued_by_runner",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_skipped_record_is_requeued_by_runner",
+      "label": "test_skipped_record_is_requeued_by_runner",
+      "path": "tests/test_review_actions.py",
+      "line": 64,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0eaf995b2e24fca5116b592944c764f4e7097fb5da4ddf0ed3f2e0cc5035aff8"
     }
   ],
   "edges": [
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "target": "symbol:labelpipe/audit.py#class:AuditUnavailable",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.hmac",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/audit.py#function:from_env",
+      "target": "symbol:labelpipe/audit.py#class:AuditLog",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
     {
       "type": "calls",
       "source": "symbol:labelpipe/cli.py#function:main",
@@ -748,10 +1037,34 @@
     {
       "type": "calls",
       "source": "symbol:labelpipe/review/api.py#function:create_app",
+      "target": "symbol:labelpipe/audit.py#function:from_env",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/audit.py#function:from_env"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:create_app",
       "target": "symbol:labelpipe/db.py#function:connect",
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:create_app.decide",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/audit.py#function:AuditLog.append"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -761,6 +1074,18 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:segments",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/audit.py#function:AuditLog.append"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -833,10 +1158,76 @@
     {
       "type": "calls",
       "source": "symbol:labelpipe/scan.py#function:scan",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/audit.py#function:AuditLog.append"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/scan.py#function:scan",
       "target": "symbol:labelpipe/scan.py#function:analyzer",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conftest.py#function:pending",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/db.py#function:connect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conftest.py#function:pending",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/intake.py#function:ingest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conftest.py#function:pending",
+      "target": "symbol:labelpipe/review/api.py#function:create_app",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/conftest.py#function:pending",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_audit.py#function:test_missing_key_fails_at_startup",
+      "target": "symbol:labelpipe/review/api.py#function:create_app",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -963,6 +1354,114 @@
       "extractor": "python-stdlib-ast-calls"
     },
     {
+      "type": "calls",
+      "source": "symbol:tests/test_review_actions.py#function:body",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.index",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/review/api.py#function:create_app.index"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_review_actions.py#function:test_each_action_persists_exactly_one_decision",
+      "target": "symbol:tests/test_review_actions.py#function:body",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_review_actions.py#function:test_rewrite_exports_new_offsets_as_human",
+      "target": "symbol:labelpipe/dataset.py#function:export",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/dataset.py#function:export"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_review_actions.py#function:test_rewrite_exports_new_offsets_as_human",
+      "target": "symbol:tests/test_review_actions.py#function:body",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_review_actions.py#function:test_skipped_record_is_requeued_by_runner",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/audit.py",
+      "target": "symbol:labelpipe/audit.py#class:AuditLog",
+      "line": 15,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/audit.py",
+      "target": "symbol:labelpipe/audit.py#class:AuditUnavailable",
+      "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/audit.py",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.__init__",
+      "line": 16,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/audit.py",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "line": 24,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/audit.py",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.hmac",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/audit.py",
+      "target": "symbol:labelpipe/audit.py#function:from_env",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
       "type": "defines",
       "source": "file:labelpipe/cli.py",
       "target": "symbol:labelpipe/cli.py#function:main",
@@ -993,7 +1492,7 @@
       "type": "defines",
       "source": "file:labelpipe/db.py",
       "target": "symbol:labelpipe/db.py#function:connect",
-      "line": 38,
+      "line": 41,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1056,7 +1555,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#class:Decision",
-      "line": 16,
+      "line": 21,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1065,7 +1564,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:create_app",
-      "line": 34,
+      "line": 42,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1074,7 +1573,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:create_app.decide",
-      "line": 57,
+      "line": 66,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1083,7 +1582,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:create_app.index",
-      "line": 40,
+      "line": 49,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1092,7 +1591,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:create_app.next_record",
-      "line": 44,
+      "line": 53,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1101,7 +1600,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:segments",
-      "line": 21,
+      "line": 29,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1128,7 +1627,7 @@
       "type": "defines",
       "source": "file:labelpipe/runner.py",
       "target": "symbol:labelpipe/runner.py#function:run.advance",
-      "line": 22,
+      "line": 24,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1171,6 +1670,60 @@
     },
     {
       "type": "defines",
+      "source": "file:tests/conftest.py",
+      "target": "symbol:tests/conftest.py#function:audit_env",
+      "line": 14,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/conftest.py",
+      "target": "symbol:tests/conftest.py#function:pending",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_audit.py",
+      "target": "symbol:tests/test_audit.py#function:test_audit_entry_holds_no_plaintext",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_audit.py",
+      "target": "symbol:tests/test_audit.py#function:test_log_is_append_only",
+      "line": 30,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_audit.py",
+      "target": "symbol:tests/test_audit.py#function:test_missing_key_fails_at_startup",
+      "line": 38,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_audit.py",
+      "target": "symbol:tests/test_audit.py#function:test_unwritable_sink_refuses_action_and_persists_nothing",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:tests/test_end_to_end.py",
       "target": "symbol:tests/test_end_to_end.py#function:assert_no_secret",
       "line": 16,
@@ -1195,6 +1748,101 @@
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_review_actions.py",
+      "target": "symbol:tests/test_review_actions.py#function:body",
+      "line": 11,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_review_actions.py",
+      "target": "symbol:tests/test_review_actions.py#function:test_each_action_persists_exactly_one_decision",
+      "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_review_actions.py",
+      "target": "symbol:tests/test_review_actions.py#function:test_invalid_decisions_rejected_without_side_effects",
+      "line": 56,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_review_actions.py",
+      "target": "symbol:tests/test_review_actions.py#function:test_rewrite_exports_new_offsets_as_human",
+      "line": 36,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_review_actions.py",
+      "target": "symbol:tests/test_review_actions.py#function:test_skipped_record_is_requeued_by_runner",
+      "line": 64,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/audit.py",
+      "target": "runtime:python:datetime",
+      "specifier": "datetime",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/audit.py",
+      "target": "runtime:python:hashlib",
+      "specifier": "hashlib",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/audit.py",
+      "target": "runtime:python:hmac",
+      "specifier": "hmac",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/audit.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/audit.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
     },
     {
       "type": "imports",
@@ -1359,9 +2007,19 @@
     {
       "type": "imports",
       "source": "file:labelpipe/review/api.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": "..",
+      "line": 11,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
       "target": "file:labelpipe/db.py",
       "specifier": "..db",
-      "line": 11,
+      "line": 12,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -1558,6 +2216,106 @@
     },
     {
       "type": "imports",
+      "source": "file:tests/conftest.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": "labelpipe",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conftest.py",
+      "target": "file:labelpipe/review/api.py",
+      "specifier": "labelpipe.review.api",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conftest.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 5,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conftest.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conftest.py",
+      "target": "runtime:python:pathlib",
+      "specifier": "pathlib",
+      "line": 2,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/conftest.py",
+      "target": "runtime:python:shutil",
+      "specifier": "shutil",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_audit.py",
+      "target": "file:labelpipe/review/api.py",
+      "specifier": "labelpipe.review.api",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_audit.py",
+      "target": "file:tests/test_end_to_end.py",
+      "specifier": "tests.test_end_to_end",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_audit.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_audit.py",
+      "target": "runtime:python:os",
+      "specifier": "os",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/test_end_to_end.py",
       "target": "file:labelpipe/__init__.py",
       "specifier": "labelpipe",
@@ -1625,10 +2383,40 @@
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_review_actions.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": "labelpipe",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_review_actions.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_review_actions.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
     }
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 89
+    "unresolvedCalls": 151
   }
 }
