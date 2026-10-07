@@ -1,0 +1,385 @@
+{
+  "schema_version": 2,
+  "project": {
+    "name": "context-sanitizer-slm-data-pipeline",
+    "mode": "init",
+    "profile": "prototype",
+    "objective": "Build a privacy-preserving, human-in-the-loop data-labeling pipeline that ingests raw incident/log dumps, redacts secrets and PII, and emits a versioned, audit-stamped, character-offset-anchored labeled dataset for training and evaluating a 1.5B context-distillation SLM.",
+    "constraints": [],
+    "non_goals": [],
+    "trust_boundary": "local repository",
+    "created_at": "2026-10-07T14:35:39.977Z",
+    "updated_at": "2026-10-07T14:47:21.710Z"
+  },
+  "policy": {
+    "ponytail": "full",
+    "autonomy": "human-in-the-loop",
+    "learned_rule_promotion": "human-required",
+    "cleanup": "propose-only",
+    "traces": {
+      "storage": "local",
+      "commit_raw": false,
+      "redact_secrets": true
+    }
+  },
+  "lifecycle": {
+    "phase": "specification",
+    "status": "active",
+    "active_task": "SPEC-1",
+    "blocker": null,
+    "next_action": "Ask the human to review SPEC.md, then record explicit specification approval."
+  },
+  "commands": {},
+  "workflow": {
+    "type": "new-product",
+    "started_at": "2026-10-07T14:35:39.983Z",
+    "spec_check": {
+      "at": "2026-10-07T14:38:38.906Z",
+      "source_hash": "4434ea6f94448a462878695ed279c4bb8c156841196dd276db993bda863c665d",
+      "requirements": [
+        "AC-1",
+        "AC-2",
+        "AC-3",
+        "AC-4",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6",
+        "NFR-7"
+      ]
+    },
+    "plan_check": null,
+    "plan_approval": null
+  },
+  "artifacts": [
+    {
+      "id": "SPEC-1",
+      "type": "specification",
+      "path": "SPEC.md",
+      "status": "checked",
+      "requirements": [
+        "AC-1",
+        "AC-2",
+        "AC-3",
+        "AC-4",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6",
+        "NFR-7"
+      ],
+      "source_hash": "4434ea6f94448a462878695ed279c4bb8c156841196dd276db993bda863c665d",
+      "approval": null
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "ASSUMPTION-7bd0a9ca",
+      "text": "A 1.5B SLM can produce usable candidate label spans + evidence for pre-annotation; model quality for the propose-labels stage is not yet validated.",
+      "status": "open",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/task.md",
+      "recorded_at": "2026-10-07T14:37:26.097Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "ASSUMPTION-b7bddc2c",
+      "text": "Single-reviewer v1 throughput is sufficient to produce enough labeled data before multi-reviewer/IAA is needed.",
+      "status": "open",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q1",
+      "recorded_at": "2026-10-07T14:37:26.222Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "ASSUMPTION-fd80e5a6",
+      "text": "Raw dumps are primarily incident/log text (PagerDuty-style); other source types/formats are not yet characterized.",
+      "status": "open",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/task.md",
+      "recorded_at": "2026-10-07T14:37:26.323Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "ASSUMPTION-e5a3fc74",
+      "text": "Tech-stack choices in 03-design supersede task.md's 'stack not yet decided' per the design doc's stated document precedence; treated as authoritative pending human confirmation. (Recorded as unresolved disagreement between artifacts.)",
+      "status": "open",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md",
+      "recorded_at": "2026-10-07T14:37:26.416Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "ASSUMPTION-4c36bb5a",
+      "text": "Research 'Unverified' sub-facts must be confirmed before relying on them: exact Argilla/Doccano span JSON shapes, Prefect pause-timeout terminal state, Airflow HITL exact version, Pydantic Field constraint specifics, Llama-3 tokenizer spurious offsets.",
+      "status": "open",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/02-research-labeling-pipeline-ecosystem.md",
+      "recorded_at": "2026-10-07T14:37:26.512Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "invariants": [
+    {
+      "id": "INVARIANT-0a668fd2",
+      "text": "Every label span is stored as code-point character offsets {start,end} into the raw text; raw secret/PII text never appears in annotations, exports, or the review DOM (offset-only, W3C TextPositionSelector).",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md",
+      "recorded_at": "2026-10-07T14:37:25.328Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-be46e959",
+      "text": "Secret and PII scanning run fully offline in the sensitive path: no live verification or network calls (detect-secrets -n / no --verification).",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q5",
+      "recorded_at": "2026-10-07T14:37:25.403Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-efac03a9",
+      "text": "Per-record audit metadata (reviewer, timestamp, model version, policy version) is stored as columns on each record; the audit log is append-only, stores HMAC hashes not plaintext, and fails closed.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q8",
+      "recorded_at": "2026-10-07T14:37:25.473Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-36e24b71",
+      "text": "Thread/document grouping has no cross-split leakage: an entire source thread is assigned wholly to a single dataset split.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q7",
+      "recorded_at": "2026-10-07T14:37:25.550Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-e708cc98",
+      "text": "Authorization is enforced server-side; unredacted spans are returned only on an explicit, logged, policy-permitted request.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q8",
+      "recorded_at": "2026-10-07T14:37:25.612Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DECISION-ea8f447b",
+      "title": "v1 scope = thin end-to-end slice",
+      "text": "First implementation builds every DAG stage in its simplest honest form, single-reviewer, no orchestrator. Defer adjudication queue (flat needs-second-look flag), IAA, multi-reviewer, multi-tenant RBAC.",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q1",
+      "recorded_at": "2026-10-07T14:37:01.772Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-9acea95a",
+      "title": "No orchestrator in v1; DB-state HITL, Prefect later",
+      "text": "Human-review pause is DB state (pending_review table flipped by the review API); a plain worker loop advances records. Keep review state in our own DB so orchestrator choice stays reversible; adopt Prefect when multi-batch retries/observability are needed. Temporal only if waits reach weeks.",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q2",
+      "recorded_at": "2026-10-07T14:37:01.861Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-ef8c46ce",
+      "title": "Thin custom React review tool, not off-the-shelf",
+      "text": "Build a one-screen annotation/review tool (accept/rewrite/skip/reject/escalate) storing only {doc_id,start,end,label}. Rejected Label Studio CE (review/IAA Enterprise-only), Prodigy (commercial), Argilla (maintenance-only)/Doccano (no adjudication).",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q3",
+      "recorded_at": "2026-10-07T14:37:01.933Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-c999315f",
+      "title": "spaCy owns offsets; no destructive normalize in v1",
+      "text": "Keep raw text verbatim (doc.text==input_text); use Doc.char_span(strict) whose None return is the invalid-span signal. No normalized->raw index map. If normalization is later needed, prefer HF library-tracked normalizers over a hand-rolled map.",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q4",
+      "recorded_at": "2026-10-07T14:37:01.997Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-5c3235cc",
+      "title": "PII/secret scan = Presidio + offline secret scanner",
+      "text": "Presidio for entity PII + custom PatternRecognizers for Bearer/sk- tokens; detect-secrets --no-verify (or gitleaks stdin) for key long-tail; merge spans, secret-scanner wins on overlap. Redaction via Presidio Anonymizer, all in-environment.",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q5",
+      "recorded_at": "2026-10-07T14:37:02.063Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-3ac08160",
+      "title": "Pydantic per-record validation; Pandera dataset-gate later",
+      "text": "One Pydantic model is both the SLM output contract and the validation gate; cross-field span rules and conditional-required evidence live in @model_validator(mode=after). Add Pandera at dataset level once batches are large.",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q6",
+      "recorded_at": "2026-10-07T14:37:02.122Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-9192c6f9",
+      "title": "DVC + thread-grouped JSONL; HF datasets for trainer",
+      "text": "Version data/<thread_id>.jsonl with DVC + private remote; per-record audit as JSONL columns. Emit HF datasets splits for the SLM trainer; thread-grouping enforced by our own split logic. Move to lakeFS if hook-enforced audit fields are wanted.",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q7",
+      "recorded_at": "2026-10-07T14:37:02.186Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-cdd091a6",
+      "title": "Minimal-but-correct-shaped access/audit in v1",
+      "text": "Single reviewer role; API returns redacted text by default, serves unredacted span only on explicit logged view_unredacted; append-only HMAC audit that fails closed. Add RBAC/ABAC + policy engine when a second reviewer or sensitivity tier exists.",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q8",
+      "recorded_at": "2026-10-07T14:37:02.265Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-8b485576",
+      "title": "Python backend + thin React/TS review UI",
+      "text": "Backend in Python (Presidio, spaCy, Pydantic, DVC, HF datasets native). One small React/TS screen for review; server-rendered + vanilla JS acceptable to start. Rejected Streamlit (awkward span interaction, harder to make privacy-safe).",
+      "status": "accepted",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/03-design-discussion-pipeline-architecture.md#Q9",
+      "recorded_at": "2026-10-07T14:37:02.345Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "KNOWLEDGE-d308c87f",
+      "title": "Offsets are the universal span contract",
+      "text": "Every surveyed tool (Presidio, spaCy, HF fast tokenizers, W3C selector, Label Studio/Argilla/Doccano/Prodigy) represents spans as {start,end} char offsets, so offset preservation is the integration seam tying intake->annotation->validation together.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/02-research-labeling-pipeline-ecosystem.md",
+      "tags": [],
+      "recorded_at": "2026-10-07T14:37:25.677Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-869f3cc6",
+      "title": "Presidio lacks built-in secret entities",
+      "text": "Presidio has no built-in API_KEY/BEARER_TOKEN entity; keys/tokens come from secret scanners (gitleaks/trufflehog/detect-secrets, all accept stdin) or custom PatternRecognizers. Scanner verification makes live network calls - disable for sensitive data.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/02-research-labeling-pipeline-ecosystem.md",
+      "tags": [],
+      "recorded_at": "2026-10-07T14:37:25.740Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-3d6925a6",
+      "title": "spaCy gives a free invalid-span signal",
+      "text": "spaCy guarantees doc.text==input_text; Doc.char_span(start,end,alignment_mode=strict) returns None when offsets do not land on token boundaries, which is a natural invalid-span signal. Length checks are NOT proof offsets survived normalization.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/02-research-labeling-pipeline-ecosystem.md",
+      "tags": [],
+      "recorded_at": "2026-10-07T14:37:25.804Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-e61fe935",
+      "title": "HITL pause separates the orchestrators",
+      "text": "Native human-wait pause/resume: Temporal (durable signals, years), Airflow 3.1+ (HITL operators), Prefect (pause/suspend with Pydantic form). Dagster has no pause primitive (issue 14681) and needs a split-run+sensor workaround.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/02-research-labeling-pipeline-ecosystem.md",
+      "tags": [],
+      "recorded_at": "2026-10-07T14:37:25.880Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-fe5759c9",
+      "title": "Per-record audit belongs in columns",
+      "text": "Across DVC/lakeFS/HF datasets/Delta/Git-LFS, per-record audit (reviewer/timestamp/model/policy) lives as record columns; commit/tag metadata only carries batch-level facts. Grouping by thread is always a self-defined partition, never an automatic no-leakage guarantee.",
+      "source": ".humanlayer/tasks/design-data-labeling-pipeline-architecture-micksk/02-research-labeling-pipeline-ecosystem.md",
+      "tags": [],
+      "recorded_at": "2026-10-07T14:37:25.950Z",
+      "paths": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "SPEC-1",
+      "outcome": "Produce an approved, implementation-ready product specification",
+      "state": "active",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "SPEC.md"
+      ],
+      "dependencies": [],
+      "requirements": [],
+      "gates": [
+        {
+          "id": "independent-review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null,
+          "kind": "review"
+        }
+      ],
+      "next_action": "Interview the human, record durable context, and replace every placeholder in SPEC.md.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-07T14:35:39.983Z",
+      "updated_at": "2026-10-07T14:38:38.912Z"
+    }
+  ],
+  "learning_proposals": [],
+  "cleanup_proposals": [],
+  "controls": [],
+  "attempts": [],
+  "authorizations": [],
+  "experiments": [],
+  "incidents": [],
+  "discovery": null,
+  "checkpoint": {
+    "at": "2026-10-07T14:47:21.637Z",
+    "revision": {
+      "commit": null,
+      "dirty": null,
+      "source_hash": "2aa64b9841b57bba821f62dc26d81f8bf1d49d9515e49171e3aa9f5c96b70d6a"
+    },
+    "active_task": "SPEC-1",
+    "next_action": "Ask the human to review SPEC.md, then record explicit specification approval."
+  },
+  "legacy": null
+}
