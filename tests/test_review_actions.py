@@ -41,9 +41,10 @@ def test_rewrite_exports_new_offsets_as_human(pending, tmp_path):
     b = body("rewrite", raw)
     assert client.post(f"/records/{doc_id}/decision", json=b).status_code == 200
     runner.run(conn)
-    out = tmp_path / "data" / "labeled.jsonl"
+    out = tmp_path / "data"
     assert dataset.export(conn, out) == 1
-    [label] = json.loads(out.read_text())["labels"]
+    [f] = out.glob("*/*.jsonl")
+    [label] = json.loads(f.read_text())["labels"]
     assert (label["start"], label["end"], label["label"], label["source"]) == (b["new_start"], b["new_end"], "SERVICE", "human")
     assert raw[label["start"]:label["end"]] == "payments-api"
 

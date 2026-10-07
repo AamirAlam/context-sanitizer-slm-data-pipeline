@@ -1,0 +1,9 @@
+stages:
+  export:
+    cmd: labelpipe --db labelpipe.db export --out data --seed ${export.seed} --version-tag ${export.version_tag}
+    deps:
+      - labelpipe.db
+    params:
+      - export
+    outs:
+      - data

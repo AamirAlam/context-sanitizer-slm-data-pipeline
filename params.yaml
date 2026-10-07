@@ -1,0 +1,4 @@
+# Batch facts for the export stage; dvc.lock records their values per dataset version.
+export:
+  seed: v1          # split hash seed: changing it reshuffles threads across splits
+  version_tag: v1

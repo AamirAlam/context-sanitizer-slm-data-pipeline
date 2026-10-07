@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T20:25:01.711Z"
+    "updated_at": "2026-10-07T20:37:57.852Z"
   },
   "policy": {
     "ponytail": "full",
@@ -397,6 +397,15 @@
       "source": "human confirmation 2026-10-08",
       "tags": [],
       "recorded_at": "2026-10-07T20:24:08.815Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-fcbe1c54",
+      "title": "IMPL-6 manual check passed",
+      "text": "Aamir Alam loaded a 12-thread export with datasets.load_dataset: splits train=10, validation=1, test=1 matching manifest; rows offset-only with audit columns populated (outline Phase 6 manual verification).",
+      "source": "human confirmation 2026-10-08",
+      "tags": [],
+      "recorded_at": "2026-10-07T20:37:43.919Z",
       "paths": []
     }
   ],
@@ -934,16 +943,28 @@
           "kind": "command",
           "command": "uv run pytest tests/test_dataset.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-6-dataset-07b2adb6-600b-43dc-b5bb-6073f4599f0b.json",
+            "hash": "b4a167dcc61123c721e973c80234e36faf457888af8a79be4b30e0e9af301f3c",
+            "source_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640",
+            "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+            "observed_at": "2026-10-07T20:37:51.007Z"
+          }
         },
         {
           "id": "suite",
           "kind": "command",
           "command": "uv run pytest",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-6-suite-20fede92-f63c-48d2-90cf-d1b77e566a79.json",
+            "hash": "45a0906448a3d9817cf27212948d565c7222e47f4c09189e4f786810544d4832",
+            "source_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640",
+            "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+            "observed_at": "2026-10-07T20:37:57.283Z"
+          }
         },
         {
           "id": "independent-review",
@@ -1288,6 +1309,102 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-07T20:21:00.937Z"
+    },
+    {
+      "id": "c1747246-e2fd-48a6-8ebd-5a808bf214ea",
+      "task": "IMPL-6",
+      "kind": "gate",
+      "command": "uv run pytest tests/test_dataset.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 77994,
+      "child_pid": 78136,
+      "started_at": "2026-10-07T20:29:49.685Z",
+      "status": "passed",
+      "before_hash": "10e8271dc163504d366dcbe1770fc7b71a79b9e1811fe030286711787d57d846",
+      "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:29:55.140Z"
+    },
+    {
+      "id": "0b2f6a6c-3464-4273-9037-0c655251214b",
+      "task": "IMPL-6",
+      "kind": "gate",
+      "command": "uv run pytest",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 77994,
+      "child_pid": 78640,
+      "started_at": "2026-10-07T20:29:55.451Z",
+      "status": "passed",
+      "before_hash": "10e8271dc163504d366dcbe1770fc7b71a79b9e1811fe030286711787d57d846",
+      "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:30:01.455Z"
+    },
+    {
+      "id": "07b2adb6-600b-43dc-b5bb-6073f4599f0b",
+      "task": "IMPL-6",
+      "kind": "gate",
+      "command": "uv run pytest tests/test_dataset.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 82637,
+      "child_pid": 82835,
+      "started_at": "2026-10-07T20:37:44.418Z",
+      "status": "passed",
+      "before_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640",
+      "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:37:51.007Z"
+    },
+    {
+      "id": "20fede92-f63c-48d2-90cf-d1b77e566a79",
+      "task": "IMPL-6",
+      "kind": "gate",
+      "command": "uv run pytest",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 82637,
+      "child_pid": 83442,
+      "started_at": "2026-10-07T20:37:51.334Z",
+      "status": "passed",
+      "before_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640",
+      "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:37:57.283Z"
     }
   ],
   "authorizations": [],
@@ -1295,11 +1412,11 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T20:25:01.675Z",
+    "at": "2026-10-07T20:37:57.796Z",
     "revision": {
-      "commit": "54e9a4f297d08140bad7704641ed1e7f77138705",
+      "commit": "2830d20895d31dfd95558859623ef91aefdf14e0",
       "dirty": true,
-      "source_hash": "714c19bf0261b031444e800afeeaedde1155f1668e953afd68f1289ef620d58e"
+      "source_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640"
     },
     "active_task": "IMPL-6",
     "next_action": "Run the task pre-flight."

@@ -1,0 +1,30 @@
+{
+  "task": "IMPL-6",
+  "gate": "suite",
+  "kind": "command",
+  "attempt": "20fede92-f63c-48d2-90cf-d1b77e566a79",
+  "command": "uv run pytest",
+  "started_at": "2026-10-07T20:37:51.334Z",
+  "observed_at": "2026-10-07T20:37:57.283Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.11, pytest-9.1.1, pluggy-1.6.0\nrootdir: /Users/aamir/.humanlayer/workspaces/design-data-labeling-pipeline-architecture-micksk/context-sanitizer-slm-data-pipeline\nconfigfile: pyproject.toml\nplugins: hydra-core-1.3.7, platformdirs-4.12.3, anyio-4.15.1\ncollected 51 items\n\ntests/test_adjudication_loop.py ...                                      [  5%]\ntests/test_audit.py ....                                                 [ 13%]\ntests/test_dataset.py .....                                              [ 23%]\ntests/test_end_to_end.py .                                               [ 25%]\ntests/test_offsets.py .                                                  [ 27%]\ntests/test_review_actions.py .............                               [ 52%]\ntests/test_scan.py .....                                                 [ 62%]\ntests/test_unredacted.py ...                                             [ 68%]\ntests/test_validation.py ................                                [100%]\n\n============================== 51 passed in 4.50s ==============================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "2830d20895d31dfd95558859623ef91aefdf14e0",
+    "dirty": true
+  },
+  "source_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640",
+  "before_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640",
+  "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+  "environment": {
+    "node": "v24.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+    "variables": {}
+  },
+  "hash": "45a0906448a3d9817cf27212948d565c7222e47f4c09189e4f786810544d4832"
+}

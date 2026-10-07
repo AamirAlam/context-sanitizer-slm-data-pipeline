@@ -49,9 +49,10 @@ def test_secret_never_leaves_server(tmp_path):
     assert client.get("/records/next").status_code == 404
     runner.run(conn)  # approved -> validated: only validated records are exported
 
-    out = tmp_path / "data" / "labeled.jsonl"
+    out = tmp_path / "data"
     assert dataset.export(conn, out) == 1
-    exported = out.read_text()
+    [f] = out.glob("*/*.jsonl")
+    exported = f.read_text()
     assert_no_secret(exported)
     import json
     row = json.loads(exported)

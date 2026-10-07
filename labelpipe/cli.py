@@ -14,7 +14,10 @@ def main(argv=None):
     s = sub.add_parser("serve")
     s.add_argument("--host", default="127.0.0.1")
     s.add_argument("--port", type=int, default=8000)
-    sub.add_parser("export").add_argument("--out", type=Path, default=Path("data/labeled.jsonl"))
+    e = sub.add_parser("export")
+    e.add_argument("--out", type=Path, default=Path("data"))
+    e.add_argument("--seed", default="v1")
+    e.add_argument("--version-tag", default="dev")
     a = p.parse_args(argv)
 
     if a.cmd == "serve":
@@ -31,7 +34,8 @@ def main(argv=None):
     elif a.cmd == "run":
         print(f"advanced {runner.run(conn)} record(s)")
     elif a.cmd == "export":
-        print(f"exported {dataset.export(conn, a.out)} record(s) to {a.out}")
+        n = dataset.export(conn, a.out, seed=a.seed, version_tag=a.version_tag)
+        print(f"exported {n} record(s) to {a.out}")
 
 
 if __name__ == "__main__":
