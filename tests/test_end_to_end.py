@@ -47,6 +47,7 @@ def test_secret_never_leaves_server(tmp_path):
 
     assert client.post(f"/records/{doc_id}/decision", json={"action": "accept", "span_index": 0}).json() == {"status": "approved"}
     assert client.get("/records/next").status_code == 404
+    runner.run(conn)  # approved -> validated: only validated records are exported
 
     out = tmp_path / "data" / "labeled.jsonl"
     assert dataset.export(conn, out) == 1

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "context-sanitizer-slm-data-pipeline",
-  "revision": "df5407f70dcc1f6c0ec97c02e01e0c59e8d9acfa",
-  "sourceHash": "77d9d6dd0c5db0df48c58704b74d311a7022418814313b29f1530b7c0a24ac80",
+  "revision": "ee5e1dc84a10c84f8f942adbc9404814b3943d57",
+  "sourceHash": "15798cf8b88f88270ff39238e6c5d77e4eb802c077c3a248d0c94b733fffe38b",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -30,6 +30,16 @@
       "contentHash": "e046bcfecc6569bea12928f1b751f181c7d984883ff683ccdd76c9cc24031088"
     },
     {
+      "id": "file:labelpipe/checks.py",
+      "type": "file",
+      "label": "labelpipe/checks.py",
+      "path": "labelpipe/checks.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "8a5a7297714894b0cc3fcb4a0555ffa64bf4c8ea8a71e6ffddabfdad0b60706a"
+    },
+    {
       "id": "file:labelpipe/cli.py",
       "type": "file",
       "label": "labelpipe/cli.py",
@@ -47,7 +57,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "4e3873f6a3fbde5db1ec49d9ba20e7e39cbc28e19380f034d0747fdf83586c39"
+      "contentHash": "d8cd920185f4a298d4b18b48177e51b6bf8258834e5d9c91970a122ef6a71438"
     },
     {
       "id": "file:labelpipe/db.py",
@@ -57,7 +67,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "3298bced80ed3dabe60f78d3ed82cb4a8f80b287a43a99d65090141877bfa939"
+      "contentHash": "d3faf7fa5580330238c6974c140ffe7a25cc79a718fbef9dad56790c706cb554"
     },
     {
       "id": "file:labelpipe/intake.py",
@@ -107,7 +117,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "199f85d2c751af3fd94b69e1bd89d3d9ad969fd7f1f512334c451c2dc61f1e84"
+      "contentHash": "cae927d5745a7e1b9c1b4bedbf7a3e6b360905dd5887c34394b5de77f783d3eb"
     },
     {
       "id": "file:labelpipe/runner.py",
@@ -117,7 +127,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "41a1550f99cf8f604b953096a1ce70f19a02ae8b65704e92b51201597b1ab80b"
+      "contentHash": "18a29144c8036601c1b817ec5c42186554fed8a5457403cffe9ac09d1992ae2e"
     },
     {
       "id": "file:labelpipe/scan.py",
@@ -137,7 +147,17 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "1a6a3bfc0d8f3c3d84a406059181f911aacd691a0433cec9437178eec6d3aa12"
+      "contentHash": "0bb8af20664ce45fb2bcb73e7ee32e42afe32b34a075f80a2e971a4bcfc06606"
+    },
+    {
+      "id": "file:labelpipe/validate.py",
+      "type": "file",
+      "label": "labelpipe/validate.py",
+      "path": "labelpipe/validate.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "20385dadb8d1a53bd9f4521046d92d2aec3967bb825495f91e1b72a4f15a08aa"
     },
     {
       "id": "file:tests/conftest.py",
@@ -148,6 +168,16 @@
       "confidence": 1,
       "extractor": "filesystem",
       "contentHash": "3526bb33cf0257e02195e661f73a034519e69afc14e10ab8de2c4c928b5175b7"
+    },
+    {
+      "id": "file:tests/test_adjudication_loop.py",
+      "type": "file",
+      "label": "tests/test_adjudication_loop.py",
+      "path": "tests/test_adjudication_loop.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "00f2d66ebbbe4fa9d34b2a58d3bbb0730b34a6851aa66f51917b1c2367b26523"
     },
     {
       "id": "file:tests/test_audit.py",
@@ -167,7 +197,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "7f308da1095ad201b4b7f0971a924afa6c7bfad4eaaa05e0f6f98a91155bcaf6"
+      "contentHash": "eff7880c827f04f2bd95af014ddb641bab45337e75cf6ceac580b415f1514290"
     },
     {
       "id": "file:tests/test_offsets.py",
@@ -187,7 +217,17 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "12b4a50381c2a06d8f633e4e6f270c371a1354ae1ff2aa92af5eee6eec88aa93"
+      "contentHash": "ab2eb978efa4dffef50a9dd20226f2614df4527fb9db824543495f4082caad8d"
+    },
+    {
+      "id": "file:tests/test_validation.py",
+      "type": "file",
+      "label": "tests/test_validation.py",
+      "path": "tests/test_validation.py",
+      "language": "python",
+      "confidence": 1,
+      "extractor": "filesystem",
+      "contentHash": "106b1d8dc7bf47315428b7ad047d2b12e57a3ac23cd7ce1260dc75e966b314a3"
     },
     {
       "id": "package:pypi:fastapi",
@@ -361,6 +401,15 @@
       "contentHash": "f80e30cf02d84c10bc9ec466758fee39c984c5b41f4d5ab280e2be46cd1c3c2a"
     },
     {
+      "id": "runtime:python:re",
+      "type": "runtime",
+      "label": "re",
+      "language": "python",
+      "confidence": 0.85,
+      "extractor": "standard-library",
+      "contentHash": "7e94b3e53ed926a0862ab420950da1727eead16cbd6a34908b9d475846791a02"
+    },
+    {
       "id": "runtime:python:shutil",
       "type": "runtime",
       "label": "shutil",
@@ -460,6 +509,18 @@
       "contentHash": "ed11716bbf225e5864193bdf4e3c25b06f0952b8dd3433c3ad3e8f9ee5227b9d"
     },
     {
+      "id": "symbol:labelpipe/checks.py#function:candidate_problems",
+      "type": "symbol",
+      "kind": "function",
+      "name": "candidate_problems",
+      "label": "candidate_problems",
+      "path": "labelpipe/checks.py",
+      "line": 9,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "80c5df0391d3823bd8e1279d09cb92636c390ae593caf9abcf3a528c0e097580"
+    },
+    {
       "id": "symbol:labelpipe/cli.py#function:main",
       "type": "symbol",
       "kind": "function",
@@ -490,10 +551,22 @@
       "name": "export",
       "label": "export",
       "path": "labelpipe/dataset.py",
-      "line": 15,
+      "line": 27,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c20c8532a522936d94fd2278e3b2b3fcd98204c547b8ff69a94e6a6d19982683"
+    },
+    {
+      "id": "symbol:labelpipe/dataset.py#function:record_dict",
+      "type": "symbol",
+      "kind": "function",
+      "name": "record_dict",
+      "label": "record_dict",
+      "path": "labelpipe/dataset.py",
+      "line": 16,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "2af0daf002f1e278a2c1863199c054eb8141f445fa992579fd2aa788695d4381"
     },
     {
       "id": "symbol:labelpipe/db.py#function:connect",
@@ -502,7 +575,7 @@
       "name": "connect",
       "label": "connect",
       "path": "labelpipe/db.py",
-      "line": 41,
+      "line": 43,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "2bcb37d471de92c7670c853af9aabe618e537065c83eb4c0478e280a53e685a2"
@@ -586,7 +659,7 @@
       "name": "Decision",
       "label": "Decision",
       "path": "labelpipe/review/api.py",
-      "line": 21,
+      "line": 25,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "af627f76f43379b2c36876dda5939faed1c534d58bbf2af037353f5cd03ceede"
@@ -598,7 +671,7 @@
       "name": "create_app",
       "label": "create_app",
       "path": "labelpipe/review/api.py",
-      "line": 42,
+      "line": 46,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "afa04afda8b62c8b5ff01b15f595010827452e61a3ae6d5ab6b67c7ef55e1fb7"
@@ -610,7 +683,7 @@
       "name": "create_app.decide",
       "label": "create_app.decide",
       "path": "labelpipe/review/api.py",
-      "line": 66,
+      "line": 74,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "35be0531a3f3cc623ef4522c682ccb235f7cf4302e03c9acbd4639782bb4ffe0"
@@ -622,7 +695,7 @@
       "name": "create_app.index",
       "label": "create_app.index",
       "path": "labelpipe/review/api.py",
-      "line": 49,
+      "line": 53,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "20890ca260abab5c6d928aa5a013dcec5a253b2605be78cff6ec191cac79d534"
@@ -634,7 +707,7 @@
       "name": "create_app.next_record",
       "label": "create_app.next_record",
       "path": "labelpipe/review/api.py",
-      "line": 53,
+      "line": 57,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0ab99452543864f597b804020dfbc4bbb6159f8d2b8920ac5942f02c4f8e42ca"
@@ -646,7 +719,7 @@
       "name": "segments",
       "label": "segments",
       "path": "labelpipe/review/api.py",
-      "line": 29,
+      "line": 33,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "634e8d9d9ab26e6f27b574d50aa98d90348f2f6976c8490c5b948b9f1fae08e2"
@@ -658,7 +731,7 @@
       "name": "_check",
       "label": "_check",
       "path": "labelpipe/runner.py",
-      "line": 9,
+      "line": 14,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "59a9042474ef0cde8cd68797cf22d9226d3e05422b6743d97041457d3dd16857"
@@ -670,7 +743,7 @@
       "name": "run",
       "label": "run",
       "path": "labelpipe/runner.py",
-      "line": 14,
+      "line": 19,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8d0b6bf00d06e33e1ec0e8955ce3bc8c37c0363cab2e9c63707d2c69c6b70294"
@@ -682,7 +755,7 @@
       "name": "run.advance",
       "label": "run.advance",
       "path": "labelpipe/runner.py",
-      "line": 24,
+      "line": 29,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ad3cd4d81aeac425ccd5b354b5fc5c3d77843a17c8f6929e0a1467d39f0393e6"
@@ -718,7 +791,7 @@
       "name": "Record",
       "label": "Record",
       "path": "labelpipe/schema.py",
-      "line": 15,
+      "line": 16,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8cf31771bc087955d85c75dfcb6304a39cd9ac9411ededa480e32e9a44b188fc"
@@ -734,6 +807,30 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "51bf81430b58fc42aae93ff6e785c63afae5629178c8b7ad05f7d3853700e363"
+    },
+    {
+      "id": "symbol:labelpipe/schema.py#function:Record._check_spans",
+      "type": "symbol",
+      "kind": "function",
+      "name": "Record._check_spans",
+      "label": "Record._check_spans",
+      "path": "labelpipe/schema.py",
+      "line": 31,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "5dde7f8d4908e082aa76d68f2577d5638c49fda02f68b820e240d4d1935c1ec8"
+    },
+    {
+      "id": "symbol:labelpipe/validate.py#function:validate",
+      "type": "symbol",
+      "kind": "function",
+      "name": "validate",
+      "label": "validate",
+      "path": "labelpipe/validate.py",
+      "line": 6,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "58ec4a3568b8d01be81381b570bcf5b8443eac85978490b0a1a77254e1e9cf52"
     },
     {
       "id": "symbol:tests/conftest.py#function:audit_env",
@@ -758,6 +855,90 @@
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "37d597ef8db39ce794c16905f146e5e51b45e199605bf2a0e1b434ccd3688890"
+    },
+    {
+      "id": "symbol:tests/test_adjudication_loop.py#class:MisalignedProposer",
+      "type": "symbol",
+      "kind": "class",
+      "name": "MisalignedProposer",
+      "label": "MisalignedProposer",
+      "path": "tests/test_adjudication_loop.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f48399b52d554145481313da4aecc207b710ed3e312bf0ef0ed2d867d631a160"
+    },
+    {
+      "id": "symbol:tests/test_adjudication_loop.py#function:MisalignedProposer.propose",
+      "type": "symbol",
+      "kind": "function",
+      "name": "MisalignedProposer.propose",
+      "label": "MisalignedProposer.propose",
+      "path": "tests/test_adjudication_loop.py",
+      "line": 17,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "96d0a721a4ee869fee92fd30cb6bd65e506507e74d102dadde5a6a4eb955ea77"
+    },
+    {
+      "id": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "type": "symbol",
+      "kind": "function",
+      "name": "setup",
+      "label": "setup",
+      "path": "tests/test_adjudication_loop.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "c39172856b8a29e33152e3be157363c0ff65086708a51a91b0b724da3794a170"
+    },
+    {
+      "id": "symbol:tests/test_adjudication_loop.py#function:status",
+      "type": "symbol",
+      "kind": "function",
+      "name": "status",
+      "label": "status",
+      "path": "tests/test_adjudication_loop.py",
+      "line": 33,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "04335420e655df756311ee7e55ca51aa5d37735b02549cbe87304a2dc4cd3134"
+    },
+    {
+      "id": "symbol:tests/test_adjudication_loop.py#function:test_escalated_record_is_served_before_pending_ones",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_escalated_record_is_served_before_pending_ones",
+      "label": "test_escalated_record_is_served_before_pending_ones",
+      "path": "tests/test_adjudication_loop.py",
+      "line": 76,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "ec1ac972175b2b7cf2745f0b06e69c93d08df2bfb5b24ad96139d20748ab37a4"
+    },
+    {
+      "id": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_invalid_label_loops_through_adjudication_to_validated",
+      "label": "test_invalid_label_loops_through_adjudication_to_validated",
+      "path": "tests/test_adjudication_loop.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "7c8947ff7b0c289e03d090b34d801a5d331954b6b630a4fc6643a5f9c8dadf41"
+    },
+    {
+      "id": "symbol:tests/test_adjudication_loop.py#function:test_unvalidated_records_are_not_exported",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_unvalidated_records_are_not_exported",
+      "label": "test_unvalidated_records_are_not_exported",
+      "path": "tests/test_adjudication_loop.py",
+      "line": 68,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "4dfa6f87cbb744ccf4af6866f80ff8262ca5d93d6c118c084d21b9871a6a0486"
     },
     {
       "id": "symbol:tests/test_audit.py#function:test_audit_entry_holds_no_plaintext",
@@ -874,7 +1055,7 @@
       "name": "test_invalid_decisions_rejected_without_side_effects",
       "label": "test_invalid_decisions_rejected_without_side_effects",
       "path": "tests/test_review_actions.py",
-      "line": 56,
+      "line": 59,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "06f484ef1c4575b75293d057f8461ebada586846726053ad1c5d63b087a9427c"
@@ -886,7 +1067,7 @@
       "name": "test_rewrite_exports_new_offsets_as_human",
       "label": "test_rewrite_exports_new_offsets_as_human",
       "path": "tests/test_review_actions.py",
-      "line": 36,
+      "line": 38,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "39115498111ab94eb2fac3b79a65534669cf13decb02cb779c7763b5a1ca19c4"
@@ -898,10 +1079,130 @@
       "name": "test_skipped_record_is_requeued_by_runner",
       "label": "test_skipped_record_is_requeued_by_runner",
       "path": "tests/test_review_actions.py",
-      "line": 64,
+      "line": 67,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "0eaf995b2e24fca5116b592944c764f4e7097fb5da4ddf0ed3f2e0cc5035aff8"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:lab",
+      "type": "symbol",
+      "kind": "function",
+      "name": "lab",
+      "label": "lab",
+      "path": "tests/test_validation.py",
+      "line": 18,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "df05cf6fd6fcddf94e9e66614369c263ee32b3ee42c7e60e4e73c4caccc6fe95"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:rec",
+      "type": "symbol",
+      "kind": "function",
+      "name": "rec",
+      "label": "rec",
+      "path": "tests/test_validation.py",
+      "line": 13,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "224dd41325f81268785cc9bbbb0bfd0c2bf306c8983ecaf20251b9f2d2508875"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_bad_offsets_rejected",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_bad_offsets_rejected",
+      "label": "test_bad_offsets_rejected",
+      "path": "tests/test_validation.py",
+      "line": 32,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "6a1adc671ae5197bc4f1a155d492a801f8d5e4e2f4cfa43e01279751e9fe9a88"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_candidate_checks_reject_before_scan",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_candidate_checks_reject_before_scan",
+      "label": "test_candidate_checks_reject_before_scan",
+      "path": "tests/test_validation.py",
+      "line": 66,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d90c24b04977fbb235de5aac15b33de9d9279728aa7cded66524762053cb2ea3"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_duplicate_dump_is_a_single_record",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_duplicate_dump_is_a_single_record",
+      "label": "test_duplicate_dump_is_a_single_record",
+      "path": "tests/test_validation.py",
+      "line": 78,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "d65cb8ba0447f3b23d7357c5773e1bc87d70cf63193e0f986e38d3c22f0459dd"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_evidence_label_without_note_fails",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_evidence_label_without_note_fails",
+      "label": "test_evidence_label_without_note_fails",
+      "path": "tests/test_validation.py",
+      "line": 49,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "317d84bd9cb6a74cf88e2bc58ccb1ffee621044b3c0008bc3944a1bb75418d4d"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "label": "test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "path": "tests/test_validation.py",
+      "line": 53,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "aa7f8ae5f88062b07e67818101f9f3ad433410b15e7c27c21c4cc948f80aaa88"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_misaligned_span_is_char_span_none_and_flagged",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_misaligned_span_is_char_span_none_and_flagged",
+      "label": "test_misaligned_span_is_char_span_none_and_flagged",
+      "path": "tests/test_validation.py",
+      "line": 37,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "9b5077e3ab98740b2039a2dde06b21735ff158267a477c4412b8f48e6fdfc510"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_overlapping_labels_rejected",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_overlapping_labels_rejected",
+      "label": "test_overlapping_labels_rejected",
+      "path": "tests/test_validation.py",
+      "line": 43,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "f8aa23e939290105dbe696ace50dade0ab8faf2c0469d6d395fca67b0380c71e"
+    },
+    {
+      "id": "symbol:tests/test_validation.py#function:test_valid_record_passes",
+      "type": "symbol",
+      "kind": "function",
+      "name": "test_valid_record_passes",
+      "label": "test_valid_record_passes",
+      "path": "tests/test_validation.py",
+      "line": 22,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "a35f57779eb2dee261680f68b159fef186f3366492d98a660627f890e7d7e94c"
     }
   ],
   "edges": [
@@ -930,6 +1231,18 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/checks.py#function:candidate_problems",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/audit.py#function:AuditLog.append"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1001,7 +1314,7 @@
     {
       "type": "calls",
       "source": "symbol:labelpipe/dataset.py#function:export",
-      "target": "symbol:labelpipe/dataset.py#function:_spans",
+      "target": "symbol:labelpipe/dataset.py#function:record_dict",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
@@ -1014,6 +1327,15 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/dataset.py#function:record_dict",
+      "target": "symbol:labelpipe/dataset.py#function:_spans",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1070,10 +1392,37 @@
     {
       "type": "calls",
       "source": "symbol:labelpipe/review/api.py#function:create_app.next_record",
+      "target": "symbol:labelpipe/dataset.py#function:record_dict",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:create_app.next_record",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:create_app.next_record",
       "target": "symbol:labelpipe/review/api.py#function:segments",
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/review/api.py#function:create_app.next_record",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1086,6 +1435,24 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/checks.py#function:candidate_problems",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/dataset.py#function:record_dict",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1113,7 +1480,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:labelpipe/propose.py#function:Proposer.propose",
-        "symbol:labelpipe/propose.py#function:StubProposer.propose"
+        "symbol:labelpipe/propose.py#function:StubProposer.propose",
+        "symbol:tests/test_adjudication_loop.py#function:MisalignedProposer.propose"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -1157,6 +1525,15 @@
     },
     {
       "type": "calls",
+      "source": "symbol:labelpipe/runner.py#function:run",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:labelpipe/scan.py#function:scan",
       "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
       "tier": "ambiguous",
@@ -1174,6 +1551,18 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:labelpipe/schema.py#function:Record._check_spans",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/audit.py#function:AuditLog.append"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1219,6 +1608,228 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:MisalignedProposer.propose",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.index",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/review/api.py#function:create_app.index"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:MisalignedProposer.propose",
+      "target": "symbol:labelpipe/schema.py#class:Span",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "target": "symbol:labelpipe/audit.py#function:AuditLog.append",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/audit.py#function:AuditLog.append"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/db.py#function:connect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/intake.py#function:ingest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "target": "symbol:labelpipe/review/api.py#function:create_app",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_escalated_record_is_served_before_pending_ones",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_escalated_record_is_served_before_pending_ones",
+      "target": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_escalated_record_is_served_before_pending_ones",
+      "target": "symbol:tests/test_adjudication_loop.py#function:status",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "target": "symbol:labelpipe/dataset.py#function:export",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/dataset.py#function:export"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.index",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/review/api.py#function:create_app.index"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "target": "symbol:tests/test_adjudication_loop.py#class:MisalignedProposer",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "target": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "target": "symbol:tests/test_adjudication_loop.py#function:status",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "target": "symbol:tests/test_end_to_end.py#function:assert_no_secret",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_unvalidated_records_are_not_exported",
+      "target": "symbol:labelpipe/dataset.py#function:export",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/dataset.py#function:export"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_unvalidated_records_are_not_exported",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_unvalidated_records_are_not_exported",
+      "target": "symbol:tests/test_adjudication_loop.py#class:MisalignedProposer",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_adjudication_loop.py#function:test_unvalidated_records_are_not_exported",
+      "target": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1389,6 +2000,18 @@
     {
       "type": "calls",
       "source": "symbol:tests/test_review_actions.py#function:test_rewrite_exports_new_offsets_as_human",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_review_actions.py#function:test_rewrite_exports_new_offsets_as_human",
       "target": "symbol:tests/test_review_actions.py#function:body",
       "tier": "proven",
       "resolved": true,
@@ -1405,6 +2028,312 @@
       ],
       "resolved": false,
       "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:lab",
+      "target": "symbol:labelpipe/schema.py#class:Span",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_bad_offsets_rejected",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_bad_offsets_rejected",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_bad_offsets_rejected",
+      "target": "symbol:tests/test_validation.py#function:lab",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_bad_offsets_rejected",
+      "target": "symbol:tests/test_validation.py#function:rec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_candidate_checks_reject_before_scan",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/db.py#function:connect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_candidate_checks_reject_before_scan",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/intake.py#function:ingest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_candidate_checks_reject_before_scan",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/runner.py#function:run"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_duplicate_dump_is_a_single_record",
+      "target": "symbol:labelpipe/db.py#function:connect",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/db.py#function:connect"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_duplicate_dump_is_a_single_record",
+      "target": "symbol:labelpipe/intake.py#function:ingest",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/intake.py#function:ingest"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_label_without_note_fails",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_label_without_note_fails",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_label_without_note_fails",
+      "target": "symbol:tests/test_validation.py#function:lab",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_label_without_note_fails",
+      "target": "symbol:tests/test_validation.py#function:rec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.index",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:labelpipe/review/api.py#function:create_app.index"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "target": "symbol:labelpipe/schema.py#class:Span",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "target": "symbol:tests/test_validation.py#function:lab",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "target": "symbol:tests/test_validation.py#function:rec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_misaligned_span_is_char_span_none_and_flagged",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_misaligned_span_is_char_span_none_and_flagged",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_misaligned_span_is_char_span_none_and_flagged",
+      "target": "symbol:tests/test_validation.py#function:lab",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_misaligned_span_is_char_span_none_and_flagged",
+      "target": "symbol:tests/test_validation.py#function:rec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_overlapping_labels_rejected",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_overlapping_labels_rejected",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_overlapping_labels_rejected",
+      "target": "symbol:tests/test_validation.py#function:lab",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_overlapping_labels_rejected",
+      "target": "symbol:tests/test_validation.py#function:rec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_valid_record_passes",
+      "target": "symbol:labelpipe/parse.py#function:parse",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_valid_record_passes",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_valid_record_passes",
+      "target": "symbol:tests/test_validation.py#function:lab",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_validation.py#function:test_valid_record_passes",
+      "target": "symbol:tests/test_validation.py#function:rec",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -1463,6 +2392,15 @@
     },
     {
       "type": "defines",
+      "source": "file:labelpipe/checks.py",
+      "target": "symbol:labelpipe/checks.py#function:candidate_problems",
+      "line": 9,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
       "source": "file:labelpipe/cli.py",
       "target": "symbol:labelpipe/cli.py#function:main",
       "line": 8,
@@ -1483,7 +2421,16 @@
       "type": "defines",
       "source": "file:labelpipe/dataset.py",
       "target": "symbol:labelpipe/dataset.py#function:export",
-      "line": 15,
+      "line": 27,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/dataset.py",
+      "target": "symbol:labelpipe/dataset.py#function:record_dict",
+      "line": 16,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1492,7 +2439,7 @@
       "type": "defines",
       "source": "file:labelpipe/db.py",
       "target": "symbol:labelpipe/db.py#function:connect",
-      "line": 41,
+      "line": 43,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1555,7 +2502,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#class:Decision",
-      "line": 21,
+      "line": 25,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1564,7 +2511,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:create_app",
-      "line": 42,
+      "line": 46,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1573,7 +2520,7 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:create_app.decide",
-      "line": 66,
+      "line": 74,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1582,15 +2529,6 @@
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:create_app.index",
-      "line": 49,
-      "resolved": true,
-      "confidence": 1,
-      "extractor": "python-stdlib-ast"
-    },
-    {
-      "type": "defines",
-      "source": "file:labelpipe/review/api.py",
-      "target": "symbol:labelpipe/review/api.py#function:create_app.next_record",
       "line": 53,
       "resolved": true,
       "confidence": 1,
@@ -1599,8 +2537,17 @@
     {
       "type": "defines",
       "source": "file:labelpipe/review/api.py",
+      "target": "symbol:labelpipe/review/api.py#function:create_app.next_record",
+      "line": 57,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/review/api.py",
       "target": "symbol:labelpipe/review/api.py#function:segments",
-      "line": 29,
+      "line": 33,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1609,15 +2556,6 @@
       "type": "defines",
       "source": "file:labelpipe/runner.py",
       "target": "symbol:labelpipe/runner.py#function:_check",
-      "line": 9,
-      "resolved": true,
-      "confidence": 1,
-      "extractor": "python-stdlib-ast"
-    },
-    {
-      "type": "defines",
-      "source": "file:labelpipe/runner.py",
-      "target": "symbol:labelpipe/runner.py#function:run",
       "line": 14,
       "resolved": true,
       "confidence": 1,
@@ -1626,8 +2564,17 @@
     {
       "type": "defines",
       "source": "file:labelpipe/runner.py",
+      "target": "symbol:labelpipe/runner.py#function:run",
+      "line": 19,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/runner.py",
       "target": "symbol:labelpipe/runner.py#function:run.advance",
-      "line": 24,
+      "line": 29,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1654,7 +2601,7 @@
       "type": "defines",
       "source": "file:labelpipe/schema.py",
       "target": "symbol:labelpipe/schema.py#class:Record",
-      "line": 15,
+      "line": 16,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1664,6 +2611,24 @@
       "source": "file:labelpipe/schema.py",
       "target": "symbol:labelpipe/schema.py#class:Span",
       "line": 7,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/schema.py",
+      "target": "symbol:labelpipe/schema.py#function:Record._check_spans",
+      "line": 31,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:labelpipe/validate.py",
+      "target": "symbol:labelpipe/validate.py#function:validate",
+      "line": 6,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1682,6 +2647,69 @@
       "source": "file:tests/conftest.py",
       "target": "symbol:tests/conftest.py#function:pending",
       "line": 21,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "symbol:tests/test_adjudication_loop.py#class:MisalignedProposer",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "symbol:tests/test_adjudication_loop.py#function:MisalignedProposer.propose",
+      "line": 17,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "symbol:tests/test_adjudication_loop.py#function:setup",
+      "line": 22,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "symbol:tests/test_adjudication_loop.py#function:status",
+      "line": 33,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "symbol:tests/test_adjudication_loop.py#function:test_escalated_record_is_served_before_pending_ones",
+      "line": 76,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "symbol:tests/test_adjudication_loop.py#function:test_invalid_label_loops_through_adjudication_to_validated",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "symbol:tests/test_adjudication_loop.py#function:test_unvalidated_records_are_not_exported",
+      "line": 68,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1771,7 +2799,7 @@
       "type": "defines",
       "source": "file:tests/test_review_actions.py",
       "target": "symbol:tests/test_review_actions.py#function:test_invalid_decisions_rejected_without_side_effects",
-      "line": 56,
+      "line": 59,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1780,7 +2808,7 @@
       "type": "defines",
       "source": "file:tests/test_review_actions.py",
       "target": "symbol:tests/test_review_actions.py#function:test_rewrite_exports_new_offsets_as_human",
-      "line": 36,
+      "line": 38,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1789,7 +2817,97 @@
       "type": "defines",
       "source": "file:tests/test_review_actions.py",
       "target": "symbol:tests/test_review_actions.py#function:test_skipped_record_is_requeued_by_runner",
-      "line": 64,
+      "line": 67,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:lab",
+      "line": 18,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:rec",
+      "line": 13,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_bad_offsets_rejected",
+      "line": 32,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_candidate_checks_reject_before_scan",
+      "line": 66,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_duplicate_dump_is_a_single_record",
+      "line": 78,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_evidence_label_without_note_fails",
+      "line": 49,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_evidence_quoting_redacted_text_fails_without_echoing_it",
+      "line": 53,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_misaligned_span_is_char_span_none_and_flagged",
+      "line": 37,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_overlapping_labels_rejected",
+      "line": 43,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:tests/test_validation.py",
+      "target": "symbol:tests/test_validation.py#function:test_valid_record_passes",
+      "line": 22,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -1840,6 +2958,16 @@
       "target": "runtime:python:os",
       "specifier": "os",
       "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/checks.py",
+      "target": "runtime:python:re",
+      "specifier": "re",
+      "line": 3,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2009,7 +3137,17 @@
       "source": "file:labelpipe/review/api.py",
       "target": "file:labelpipe/__init__.py",
       "specifier": "..",
-      "line": 11,
+      "line": 12,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "file:labelpipe/dataset.py",
+      "specifier": "..dataset",
+      "line": 13,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2019,7 +3157,27 @@
       "source": "file:labelpipe/review/api.py",
       "target": "file:labelpipe/db.py",
       "specifier": "..db",
-      "line": 12,
+      "line": 14,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "file:labelpipe/parse.py",
+      "specifier": "..parse",
+      "line": 15,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "file:labelpipe/validate.py",
+      "specifier": "..validate",
+      "line": 16,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2029,7 +3187,7 @@
       "source": "file:labelpipe/review/api.py",
       "target": "package:pypi:fastapi",
       "specifier": "fastapi",
-      "line": 7,
+      "line": 8,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -2039,7 +3197,7 @@
       "source": "file:labelpipe/review/api.py",
       "target": "package:pypi:fastapi.responses",
       "specifier": "fastapi.responses",
-      "line": 8,
+      "line": 9,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -2049,7 +3207,7 @@
       "source": "file:labelpipe/review/api.py",
       "target": "package:pypi:pydantic",
       "specifier": "pydantic",
-      "line": 9,
+      "line": 10,
       "resolved": false,
       "confidence": 0.5,
       "extractor": "python-imports"
@@ -2059,7 +3217,17 @@
       "source": "file:labelpipe/review/api.py",
       "target": "runtime:python:datetime",
       "specifier": "datetime",
-      "line": 3,
+      "line": 4,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/review/api.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 2,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2069,7 +3237,7 @@
       "source": "file:labelpipe/review/api.py",
       "target": "runtime:python:os",
       "specifier": "os",
-      "line": 2,
+      "line": 3,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2079,7 +3247,7 @@
       "source": "file:labelpipe/review/api.py",
       "target": "runtime:python:pathlib",
       "specifier": "pathlib",
-      "line": 4,
+      "line": 5,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2089,7 +3257,27 @@
       "source": "file:labelpipe/review/api.py",
       "target": "runtime:python:typing",
       "specifier": "typing",
-      "line": 5,
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "file:labelpipe/checks.py",
+      "specifier": ".checks",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "file:labelpipe/dataset.py",
+      "specifier": ".dataset",
+      "line": 4,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2099,7 +3287,7 @@
       "source": "file:labelpipe/runner.py",
       "target": "file:labelpipe/parse.py",
       "specifier": ".parse",
-      "line": 1,
+      "line": 5,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2109,7 +3297,7 @@
       "source": "file:labelpipe/runner.py",
       "target": "file:labelpipe/propose.py",
       "specifier": ".propose",
-      "line": 2,
+      "line": 6,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2119,7 +3307,7 @@
       "source": "file:labelpipe/runner.py",
       "target": "file:labelpipe/scan.py",
       "specifier": ".scan",
-      "line": 3,
+      "line": 7,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2129,7 +3317,27 @@
       "source": "file:labelpipe/runner.py",
       "target": "file:labelpipe/schema.py",
       "specifier": ".schema",
-      "line": 4,
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "file:labelpipe/validate.py",
+      "specifier": ".validate",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/runner.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2216,6 +3424,26 @@
     },
     {
       "type": "imports",
+      "source": "file:labelpipe/validate.py",
+      "target": "file:labelpipe/schema.py",
+      "specifier": ".schema",
+      "line": 3,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:labelpipe/validate.py",
+      "target": "package:pypi:pydantic",
+      "specifier": "pydantic",
+      "line": 1,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
       "source": "file:tests/conftest.py",
       "target": "file:labelpipe/__init__.py",
       "specifier": "labelpipe",
@@ -2270,6 +3498,86 @@
       "target": "runtime:python:shutil",
       "specifier": "shutil",
       "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": "labelpipe",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "file:labelpipe/review/api.py",
+      "specifier": "labelpipe.review.api",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "file:labelpipe/schema.py",
+      "specifier": "labelpipe.schema",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "file:tests/conftest.py",
+      "specifier": "tests.conftest",
+      "line": 9,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "file:tests/test_end_to_end.py",
+      "specifier": "tests.test_end_to_end",
+      "line": 10,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "package:pypi:fastapi.testclient",
+      "specifier": "fastapi.testclient",
+      "line": 4,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_adjudication_loop.py",
+      "target": "runtime:python:shutil",
+      "specifier": "shutil",
+      "line": 2,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2349,7 +3657,7 @@
       "source": "file:tests/test_end_to_end.py",
       "target": "runtime:python:json",
       "specifier": "json",
-      "line": 55,
+      "line": 56,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -2413,10 +3721,70 @@
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_validation.py",
+      "target": "file:labelpipe/__init__.py",
+      "specifier": "labelpipe",
+      "line": 5,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_validation.py",
+      "target": "file:labelpipe/parse.py",
+      "specifier": "labelpipe.parse",
+      "line": 6,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_validation.py",
+      "target": "file:labelpipe/schema.py",
+      "specifier": "labelpipe.schema",
+      "line": 7,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_validation.py",
+      "target": "file:labelpipe/validate.py",
+      "specifier": "labelpipe.validate",
+      "line": 8,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_validation.py",
+      "target": "package:pypi:pytest",
+      "specifier": "pytest",
+      "line": 3,
+      "resolved": false,
+      "confidence": 0.5,
+      "extractor": "python-imports"
+    },
+    {
+      "type": "imports",
+      "source": "file:tests/test_validation.py",
+      "target": "runtime:python:json",
+      "specifier": "json",
+      "line": 1,
+      "resolved": true,
+      "confidence": 0.85,
+      "extractor": "python-imports"
     }
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 151
+    "unresolvedCalls": 205
   }
 }

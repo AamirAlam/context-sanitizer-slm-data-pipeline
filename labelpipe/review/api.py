@@ -1,4 +1,5 @@
 """Review API: the trust boundary. Raw characters inside a redaction never leave the server."""
+import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
@@ -9,7 +10,10 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from .. import audit
+from ..dataset import record_dict
 from ..db import connect
+from ..parse import parse
+from ..validate import validate
 
 UI = Path(__file__).parent / "ui" / "index.html"
 
@@ -51,16 +55,20 @@ def create_app(db_path, audit_log: audit.AuditLog | None = None) -> FastAPI:
 
     @app.get("/records/next")
     def next_record():
-        row = conn.execute("SELECT doc_id, raw_text FROM records WHERE status='pending_review'"
-                           " ORDER BY ingested_at, doc_id LIMIT 1").fetchone()
+        row = conn.execute("SELECT doc_id, raw_text, status, reasons FROM records"
+                           " WHERE status IN ('adjudicate', 'pending_review')"
+                           " ORDER BY status='adjudicate' DESC, ingested_at, doc_id LIMIT 1").fetchone()
         if not row:
             raise HTTPException(404, "no records pending review")
-        doc_id, raw = row
+        doc_id, raw, status, reasons = row
         q = 'SELECT start, "end", label FROM spans WHERE doc_id=? AND kind=? ORDER BY '
         red = conn.execute(q + "start", (doc_id, "redaction")).fetchall()
         props = conn.execute(q + "idx", (doc_id, "label")).fetchall()
         return {"doc_id": doc_id, "segments": segments(raw, red),
-                "proposals": [{"start": s, "end": e, "label": l, "source": "slm"} for s, e, l in props]}
+                "proposals": [{"start": s, "end": e, "label": l, "source": "slm"} for s, e, l in props],
+                "needs_second_look": status == "adjudicate", "adjudication_reasons": json.loads(reasons or "[]"),
+                # live gate over every proposal, so the reviewer sees problems before acting
+                "validation": validate(record_dict(conn, doc_id, accepted_only=False), parse(raw))}
 
     @app.post("/records/{doc_id}/decision")
     def decide(doc_id: str, d: Decision):
@@ -69,7 +77,7 @@ def create_app(db_path, audit_log: audit.AuditLog | None = None) -> FastAPI:
             if not row:
                 raise HTTPException(404, "unknown record")
             status, raw = row
-            if status != "pending_review":
+            if status not in ("pending_review", "adjudicate"):
                 raise HTTPException(409, f"record is {status}")
             if d.action in ("accept", "rewrite") and d.span_index is None:
                 raise HTTPException(422, f"{d.action} requires span_index")
@@ -91,8 +99,9 @@ def create_app(db_path, audit_log: audit.AuditLog | None = None) -> FastAPI:
                          " reviewer, decided_at) VALUES (?,?,?,?,?,?,?,?)",
                          (doc_id, d.span_index, d.action, d.new_start, d.new_end, d.new_label, reviewer, now))
             new_status = NEXT_STATUS[d.action]
-            conn.execute("UPDATE records SET status=?, reviewer=?, reviewed_at=? WHERE doc_id=?",
-                         (new_status, reviewer, now, doc_id))
+            conn.execute("UPDATE records SET status=?, reviewer=?, reviewed_at=?, reasons=? WHERE doc_id=?",
+                         (new_status, reviewer, now,
+                          json.dumps(["escalated by reviewer"]) if d.action == "escalate" else None, doc_id))
             try:  # audit before commit: no entry, no action
                 audit_log.append({"action": d.action, "actor": reviewer, "doc_id": doc_id, **d.model_dump(exclude={"action"})})
             except audit.AuditUnavailable:

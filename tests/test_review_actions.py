@@ -28,6 +28,8 @@ def test_each_action_persists_exactly_one_decision(pending, audit_env, action): 
     assert conn.execute("SELECT status FROM records WHERE doc_id=?", (doc_id,)).fetchone()[0] == EXPECTED[action]
     entries = audit_env.read_text().splitlines()
     assert len(entries) == 1 and json.loads(entries[0])["action"] == action
+    if action == "escalate":
+        return  # escalated records re-enter review (adjudication loop, test_adjudication_loop.py)
     # a second decision on the same record is refused and not logged
     assert client.post(f"/records/{doc_id}/decision", json=body(action, raw)).status_code == 409
     assert len(audit_env.read_text().splitlines()) == 1
@@ -38,6 +40,7 @@ def test_rewrite_exports_new_offsets_as_human(pending, tmp_path):
     raw = conn.execute("SELECT raw_text FROM records WHERE doc_id=?", (doc_id,)).fetchone()[0]
     b = body("rewrite", raw)
     assert client.post(f"/records/{doc_id}/decision", json=b).status_code == 200
+    runner.run(conn)
     out = tmp_path / "data" / "labeled.jsonl"
     assert dataset.export(conn, out) == 1
     [label] = json.loads(out.read_text())["labels"]

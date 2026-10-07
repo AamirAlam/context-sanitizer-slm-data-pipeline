@@ -12,7 +12,8 @@ CREATE TABLE IF NOT EXISTS records (
     status TEXT NOT NULL,
     model_version TEXT,
     reviewer TEXT,
-    reviewed_at TEXT
+    reviewed_at TEXT,
+    reasons TEXT         -- JSON list: why the record sits in adjudicate / candidate_rejected
 );
 CREATE TABLE IF NOT EXISTS spans (
     doc_id TEXT NOT NULL REFERENCES records(doc_id),
@@ -22,6 +23,7 @@ CREATE TABLE IF NOT EXISTS spans (
     "end" INTEGER NOT NULL,
     label TEXT NOT NULL,
     source TEXT NOT NULL,
+    evidence TEXT,       -- proposer's evidence note (labels only)
     PRIMARY KEY (doc_id, kind, idx)
 );
 CREATE TABLE IF NOT EXISTS decisions (

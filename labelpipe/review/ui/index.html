@@ -9,6 +9,8 @@
   #panel { padding: 16px; }
   .redacted { background: #111; color: #111; border-radius: 2px; user-select: none; }
   button { font: inherit; padding: 4px 12px; }
+  .flag { background: #fff4e5; border-left: 4px solid #faad14; padding: 8px 12px; }
+  .invalid { color: #cf1322; }
 </style>
 </head>
 <body>
@@ -44,6 +46,14 @@ async function load() {
     else { el.textContent = s.text; el.dataset.start = s.start; }
     doc.append(el);
   }
+  const list = (title, items, cls) => {
+    const box = document.createElement("div"); box.className = cls;
+    const t = document.createElement("strong"); t.textContent = title; box.append(t);
+    const ul = document.createElement("ul");
+    for (const it of items) { const li = document.createElement("li"); li.textContent = it; ul.append(li); }
+    box.append(ul); panel.append(box);
+  };
+  if (rec.needs_second_look) list("Needs second look", rec.adjudication_reasons, "flag");
   const h = document.createElement("h3"); h.textContent = "Proposals for " + rec.doc_id; panel.append(h);
   rec.proposals.forEach((p, i) => {
     const row = document.createElement("p");
@@ -60,6 +70,8 @@ async function load() {
       }));
     panel.append(row);
   });
+  if (rec.validation.length) list("Validation: will fail", rec.validation, "invalid");
+  else { const ok = document.createElement("p"); ok.textContent = "Validation: all proposals pass"; panel.append(ok); }
   const actions = document.createElement("p");
   for (const a of ["skip", "reject", "escalate"])
     actions.append(button(a[0].toUpperCase() + a.slice(1), () => decide(rec.doc_id, {action: a})), " ");
