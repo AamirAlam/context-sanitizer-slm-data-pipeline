@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T19:38:59.473Z"
+    "updated_at": "2026-10-07T19:45:51.082Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,7 +25,7 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "IMPL-1",
+    "active_task": "IMPL-2",
     "blocker": null,
     "next_action": "Run the task pre-flight."
   },
@@ -402,7 +402,7 @@
     {
       "id": "IMPL-1",
       "outcome": "Walking skeleton: one dump from intake to a JSONL row, redacted the whole way (outline Phase 1)",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -456,8 +456,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-1-independent-review-14fc63dc-2393-426c-871c-417521e1e537.json",
+            "hash": "836843a2a2177e947f0b629e085cabf092e733f792ea4560365aaaf47a33912c",
+            "source_hash": "7f924797017cb9044d0758f28dfad95f78112aae9dd2405f4b5948c86a0ed9c1",
+            "config_hash": "fb5e7e5e815acbee3abd1141ea20d3417725668cbb6c00817112178bf9d74df3",
+            "observed_at": "2026-10-07T19:45:43.532Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -466,7 +472,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:16.959Z",
-      "updated_at": "2026-10-07T19:27:16.960Z",
+      "updated_at": "2026-10-07T19:45:48.267Z",
       "base_manifest": {
         ".gitignore": "1c2457184209b72e3f848c57f612ea8ed38383d97ef3fac913ac2a1fc22c7cb1",
         "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
@@ -477,7 +483,7 @@
     {
       "id": "IMPL-2",
       "outcome": "Full review action set + append-only fail-closed HMAC audit (outline Phase 2)",
-      "state": "queued",
+      "state": "active",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -523,7 +529,32 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.046Z",
-      "updated_at": "2026-10-07T19:27:17.046Z"
+      "updated_at": "2026-10-07T19:27:17.046Z",
+      "base_manifest": {
+        ".gitignore": "f58e4c12db4c8e51948383b295febf223c617aab697cb5e947f8fb306f5a326c",
+        ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "e9bf19698b57858910e23d09f91a0f32591b4513a26d4bffd2b58f7719a7ee89",
+        "labelpipe/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/cli.py": "18337fd6a747c1983f02b14182930eb6071be39932967ef4ff9961e8084cc8aa",
+        "labelpipe/dataset.py": "9fbe38dbcf242b2bb92c324abd0c77d7fe44441e304b3359be827a1de400fdd3",
+        "labelpipe/db.py": "6d635f26744f8a8abfb38e02dbcbb6a9705c9f5f62a8e39227814aeab30bda5d",
+        "labelpipe/intake.py": "831ac74b4774741039819134ea2fbe96055ae2fd110773f4ba78bf71348b7550",
+        "labelpipe/parse.py": "3b94cdc0b7958a38ad06e0cf7e8fb1fb570a762e971290321d824752a0403940",
+        "labelpipe/propose.py": "5316ee459cf0f5792e92bff91038850603d2541ae9395bc71d65129ac965b7e3",
+        "labelpipe/review/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/review/api.py": "6ceedc28806a97203252714d8664e7c404af4933e2380e9ad35f429001f43b88",
+        "labelpipe/review/ui/index.html": "08c48a265d20cc4dfa93265cb63f3145dab7b7c45763ba26c5f79c41f89101af",
+        "labelpipe/runner.py": "da215c287640981829389314934137b8cf9e8fbe75b2d1a9e991ae090b3a9c01",
+        "labelpipe/scan.py": "9830043f4364d46fa14a415571abc0ccdee2d59af8cd44dff297945a0286d81b",
+        "labelpipe/schema.py": "76f1af1fec8cf48c1dbbc6ea226729a42636f53ed9729e3c748aa9f51db83aab",
+        "pyproject.toml": "90bb22eb51d2bf21c9d3e33c35a74cb089d9d2d72fcb5f39a6456d01d8f64f64",
+        "tests/fixtures/dump_with_secret.txt": "8d80ae551f41ca023918a0997afbb830382eea0f0061c02479220221fac63008",
+        "tests/test_end_to_end.py": "120a44e4907cceb749bcb86474f6d65eb84c03d0265604d640ef5cd5311bbefa",
+        "tests/test_offsets.py": "baa5840b8b327c7c3bdedb399ac2833781898ab033df7d51f0f68b6d48b472d2",
+        "uv.lock": "a19708dbf74dc17da94ebba66b9e7e744e4d0b5b9fa01bea9d32267923f990e1"
+      }
     },
     {
       "id": "IMPL-3",
@@ -729,7 +760,17 @@
   ],
   "learning_proposals": [],
   "cleanup_proposals": [],
-  "controls": [],
+  "controls": [
+    {
+      "id": "14fc63dc-2393-426c-871c-417521e1e537",
+      "at": "2026-10-07T19:45:43.532Z",
+      "action": "approve",
+      "task": "IMPL-1",
+      "human": "Aamir Alam",
+      "reason": "Reviewed Phase 1 diff (6d395a3); tests and manual masking check pass",
+      "revision": null
+    }
+  ],
   "attempts": [
     {
       "id": "4c99dd96-49ae-4bd2-abc2-297c2d3973e3",
@@ -785,13 +826,13 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T19:38:59.438Z",
+    "at": "2026-10-07T19:45:51.009Z",
     "revision": {
-      "commit": "4edda25c5cf2ca06affa331cd2463ac008142a3f",
+      "commit": "6d395a349ce90073abd92eabb07f19727907576e",
       "dirty": true,
       "source_hash": "7f924797017cb9044d0758f28dfad95f78112aae9dd2405f4b5948c86a0ed9c1"
     },
-    "active_task": "IMPL-1",
+    "active_task": "IMPL-2",
     "next_action": "Run the task pre-flight."
   },
   "legacy": null

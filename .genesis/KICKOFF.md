@@ -4,11 +4,11 @@
 
 - objective: Build a privacy-preserving, human-in-the-loop data-labeling pipeline that ingests raw incident/log dumps, redacts secrets and PII, and emits a versioned, audit-stamped, character-offset-anchored labeled dataset for training and evaluating a 1.5B context-distillation SLM.
 - phase/status: build/active
-- active task: IMPL-1 — Walking skeleton: one dump from intake to a JSONL row, redacted the whole way (outline Phase 1)
+- active task: IMPL-2 — Full review action set + append-only fail-closed HMAC audit (outline Phase 2)
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: e2e:pass, offsets:pass, independent-review:pending
+- gates: review-audit:pending, suite:pending, independent-review:pending
 - recent failures: none
 
 ## Resume
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 8d1bcbe677bb65d5152017d576a76bad231c86508e788c07529ba203db0bdcce. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: de009fe7e62010393ab4d19740ae94d502824c66b03aebd1010f128a2ec1a9dc. Use --since only after receiving that full packet; kickoff is not the packet.
+- DECISION-cdd091a6: Minimal-but-correct-shaped access/audit in v1
 - KNOWLEDGE-a15eee3f: IMPL-1 manual check passed
 - DECISION-46422d7c: 03-design stack supersedes task.md
-- DECISION-cdd091a6: Minimal-but-correct-shaped access/audit in v1
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

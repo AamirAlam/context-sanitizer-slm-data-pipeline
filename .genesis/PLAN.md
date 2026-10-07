@@ -10,15 +10,15 @@
 
 ### IMPL-1 — Walking skeleton: one dump from intake to a JSONL row, redacted the whole way (outline Phase 1)
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-1, FR-2, FR-4, FR-5, FR-6, NFR-1, NFR-3, NFR-5, NFR-7, AC-1
 - scope: not bounded
-- gates: e2e: uv run pytest tests/test_end_to_end.py, offsets: uv run pytest -k offsets, independent-review: pending
+- gates: e2e: uv run pytest tests/test_end_to_end.py, offsets: uv run pytest -k offsets, independent-review: pass
 - next: Run the task pre-flight.
 
 ### IMPL-2 — Full review action set + append-only fail-closed HMAC audit (outline Phase 2)
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-7, FR-11, NFR-4, AC-3
 - scope: not bounded
 - gates: review-audit: uv run pytest tests/test_review_actions.py tests/test_audit.py, suite: uv run pytest, independent-review: pending
