@@ -10,6 +10,8 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "detect-secrets>=1.5,<1.6",
+    "dvc>=3.67.1",
+    "datasets>=5.1.0",
 ]
 
 [project.scripts]

@@ -59,18 +59,19 @@ def test_invalid_label_loops_through_adjudication_to_validated(tmp_path):
     runner.run(conn)
     assert status(conn, doc_id) == "validated"
 
-    out = tmp_path / "data" / "labeled.jsonl"
+    out = tmp_path / "data"
     assert dataset.export(conn, out) == 1
-    [label] = json.loads(out.read_text())["labels"]
+    [f] = out.glob("*/*.jsonl")
+    [label] = json.loads(f.read_text())["labels"]
     assert raw[label["start"]:label["end"]] == "payments-api" and label["source"] == "human"
 
 
 def test_unvalidated_records_are_not_exported(tmp_path):
     conn, client, [doc_id] = setup(tmp_path, MisalignedProposer())
     client.post(f"/records/{doc_id}/decision", json={"action": "accept", "span_index": 0})
-    assert dataset.export(conn, tmp_path / "out.jsonl") == 0  # approved, not yet validated
+    assert dataset.export(conn, tmp_path / "out") == 0  # approved, not yet validated
     runner.run(conn)
-    assert dataset.export(conn, tmp_path / "out.jsonl") == 0  # adjudicate
+    assert dataset.export(conn, tmp_path / "out") == 0  # adjudicate
 
 
 def test_escalated_record_is_served_before_pending_ones(tmp_path):
