@@ -5,12 +5,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Literal
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.responses import FileResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from .. import audit
-from ..dataset import record_dict
+from ..dataset import POLICY_VERSION, record_dict
 from ..db import connect
 from ..parse import parse
 from ..validate import validate
@@ -28,6 +28,10 @@ class Decision(BaseModel):
     new_start: int | None = None   # rewrite only: code-point offsets into raw text
     new_end: int | None = None
     new_label: str | None = None   # rewrite only; defaults to the proposed label
+
+
+class Unredact(BaseModel):
+    reason: str = Field(min_length=1)  # explicit, stated purpose; HMAC'd in the audit log
 
 
 def segments(raw: str, redactions) -> list[dict]:
@@ -48,6 +52,8 @@ def create_app(db_path, audit_log: audit.AuditLog | None = None) -> FastAPI:
     app = FastAPI()
     conn = connect(db_path)
     reviewer = os.environ.get("LABELPIPE_REVIEWER", "reviewer")
+    # ponytail: one env allowlist for the single reviewer role; RBAC/ABAC + policy engine when a 2nd role exists
+    unredact_allow = {a.strip() for a in os.environ.get("LABELPIPE_UNREDACT_ALLOW", "").split(",") if a.strip()}
 
     @app.get("/")
     def index():
@@ -62,7 +68,7 @@ def create_app(db_path, audit_log: audit.AuditLog | None = None) -> FastAPI:
             raise HTTPException(404, "no records pending review")
         doc_id, raw, status, reasons = row
         q = 'SELECT start, "end", label FROM spans WHERE doc_id=? AND kind=? ORDER BY '
-        red = conn.execute(q + "start", (doc_id, "redaction")).fetchall()
+        red = conn.execute(q + "start, idx", (doc_id, "redaction")).fetchall()  # same order as unredact's {i}
         props = conn.execute(q + "idx", (doc_id, "label")).fetchall()
         return {"doc_id": doc_id, "segments": segments(raw, red),
                 "proposals": [{"start": s, "end": e, "label": l, "source": "slm"} for s, e, l in props],
@@ -107,5 +113,25 @@ def create_app(db_path, audit_log: audit.AuditLog | None = None) -> FastAPI:
             except audit.AuditUnavailable:
                 raise HTTPException(503, "audit log unavailable; action refused")
         return {"status": new_status}
+
+    @app.post("/records/{doc_id}/spans/{i}/unredacted")
+    def view_unredacted(doc_id: str, i: int, req: Unredact, response: Response):
+        """{i} is the i-th redaction placeholder in /records/next segments. Deny by default; every request is audited."""
+        decision = "allow" if reviewer in unredact_allow else "deny"
+        try:  # fail closed: no audit entry, no answer (not even a 403)
+            audit_log.append({"action": "view_unredacted", "actor": reviewer, "doc_id": doc_id, "span_index": i,
+                              "decision": decision, "reason": req.reason, "policy": POLICY_VERSION})
+        except audit.AuditUnavailable:
+            raise HTTPException(503, "audit log unavailable; request refused")
+        if decision == "deny":
+            raise HTTPException(403, "not authorized to view unredacted text")
+        row = None if i < 0 else conn.execute(
+            'SELECT r.raw_text, s.start, s."end" FROM spans s JOIN records r USING (doc_id)'
+            " WHERE s.doc_id=? AND s.kind='redaction' ORDER BY s.start, s.idx LIMIT 1 OFFSET ?", (doc_id, i)).fetchone()
+        if not row:
+            raise HTTPException(404, "unknown redaction")
+        raw, start, end = row
+        response.headers["Cache-Control"] = "no-store"
+        return {"text": raw[start:end]}
 
     return app

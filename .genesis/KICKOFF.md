@@ -4,11 +4,11 @@
 
 - objective: Build a privacy-preserving, human-in-the-loop data-labeling pipeline that ingests raw incident/log dumps, redacts secrets and PII, and emits a versioned, audit-stamped, character-offset-anchored labeled dataset for training and evaluating a 1.5B context-distillation SLM.
 - phase/status: build/active
-- active task: IMPL-4 — Offline secret scanner merged with Presidio, secret span wins on overlap (outline Phase 4)
+- active task: IMPL-5 — Server-side authorized, audited view_unredacted access (outline Phase 5)
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: scan:pass, suite:pass, independent-review:pending
+- gates: unredacted:pass, suite:pass, independent-review:pending
 - recent failures: none
 
 ## Resume
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: eb43a933db29ee8f7623b6f0c8677fa5b7b3950e7b300cd039c6637ebd28949a. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: b95ed15ab93a5953dc7e4853fd034252c5edc4b008a318b3a3e22cf43061e884. Use --since only after receiving that full packet; kickoff is not the packet.
+- KNOWLEDGE-1819586d: IMPL-5 manual check passed
 - KNOWLEDGE-71d8f624: IMPL-4 accepted by human
-- DECISION-5c3235cc: PII/secret scan = Presidio + offline secret scanner
-- KNOWLEDGE-c785b927: IMPL-3 manual check passed
+- DECISION-cdd091a6: Minimal-but-correct-shaped access/audit in v1
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

@@ -34,15 +34,15 @@
 
 ### IMPL-4 — Offline secret scanner merged with Presidio, secret span wins on overlap (outline Phase 4)
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-4, NFR-2, AC-7
 - scope: not bounded
-- gates: scan: uv run pytest tests/test_scan.py, suite: uv run pytest, independent-review: pending
+- gates: scan: uv run pytest tests/test_scan.py, suite: uv run pytest, independent-review: pass
 - next: Run the task pre-flight.
 
 ### IMPL-5 — Server-side authorized, audited view_unredacted access (outline Phase 5)
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-11, AC-6
 - scope: not bounded
 - gates: unredacted: uv run pytest tests/test_unredacted.py, suite: uv run pytest, independent-review: pending

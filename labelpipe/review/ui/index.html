@@ -7,7 +7,8 @@
   body { font: 14px/1.5 system-ui, sans-serif; margin: 0; display: grid; grid-template-columns: 2fr 1fr; height: 100vh; }
   #doc { padding: 16px; white-space: pre-wrap; font-family: ui-monospace, monospace; overflow: auto; border-right: 1px solid #ddd; }
   #panel { padding: 16px; }
-  .redacted { background: #111; color: #111; border-radius: 2px; user-select: none; }
+  .redacted { background: #111; color: #111; border-radius: 2px; user-select: none; cursor: pointer; }
+  .revealed { background: #ffe58f; outline: 1px dashed #cf1322; }
   button { font: inherit; padding: 4px 12px; }
   .flag { background: #fff4e5; border-left: 4px solid #faad14; padding: 8px 12px; }
   .invalid { color: #cf1322; }
@@ -35,14 +36,29 @@ async function decide(docId, body) {
   load();
 }
 
+// Explicit, logged view_unredacted. The text lives only in this element; a reload shows the bar again.
+async function reveal(docId, i, el) {
+  const reason = prompt(`Reason for viewing unredacted ${el.title}:`);
+  if (!reason) return;
+  const r = await fetch(`/records/${docId}/spans/${i}/unredacted`, {method: "POST", cache: "no-store",
+    headers: {"content-type": "application/json"}, body: JSON.stringify({reason})});
+  if (!r.ok) { alert(`Refused (${r.status}): ${(await r.json()).detail}`); return; }
+  el.className = "revealed"; el.textContent = (await r.json()).text; el.onclick = null;
+}
+
 async function load() {
   doc.replaceChildren(); panel.replaceChildren();
   const r = await fetch("/records/next");
   if (!r.ok) { doc.textContent = "No records pending review."; return; }
   const rec = await r.json();
+  let ri = 0;  // i-th redaction, matching the server's {i}
   for (const s of rec.segments) {
     const el = document.createElement("span");
-    if ("redacted" in s) { el.className = "redacted"; el.title = s.redacted; el.textContent = "█".repeat(8); }
+    if ("redacted" in s) {
+      const i = ri++;
+      el.className = "redacted"; el.title = s.redacted; el.textContent = "█".repeat(8);
+      el.onclick = () => reveal(rec.doc_id, i, el);
+    }
     else { el.textContent = s.text; el.dataset.start = s.start; }
     doc.append(el);
   }

@@ -5,7 +5,7 @@ import json
 import os
 from datetime import datetime, timezone
 
-PLAIN = {"ts", "action"}  # structural, never sensitive; every other string value is hashed
+PLAIN = {"ts", "action", "decision", "policy"}  # structural, never sensitive; every other string value is hashed
 
 
 class AuditUnavailable(RuntimeError):
