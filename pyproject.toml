@@ -9,6 +9,7 @@ dependencies = [
     "pydantic",
     "fastapi",
     "uvicorn",
+    "detect-secrets>=1.5,<1.6",
 ]
 
 [project.scripts]

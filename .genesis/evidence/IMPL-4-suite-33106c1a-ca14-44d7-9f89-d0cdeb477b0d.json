@@ -1,0 +1,30 @@
+{
+  "task": "IMPL-4",
+  "gate": "suite",
+  "kind": "command",
+  "attempt": "33106c1a-ca14-44d7-9f89-d0cdeb477b0d",
+  "command": "uv run pytest",
+  "started_at": "2026-10-07T20:14:55.175Z",
+  "observed_at": "2026-10-07T20:14:56.474Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.11, pytest-9.1.1, pluggy-1.6.0\nrootdir: /Users/aamir/.humanlayer/workspaces/design-data-labeling-pipeline-architecture-micksk/context-sanitizer-slm-data-pipeline\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 43 items\n\ntests/test_adjudication_loop.py ...                                      [  6%]\ntests/test_audit.py ....                                                 [ 16%]\ntests/test_end_to_end.py .                                               [ 18%]\ntests/test_offsets.py .                                                  [ 20%]\ntests/test_review_actions.py .............                               [ 51%]\ntests/test_scan.py .....                                                 [ 62%]\ntests/test_validation.py ................                                [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /Users/aamir/.humanlayer/workspaces/design-data-labeling-pipeline-architecture-micksk/context-sanitizer-slm-data-pipeline/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 43 passed, 1 warning in 0.31s =========================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "ff50ae975c288e01a4610d5f4d1723f95d95c477",
+    "dirty": true
+  },
+  "source_hash": "d2af89c2b8ad64766fa502a6a4c17d50bca095f7014689aaff311ce9cc33d2a9",
+  "before_hash": "d2af89c2b8ad64766fa502a6a4c17d50bca095f7014689aaff311ce9cc33d2a9",
+  "config_hash": "b616b1d6ff97671ba2d0bd575fdbb2bb4afacafe2990c505a6023dcdef35ae18",
+  "environment": {
+    "node": "v24.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+    "variables": {}
+  },
+  "hash": "20b59d54b51b4cd4de24c75cf62175f6f914390235a8d0a75005a5f23972ace1"
+}
