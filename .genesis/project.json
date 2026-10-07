@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T20:37:57.852Z"
+    "updated_at": "2026-10-07T20:40:28.220Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,11 +23,11 @@
     }
   },
   "lifecycle": {
-    "phase": "build",
-    "status": "active",
-    "active_task": "IMPL-6",
+    "phase": "verify",
+    "status": "ready",
+    "active_task": null,
     "blocker": null,
-    "next_action": "Run the task pre-flight."
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "commands": {},
   "workflow": {
@@ -924,7 +924,7 @@
     {
       "id": "IMPL-6",
       "outcome": "Versioned thread-grouped dataset export: DVC + HF splits, no cross-split leakage (outline Phase 6)",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -971,8 +971,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-6-independent-review-fe7e06d0-b2bf-4abf-b260-a814888e88be.json",
+            "hash": "609d0d2f8e3b0bd9234422d2834f9daa50a805397ac45b08a02d38b6eaca5547",
+            "source_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640",
+            "config_hash": "0d3bf47c49b84118151653f400f2f3fdad11713b9674b6fd06c0e39e488662c4",
+            "observed_at": "2026-10-07T20:40:27.319Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -981,7 +987,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.378Z",
-      "updated_at": "2026-10-07T19:27:17.378Z",
+      "updated_at": "2026-10-07T20:40:27.882Z",
       "base_manifest": {
         ".gitignore": "39377c8d8297a4f2fdb8b0c04f14919ad78e9e3ace7713bfdf38ddff77f1b989",
         ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
@@ -1066,6 +1072,15 @@
       "task": "IMPL-5",
       "human": "Aamir Alam",
       "reason": "Reviewed Phase 5 diff (54e9a4f); tests and manual reveal check pass",
+      "revision": null
+    },
+    {
+      "id": "fe7e06d0-b2bf-4abf-b260-a814888e88be",
+      "at": "2026-10-07T20:40:27.319Z",
+      "action": "approve",
+      "task": "IMPL-6",
+      "human": "Aamir Alam",
+      "reason": "Reviewed Phase 6 diff (b9d2d26); dataset tests and manual HF load check pass",
       "revision": null
     }
   ],
@@ -1412,14 +1427,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T20:37:57.796Z",
+    "at": "2026-10-07T20:40:28.182Z",
     "revision": {
-      "commit": "2830d20895d31dfd95558859623ef91aefdf14e0",
+      "commit": "b9d2d269f111c05137508f84f1cacd2a084f0dab",
       "dirty": true,
       "source_hash": "3f01e66ffaad236bdf1f6c2dbc436b7a69fbe392b8be590f7c5ab8d1a8946640"
     },
-    "active_task": "IMPL-6",
-    "next_action": "Run the task pre-flight."
+    "active_task": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "legacy": null
 }
