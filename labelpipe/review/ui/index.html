@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>labelpipe review</title>
+<style>
+  body { font: 14px/1.5 system-ui, sans-serif; margin: 0; display: grid; grid-template-columns: 2fr 1fr; height: 100vh; }
+  #doc { padding: 16px; white-space: pre-wrap; font-family: ui-monospace, monospace; overflow: auto; border-right: 1px solid #ddd; }
+  #panel { padding: 16px; }
+  .redacted { background: #111; color: #111; border-radius: 2px; user-select: none; }
+  button { font: inherit; padding: 4px 12px; }
+</style>
+</head>
+<body>
+<main id="doc">Loading…</main>
+<aside id="panel"></aside>
+<script>
+// Everything goes through textContent: log text is untrusted and must never be parsed as HTML.
+const doc = document.getElementById("doc"), panel = document.getElementById("panel");
+async function load() {
+  doc.replaceChildren(); panel.replaceChildren();
+  const r = await fetch("/records/next");
+  if (!r.ok) { doc.textContent = "No records pending review."; return; }
+  const rec = await r.json();
+  for (const s of rec.segments) {
+    const el = document.createElement("span");
+    if ("redacted" in s) { el.className = "redacted"; el.title = s.redacted; el.textContent = "█".repeat(8); }
+    else el.textContent = s.text;
+    doc.append(el);
+  }
+  const h = document.createElement("h3"); h.textContent = "Proposals for " + rec.doc_id; panel.append(h);
+  rec.proposals.forEach((p, i) => {
+    const row = document.createElement("p"), btn = document.createElement("button");
+    row.textContent = `${p.label} [${p.start}, ${p.end}) `;
+    btn.textContent = "Accept";
+    btn.onclick = async () => {
+      await fetch(`/records/${rec.doc_id}/decision`, {method: "POST", headers: {"content-type": "application/json"},
+        body: JSON.stringify({action: "accept", span_index: i})});
+      load();
+    };
+    row.append(btn); panel.append(row);
+  });
+}
+load();
+</script>
+</body>
+</html>

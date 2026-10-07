@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T14:47:21.710Z"
+    "updated_at": "2026-10-07T19:38:59.473Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,18 +23,18 @@
     }
   },
   "lifecycle": {
-    "phase": "specification",
+    "phase": "build",
     "status": "active",
-    "active_task": "SPEC-1",
+    "active_task": "IMPL-1",
     "blocker": null,
-    "next_action": "Ask the human to review SPEC.md, then record explicit specification approval."
+    "next_action": "Run the task pre-flight."
   },
   "commands": {},
   "workflow": {
     "type": "new-product",
     "started_at": "2026-10-07T14:35:39.983Z",
     "spec_check": {
-      "at": "2026-10-07T14:38:38.906Z",
+      "at": "2026-10-07T19:13:33.121Z",
       "source_hash": "4434ea6f94448a462878695ed279c4bb8c156841196dd276db993bda863c665d",
       "requirements": [
         "AC-1",
@@ -64,15 +64,23 @@
         "NFR-7"
       ]
     },
-    "plan_check": null,
-    "plan_approval": null
+    "plan_check": {
+      "at": "2026-10-07T19:27:17.462Z",
+      "source_hash": "92257ed0bf5530fa4c012dfb1fa61ef9a11a9f949d19dc93f5c9af7ad10fd3aa"
+    },
+    "plan_approval": {
+      "human": "Aamir Alam",
+      "reason": "Plan looks good to me",
+      "at": "2026-10-07T19:29:14.376Z",
+      "source_hash": "92257ed0bf5530fa4c012dfb1fa61ef9a11a9f949d19dc93f5c9af7ad10fd3aa"
+    }
   },
   "artifacts": [
     {
       "id": "SPEC-1",
       "type": "specification",
       "path": "SPEC.md",
-      "status": "checked",
+      "status": "approved",
       "requirements": [
         "AC-1",
         "AC-2",
@@ -101,7 +109,12 @@
         "NFR-7"
       ],
       "source_hash": "4434ea6f94448a462878695ed279c4bb8c156841196dd276db993bda863c665d",
-      "approval": null
+      "approval": {
+        "human": "Aamir Alam",
+        "reason": "thin-slice v1 spec matches the design discussion and outline",
+        "at": "2026-10-07T19:27:01.722Z",
+        "source_hash": "4434ea6f94448a462878695ed279c4bb8c156841196dd276db993bda863c665d"
+      }
     }
   ],
   "assumptions": [
@@ -283,6 +296,16 @@
       "recorded_at": "2026-10-07T14:37:02.345Z",
       "paths": [],
       "tags": []
+    },
+    {
+      "id": "DECISION-46422d7c",
+      "title": "03-design stack supersedes task.md",
+      "text": "Approving SPEC.md confirms the 03-design-discussion tech stack (Python: Presidio, spaCy, Pydantic, DVC, HF datasets; thin review screen) supersedes task.md's 'stack not yet decided'. Resolves ASSUMPTION-fd80e5a6 stack question.",
+      "status": "accepted",
+      "source": "SPEC.md approval by Aamir Alam",
+      "recorded_at": "2026-10-07T19:27:01.831Z",
+      "paths": [],
+      "tags": []
     }
   ],
   "knowledge": [
@@ -330,13 +353,22 @@
       "tags": [],
       "recorded_at": "2026-10-07T14:37:25.950Z",
       "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-a15eee3f",
+      "title": "IMPL-1 manual check passed",
+      "text": "Aamir Alam ran labelpipe ingest/run/serve locally and confirmed secrets render masked in the review screen (outline Phase 1 manual verification).",
+      "source": "human confirmation 2026-10-08",
+      "tags": [],
+      "recorded_at": "2026-10-07T19:38:59.230Z",
+      "paths": []
     }
   ],
   "tasks": [
     {
       "id": "SPEC-1",
       "outcome": "Produce an approved, implementation-ready product specification",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [
@@ -349,8 +381,13 @@
           "id": "independent-review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null,
+          "status": "pass",
+          "evidence": {
+            "human": "Aamir Alam",
+            "reason": "thin-slice v1 spec matches the design discussion and outline",
+            "source_hash": "2aa64b9841b57bba821f62dc26d81f8bf1d49d9515e49171e3aa9f5c96b70d6a",
+            "observed_at": "2026-10-07T19:27:01.722Z"
+          },
           "kind": "review"
         }
       ],
@@ -360,26 +397,402 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T14:35:39.983Z",
-      "updated_at": "2026-10-07T14:38:38.912Z"
+      "updated_at": "2026-10-07T19:27:01.722Z"
+    },
+    {
+      "id": "IMPL-1",
+      "outcome": "Walking skeleton: one dump from intake to a JSONL row, redacted the whole way (outline Phase 1)",
+      "state": "active",
+      "risk": "medium",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-1",
+        "FR-2",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "NFR-1",
+        "NFR-3",
+        "NFR-5",
+        "NFR-7",
+        "AC-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "e2e",
+          "kind": "command",
+          "command": "uv run pytest tests/test_end_to_end.py",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-1-e2e-4c99dd96-49ae-4bd2-abc2-297c2d3973e3.json",
+            "hash": "88b5d0f0ac8c349497d5cf366770965f2d86d4661a890d70916074800ad8405e",
+            "source_hash": "7f924797017cb9044d0758f28dfad95f78112aae9dd2405f4b5948c86a0ed9c1",
+            "config_hash": "fb5e7e5e815acbee3abd1141ea20d3417725668cbb6c00817112178bf9d74df3",
+            "observed_at": "2026-10-07T19:33:28.039Z"
+          }
+        },
+        {
+          "id": "offsets",
+          "kind": "command",
+          "command": "uv run pytest -k offsets",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-1-offsets-2176e71a-5e73-43cf-8bc0-507a67376335.json",
+            "hash": "4794fed940ab63a2e5fa45aa140fb17eb06a220879ff9a4e0966cc3ba3ddb071",
+            "source_hash": "7f924797017cb9044d0758f28dfad95f78112aae9dd2405f4b5948c86a0ed9c1",
+            "config_hash": "fb5e7e5e815acbee3abd1141ea20d3417725668cbb6c00817112178bf9d74df3",
+            "observed_at": "2026-10-07T19:33:29.806Z"
+          }
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-07T19:27:16.959Z",
+      "updated_at": "2026-10-07T19:27:16.960Z",
+      "base_manifest": {
+        ".gitignore": "1c2457184209b72e3f848c57f612ea8ed38383d97ef3fac913ac2a1fc22c7cb1",
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "e9bf19698b57858910e23d09f91a0f32591b4513a26d4bffd2b58f7719a7ee89"
+      }
+    },
+    {
+      "id": "IMPL-2",
+      "outcome": "Full review action set + append-only fail-closed HMAC audit (outline Phase 2)",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-7",
+        "FR-11",
+        "NFR-4",
+        "AC-3"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "review-audit",
+          "kind": "command",
+          "command": "uv run pytest tests/test_review_actions.py tests/test_audit.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "suite",
+          "kind": "command",
+          "command": "uv run pytest",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-07T19:27:17.046Z",
+      "updated_at": "2026-10-07T19:27:17.046Z"
+    },
+    {
+      "id": "IMPL-3",
+      "outcome": "Validation gate, candidate checks, and adjudication loop (outline Phase 3)",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-3",
+        "FR-8",
+        "FR-9",
+        "AC-2",
+        "AC-4"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "validation",
+          "kind": "command",
+          "command": "uv run pytest tests/test_validation.py tests/test_adjudication_loop.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "suite",
+          "kind": "command",
+          "command": "uv run pytest",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-07T19:27:17.141Z",
+      "updated_at": "2026-10-07T19:27:17.141Z"
+    },
+    {
+      "id": "IMPL-4",
+      "outcome": "Offline secret scanner merged with Presidio, secret span wins on overlap (outline Phase 4)",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-4",
+        "NFR-2",
+        "AC-7"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "scan",
+          "kind": "command",
+          "command": "uv run pytest tests/test_scan.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "suite",
+          "kind": "command",
+          "command": "uv run pytest",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-07T19:27:17.220Z",
+      "updated_at": "2026-10-07T19:27:17.220Z"
+    },
+    {
+      "id": "IMPL-5",
+      "outcome": "Server-side authorized, audited view_unredacted access (outline Phase 5)",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-11",
+        "AC-6"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "unredacted",
+          "kind": "command",
+          "command": "uv run pytest tests/test_unredacted.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "suite",
+          "kind": "command",
+          "command": "uv run pytest",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-07T19:27:17.297Z",
+      "updated_at": "2026-10-07T19:27:17.297Z"
+    },
+    {
+      "id": "IMPL-6",
+      "outcome": "Versioned thread-grouped dataset export: DVC + HF splits, no cross-split leakage (outline Phase 6)",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-10",
+        "NFR-6",
+        "AC-5"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "dataset",
+          "kind": "command",
+          "command": "uv run pytest tests/test_dataset.py",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "suite",
+          "kind": "command",
+          "command": "uv run pytest",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-07T19:27:17.378Z",
+      "updated_at": "2026-10-07T19:27:17.378Z"
     }
   ],
   "learning_proposals": [],
   "cleanup_proposals": [],
   "controls": [],
-  "attempts": [],
+  "attempts": [
+    {
+      "id": "4c99dd96-49ae-4bd2-abc2-297c2d3973e3",
+      "task": "IMPL-1",
+      "kind": "gate",
+      "command": "uv run pytest tests/test_end_to_end.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 47443,
+      "child_pid": 47480,
+      "started_at": "2026-10-07T19:33:26.467Z",
+      "status": "passed",
+      "before_hash": "7f924797017cb9044d0758f28dfad95f78112aae9dd2405f4b5948c86a0ed9c1",
+      "config_hash": "fb5e7e5e815acbee3abd1141ea20d3417725668cbb6c00817112178bf9d74df3",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T19:33:28.039Z"
+    },
+    {
+      "id": "2176e71a-5e73-43cf-8bc0-507a67376335",
+      "task": "IMPL-1",
+      "kind": "gate",
+      "command": "uv run pytest -k offsets",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 47443,
+      "child_pid": 47653,
+      "started_at": "2026-10-07T19:33:28.401Z",
+      "status": "passed",
+      "before_hash": "7f924797017cb9044d0758f28dfad95f78112aae9dd2405f4b5948c86a0ed9c1",
+      "config_hash": "fb5e7e5e815acbee3abd1141ea20d3417725668cbb6c00817112178bf9d74df3",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T19:33:29.806Z"
+    }
+  ],
   "authorizations": [],
   "experiments": [],
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T14:47:21.637Z",
+    "at": "2026-10-07T19:38:59.438Z",
     "revision": {
-      "commit": null,
-      "dirty": null,
-      "source_hash": "2aa64b9841b57bba821f62dc26d81f8bf1d49d9515e49171e3aa9f5c96b70d6a"
+      "commit": "4edda25c5cf2ca06affa331cd2463ac008142a3f",
+      "dirty": true,
+      "source_hash": "7f924797017cb9044d0758f28dfad95f78112aae9dd2405f4b5948c86a0ed9c1"
     },
-    "active_task": "SPEC-1",
-    "next_action": "Ask the human to review SPEC.md, then record explicit specification approval."
+    "active_task": "IMPL-1",
+    "next_action": "Run the task pre-flight."
   },
   "legacy": null
 }
