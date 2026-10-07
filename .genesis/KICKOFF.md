@@ -8,7 +8,7 @@
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: review-audit:pending, suite:pending, independent-review:pending
+- gates: review-audit:pass, suite:pass, independent-review:pending
 - recent failures: none
 
 ## Resume
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: de009fe7e62010393ab4d19740ae94d502824c66b03aebd1010f128a2ec1a9dc. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: 1aa3d5efc4a958bc8b3f3413c46fc841ffbef655aa09dc236b5ff61e3f9004d5. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-cdd091a6: Minimal-but-correct-shaped access/audit in v1
+- KNOWLEDGE-15b01f8d: IMPL-2 manual check passed
 - KNOWLEDGE-a15eee3f: IMPL-1 manual check passed
-- DECISION-46422d7c: 03-design stack supersedes task.md
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

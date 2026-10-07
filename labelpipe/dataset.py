@@ -8,7 +8,7 @@ POLICY_VERSION = "v1"
 def _spans(conn, doc_id, kind, accepted_only=False):
     q = 'SELECT idx, start, "end", label, source FROM spans WHERE doc_id=? AND kind=?'
     if accepted_only:
-        q += " AND idx IN (SELECT span_index FROM decisions WHERE doc_id=spans.doc_id AND action='accept')"
+        q += " AND idx IN (SELECT span_index FROM decisions WHERE doc_id=spans.doc_id AND action IN ('accept','rewrite'))"
     return [Span(start=a, end=b, label=l, source=src) for _, a, b, l, src in conn.execute(q + " ORDER BY idx", (doc_id, kind))]
 
 

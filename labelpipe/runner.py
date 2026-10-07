@@ -14,6 +14,8 @@ def _check(raw: str, spans: list[Span]):
 def run(conn, proposer: Proposer | None = None) -> int:
     """Advance every record as far as it goes; stops at pending_review (the human pause)."""
     proposer = proposer or StubProposer()
+    with conn:  # skipped → back in the queue; rejected is terminal; adjudicate waits for a second look
+        conn.execute("UPDATE records SET status='pending_review' WHERE status='skipped'")
     rows = conn.execute("SELECT doc_id, raw_text, status FROM records"
                         " WHERE status IN ('ingested','parsed','scanned','proposed')").fetchall()
     for doc_id, raw, status in rows:

@@ -27,8 +27,11 @@ CREATE TABLE IF NOT EXISTS spans (
 CREATE TABLE IF NOT EXISTS decisions (
     id INTEGER PRIMARY KEY,
     doc_id TEXT NOT NULL REFERENCES records(doc_id),
-    span_index INTEGER NOT NULL,
-    action TEXT NOT NULL,
+    span_index INTEGER,  -- NULL for record-level actions (skip/reject/escalate)
+    action TEXT NOT NULL CHECK (action IN ('accept', 'rewrite', 'skip', 'reject', 'escalate')),
+    new_start INTEGER,   -- rewrite only
+    new_end INTEGER,
+    new_label TEXT,
     reviewer TEXT NOT NULL,
     decided_at TEXT NOT NULL
 );

@@ -17,6 +17,22 @@
 <script>
 // Everything goes through textContent: log text is untrusted and must never be parsed as HTML.
 const doc = document.getElementById("doc"), panel = document.getElementById("panel");
+const button = (label, onclick) => { const b = document.createElement("button"); b.textContent = label; b.onclick = onclick; return b; };
+
+// DOM selection point -> code-point offset into the raw text (JS offsets are UTF-16 units).
+function rawOffset(node, off) {
+  const seg = node.nodeType === Node.TEXT_NODE ? node.parentElement : null;
+  if (!seg || seg.dataset.start === undefined) return null;  // outside text, or inside a redaction
+  return Number(seg.dataset.start) + [...node.data.slice(0, off)].length;
+}
+
+async function decide(docId, body) {
+  const r = await fetch(`/records/${docId}/decision`, {method: "POST", headers: {"content-type": "application/json"},
+    body: JSON.stringify(body)});
+  if (!r.ok) { alert(`Refused (${r.status}): ${(await r.json()).detail}`); return; }
+  load();
+}
+
 async function load() {
   doc.replaceChildren(); panel.replaceChildren();
   const r = await fetch("/records/next");
@@ -25,21 +41,29 @@ async function load() {
   for (const s of rec.segments) {
     const el = document.createElement("span");
     if ("redacted" in s) { el.className = "redacted"; el.title = s.redacted; el.textContent = "█".repeat(8); }
-    else el.textContent = s.text;
+    else { el.textContent = s.text; el.dataset.start = s.start; }
     doc.append(el);
   }
   const h = document.createElement("h3"); h.textContent = "Proposals for " + rec.doc_id; panel.append(h);
   rec.proposals.forEach((p, i) => {
-    const row = document.createElement("p"), btn = document.createElement("button");
+    const row = document.createElement("p");
     row.textContent = `${p.label} [${p.start}, ${p.end}) `;
-    btn.textContent = "Accept";
-    btn.onclick = async () => {
-      await fetch(`/records/${rec.doc_id}/decision`, {method: "POST", headers: {"content-type": "application/json"},
-        body: JSON.stringify({action: "accept", span_index: i})});
-      load();
-    };
-    row.append(btn); panel.append(row);
+    row.append(button("Accept", () => decide(rec.doc_id, {action: "accept", span_index: i})),
+      button("Rewrite", () => {
+        const sel = getSelection();
+        const range = sel.rangeCount && sel.getRangeAt(0);
+        const start = range && rawOffset(range.startContainer, range.startOffset);
+        const end = range && rawOffset(range.endContainer, range.endOffset);
+        if (start == null || end == null || start >= end) { alert("Select the new span in the document text first."); return; }
+        const label = prompt(`Label for [${start}, ${end})`, p.label);
+        if (label) decide(rec.doc_id, {action: "rewrite", span_index: i, new_start: start, new_end: end, new_label: label});
+      }));
+    panel.append(row);
   });
+  const actions = document.createElement("p");
+  for (const a of ["skip", "reject", "escalate"])
+    actions.append(button(a[0].toUpperCase() + a.slice(1), () => decide(rec.doc_id, {action: a})), " ");
+  panel.append(actions);
 }
 load();
 </script>
