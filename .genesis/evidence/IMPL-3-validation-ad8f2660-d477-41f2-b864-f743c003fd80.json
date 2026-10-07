@@ -1,0 +1,30 @@
+{
+  "task": "IMPL-3",
+  "gate": "validation",
+  "kind": "command",
+  "attempt": "ad8f2660-d477-41f2-b864-f743c003fd80",
+  "command": "uv run pytest tests/test_validation.py tests/test_adjudication_loop.py",
+  "started_at": "2026-10-07T20:07:14.096Z",
+  "observed_at": "2026-10-07T20:07:15.177Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.11, pytest-9.1.1, pluggy-1.6.0\nrootdir: /Users/aamir/.humanlayer/workspaces/design-data-labeling-pipeline-architecture-micksk/context-sanitizer-slm-data-pipeline\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 19 items\n\ntests/test_validation.py ................                                [ 84%]\ntests/test_adjudication_loop.py ...                                      [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /Users/aamir/.humanlayer/workspaces/design-data-labeling-pipeline-architecture-micksk/context-sanitizer-slm-data-pipeline/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 19 passed, 1 warning in 0.15s =========================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "ee5e1dc84a10c84f8f942adbc9404814b3943d57",
+    "dirty": true
+  },
+  "source_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+  "before_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+  "config_hash": "65ee0080d294c2e78192e02e788702047e3e7637304c37d72bc03f3411238acb",
+  "environment": {
+    "node": "v24.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+    "variables": {}
+  },
+  "hash": "9e26e3d5e24b326515188088fe213df9b5c809658471c62b0fe6796f1217d3ab"
+}

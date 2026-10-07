@@ -18,15 +18,15 @@
 
 ### IMPL-2 — Full review action set + append-only fail-closed HMAC audit (outline Phase 2)
 
-- state/risk: active / medium
+- state/risk: done / medium
 - requirements: FR-7, FR-11, NFR-4, AC-3
 - scope: not bounded
-- gates: review-audit: uv run pytest tests/test_review_actions.py tests/test_audit.py, suite: uv run pytest, independent-review: pending
+- gates: review-audit: uv run pytest tests/test_review_actions.py tests/test_audit.py, suite: uv run pytest, independent-review: pass
 - next: Run the task pre-flight.
 
 ### IMPL-3 — Validation gate, candidate checks, and adjudication loop (outline Phase 3)
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-3, FR-8, FR-9, AC-2, AC-4
 - scope: not bounded
 - gates: validation: uv run pytest tests/test_validation.py tests/test_adjudication_loop.py, suite: uv run pytest, independent-review: pending

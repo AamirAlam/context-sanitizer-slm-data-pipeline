@@ -1,0 +1,30 @@
+{
+  "task": "IMPL-3",
+  "gate": "suite",
+  "kind": "command",
+  "attempt": "19c2b305-2f90-46b6-90d9-add587471610",
+  "command": "uv run pytest",
+  "started_at": "2026-10-07T20:07:15.351Z",
+  "observed_at": "2026-10-07T20:07:16.969Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "============================= test session starts ==============================\nplatform darwin -- Python 3.12.11, pytest-9.1.1, pluggy-1.6.0\nrootdir: /Users/aamir/.humanlayer/workspaces/design-data-labeling-pipeline-architecture-micksk/context-sanitizer-slm-data-pipeline\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollected 38 items\n\ntests/test_adjudication_loop.py ...                                      [  7%]\ntests/test_audit.py ....                                                 [ 18%]\ntests/test_end_to_end.py .                                               [ 21%]\ntests/test_offsets.py .                                                  [ 23%]\ntests/test_review_actions.py .............                               [ 57%]\ntests/test_validation.py ................                                [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /Users/aamir/.humanlayer/workspaces/design-data-labeling-pipeline-architecture-micksk/context-sanitizer-slm-data-pipeline/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 38 passed, 1 warning in 0.53s =========================\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "ee5e1dc84a10c84f8f942adbc9404814b3943d57",
+    "dirty": true
+  },
+  "source_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+  "before_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+  "config_hash": "65ee0080d294c2e78192e02e788702047e3e7637304c37d72bc03f3411238acb",
+  "environment": {
+    "node": "v24.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+    "variables": {}
+  },
+  "hash": "0e06fe0f3084f5af10420546bdbcc32e20d987a1f5c1b62449d857843b238811"
+}

@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-07T14:35:39.977Z",
-    "updated_at": "2026-10-07T19:59:09.396Z"
+    "updated_at": "2026-10-07T20:10:50.776Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,7 +25,7 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "IMPL-2",
+    "active_task": "IMPL-3",
     "blocker": null,
     "next_action": "Run the task pre-flight."
   },
@@ -371,6 +371,15 @@
       "tags": [],
       "recorded_at": "2026-10-07T19:59:09.103Z",
       "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-c785b927",
+      "title": "IMPL-3 manual check passed",
+      "text": "Aamir Alam confirmed a misaligned stub proposal is flagged in the UI with a readable reason and returns via the needs-second-look adjudication loop (outline Phase 3 manual verification).",
+      "source": "human confirmation 2026-10-08",
+      "tags": [],
+      "recorded_at": "2026-10-07T20:10:50.457Z",
+      "paths": []
     }
   ],
   "tasks": [
@@ -492,7 +501,7 @@
     {
       "id": "IMPL-2",
       "outcome": "Full review action set + append-only fail-closed HMAC audit (outline Phase 2)",
-      "state": "active",
+      "state": "done",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -540,8 +549,14 @@
           "kind": "review",
           "command": "",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-2-independent-review-c6a96acf-1866-4eed-aef3-cbbcb63be090.json",
+            "hash": "beb94fa713301d4292a9e8d83ec18391fa68c37d6283f251ec1680cfbb5ba075",
+            "source_hash": "a44a247886dd0c539745466c9b12e56c64952b64d9b5a28fa40108df5bee5073",
+            "config_hash": "97c235a1573b3e826852865ec850d93cdeaf2b3b5485006a9fe8ae61421dbf73",
+            "observed_at": "2026-10-07T20:02:12.537Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -550,7 +565,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.046Z",
-      "updated_at": "2026-10-07T19:27:17.046Z",
+      "updated_at": "2026-10-07T20:02:12.927Z",
       "base_manifest": {
         ".gitignore": "f58e4c12db4c8e51948383b295febf223c617aab697cb5e947f8fb306f5a326c",
         ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
@@ -580,7 +595,7 @@
     {
       "id": "IMPL-3",
       "outcome": "Validation gate, candidate checks, and adjudication loop (outline Phase 3)",
-      "state": "queued",
+      "state": "active",
       "risk": "medium",
       "owner": null,
       "scope": [],
@@ -601,16 +616,28 @@
           "kind": "command",
           "command": "uv run pytest tests/test_validation.py tests/test_adjudication_loop.py",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-3-validation-ad8f2660-d477-41f2-b864-f743c003fd80.json",
+            "hash": "9e26e3d5e24b326515188088fe213df9b5c809658471c62b0fe6796f1217d3ab",
+            "source_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+            "config_hash": "65ee0080d294c2e78192e02e788702047e3e7637304c37d72bc03f3411238acb",
+            "observed_at": "2026-10-07T20:07:15.177Z"
+          }
         },
         {
           "id": "suite",
           "kind": "command",
           "command": "uv run pytest",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/IMPL-3-suite-19c2b305-2f90-46b6-90d9-add587471610.json",
+            "hash": "0e06fe0f3084f5af10420546bdbcc32e20d987a1f5c1b62449d857843b238811",
+            "source_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+            "config_hash": "65ee0080d294c2e78192e02e788702047e3e7637304c37d72bc03f3411238acb",
+            "observed_at": "2026-10-07T20:07:16.969Z"
+          }
         },
         {
           "id": "independent-review",
@@ -627,7 +654,36 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-07T19:27:17.141Z",
-      "updated_at": "2026-10-07T19:27:17.141Z"
+      "updated_at": "2026-10-07T19:27:17.141Z",
+      "base_manifest": {
+        ".gitignore": "39377c8d8297a4f2fdb8b0c04f14919ad78e9e3ace7713bfdf38ddff77f1b989",
+        ".python-version": "c873c269ee166fdf5e4fad805eab6a11cb0e1bb571c4587f38a564539b3a6d7b",
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "e9bf19698b57858910e23d09f91a0f32591b4513a26d4bffd2b58f7719a7ee89",
+        "labelpipe/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/audit.py": "7671c2e222c8bf477a404f5768ea850df49a66a20b820d4a2181d9d59042ed40",
+        "labelpipe/cli.py": "18337fd6a747c1983f02b14182930eb6071be39932967ef4ff9961e8084cc8aa",
+        "labelpipe/dataset.py": "996e32ff7351d8b1cfd14e5ff299838a224617dd871dac7c8f0ffc66ddadaef6",
+        "labelpipe/db.py": "107ba65aec0313a62e18e141c6786a2272a0475524362d46a25d12b8c7ade38c",
+        "labelpipe/intake.py": "831ac74b4774741039819134ea2fbe96055ae2fd110773f4ba78bf71348b7550",
+        "labelpipe/parse.py": "3b94cdc0b7958a38ad06e0cf7e8fb1fb570a762e971290321d824752a0403940",
+        "labelpipe/propose.py": "5316ee459cf0f5792e92bff91038850603d2541ae9395bc71d65129ac965b7e3",
+        "labelpipe/review/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "labelpipe/review/api.py": "f804b1e436c623c0e8b9615681ff94f5b3fcbd24f5cfb87a53f928b7b3f1fdf4",
+        "labelpipe/review/ui/index.html": "cc8cff601d0780502636b9b76d8b5a105f27b62bac503b78d518124822220bb6",
+        "labelpipe/runner.py": "948607dbe331a3906b3e7c96ca3272ab80d8d78e7e4fc0103506d638d3756c99",
+        "labelpipe/scan.py": "9830043f4364d46fa14a415571abc0ccdee2d59af8cd44dff297945a0286d81b",
+        "labelpipe/schema.py": "76f1af1fec8cf48c1dbbc6ea226729a42636f53ed9729e3c748aa9f51db83aab",
+        "pyproject.toml": "90bb22eb51d2bf21c9d3e33c35a74cb089d9d2d72fcb5f39a6456d01d8f64f64",
+        "tests/conftest.py": "a7530be0d0684d3c7541d9a7f22aaabea7d7ab2d5f0436dcb88a319b3e34c16b",
+        "tests/fixtures/dump_with_secret.txt": "8d80ae551f41ca023918a0997afbb830382eea0f0061c02479220221fac63008",
+        "tests/test_audit.py": "253b3dfa0d787cff31dcde1a5e207b85c1efc5dc6c54e18caf4980d5ed41e582",
+        "tests/test_end_to_end.py": "120a44e4907cceb749bcb86474f6d65eb84c03d0265604d640ef5cd5311bbefa",
+        "tests/test_offsets.py": "baa5840b8b327c7c3bdedb399ac2833781898ab033df7d51f0f68b6d48b472d2",
+        "tests/test_review_actions.py": "2d6287a8985fc619839a0699ae5cc4e548ca0a8664ac6d57cd160d9c86fb640c",
+        "uv.lock": "a19708dbf74dc17da94ebba66b9e7e744e4d0b5b9fa01bea9d32267923f990e1"
+      }
     },
     {
       "id": "IMPL-4",
@@ -790,6 +846,15 @@
       "human": "Aamir Alam",
       "reason": "Reviewed Phase 1 diff (6d395a3); tests and manual masking check pass",
       "revision": null
+    },
+    {
+      "id": "c6a96acf-1866-4eed-aef3-cbbcb63be090",
+      "at": "2026-10-07T20:02:12.537Z",
+      "action": "approve",
+      "task": "IMPL-2",
+      "human": "Aamir Alam",
+      "reason": "Reviewed Phase 2 diff (df5407f); tests and manual rewrite/audit check pass",
+      "revision": null
     }
   ],
   "attempts": [
@@ -888,6 +953,54 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-07T19:50:39.466Z"
+    },
+    {
+      "id": "ad8f2660-d477-41f2-b864-f743c003fd80",
+      "task": "IMPL-3",
+      "kind": "gate",
+      "command": "uv run pytest tests/test_validation.py tests/test_adjudication_loop.py",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 64411,
+      "child_pid": 64490,
+      "started_at": "2026-10-07T20:07:14.096Z",
+      "status": "passed",
+      "before_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+      "config_hash": "65ee0080d294c2e78192e02e788702047e3e7637304c37d72bc03f3411238acb",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:07:15.177Z"
+    },
+    {
+      "id": "19c2b305-2f90-46b6-90d9-add587471610",
+      "task": "IMPL-3",
+      "kind": "gate",
+      "command": "uv run pytest",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 64411,
+      "child_pid": 64787,
+      "started_at": "2026-10-07T20:07:15.351Z",
+      "status": "passed",
+      "before_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc",
+      "config_hash": "65ee0080d294c2e78192e02e788702047e3e7637304c37d72bc03f3411238acb",
+      "environment": {
+        "node": "v24.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "a3c46e2eab6246959d0d08389e1c68f36c5fe7bd45bfc6594132c189a3d9f0ea",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-07T20:07:16.969Z"
     }
   ],
   "authorizations": [],
@@ -895,13 +1008,13 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-07T19:59:09.357Z",
+    "at": "2026-10-07T20:10:50.741Z",
     "revision": {
-      "commit": "7e5fa1f810d9263b4930de06d60b8efe7b41d19b",
+      "commit": "ee5e1dc84a10c84f8f942adbc9404814b3943d57",
       "dirty": true,
-      "source_hash": "a44a247886dd0c539745466c9b12e56c64952b64d9b5a28fa40108df5bee5073"
+      "source_hash": "c34a7c53035a49847fbf5951eca387a7d728ed0b8f2bbbdeb7174b7a5f7cc6cc"
     },
-    "active_task": "IMPL-2",
+    "active_task": "IMPL-3",
     "next_action": "Run the task pre-flight."
   },
   "legacy": null
