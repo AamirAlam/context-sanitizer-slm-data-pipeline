@@ -2,25 +2,128 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>labelpipe review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>labelpipe · review</title>
 <style>
-  body { font: 14px/1.5 system-ui, sans-serif; margin: 0; display: grid; grid-template-columns: 2fr 1fr; height: 100vh; }
-  #doc { padding: 16px; white-space: pre-wrap; font-family: ui-monospace, monospace; overflow: auto; border-right: 1px solid #ddd; }
-  #panel { padding: 16px; }
-  .redacted { background: #111; color: #111; border-radius: 2px; user-select: none; cursor: pointer; }
-  .revealed { background: #ffe58f; outline: 1px dashed #cf1322; }
-  button { font: inherit; padding: 4px 12px; }
-  .flag { background: #fff4e5; border-left: 4px solid #faad14; padding: 8px 12px; }
-  .invalid { color: #cf1322; }
+  /* Tokens from the design-review mockup (03-design-discussion, show-me-review-tool.html). */
+  :root {
+    --bg: #fbfcfd; --panel: #fff; --panel-2: #f1f3f5; --border: #e6e8eb; --border-strong: #d7dbdf;
+    --text: #11181c; --text-2: #687076; --text-3: #889096;
+    --accent: #0d74ce; --accent-bg: #e6f4fe; --accent-border: #8ec8f6;
+    --green: #30a46c; --green-bg: #e9f9ee; --amber: #ad5700; --amber-bg: #fff4d5; --amber-ul: #ffb224;
+    --red: #e5484d; --red-bg: #ffe5e5;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 var(--sans); }
+  header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: var(--panel);
+    border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 5; }
+  .logo { width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg, var(--accent), #8e4ec6); }
+  .title { font-weight: 650; }
+  .sub { color: var(--text-3); font-size: 12px; }
+  .sub b { color: var(--text); }
+  .spacer { flex: 1; }
+  .pill { font-size: 12px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border-strong);
+    color: var(--text-2); background: var(--panel-2); }
+  .pill.warn { color: var(--amber); background: var(--amber-bg); border-color: var(--amber-ul); font-weight: 600; }
+
+  .layout { display: grid; grid-template-columns: 1fr 380px; gap: 16px; padding: 16px; align-items: start; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; }
+  .card h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-3);
+    margin: 0; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .card .body { padding: 16px; }
+  .stack { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 64px; }
+
+  .meta { display: flex; gap: 14px; flex-wrap: wrap; padding: 10px 16px; border-bottom: 1px solid var(--border);
+    font-size: 12px; color: var(--text-2); }
+  .meta b { color: var(--text); font-weight: 600; }
+  #doc { font: 13px/2 var(--mono); white-space: pre-wrap; word-break: break-word; padding: 16px; margin: 0;
+    max-height: calc(100vh - 220px); overflow: auto; }
+  mark { color: inherit; border-radius: 4px; padding: 1px 0; border-bottom: 2px solid var(--ul); background: var(--bg-c); cursor: pointer; }
+  mark.sel { outline: 2px solid var(--accent); outline-offset: 1px; }
+  /* Redaction: no real text in the DOM, only the entity type. */
+  .redacted { display: inline-block; background: var(--text); color: var(--text); border-radius: 3px; padding: 0 2px;
+    line-height: 1.5; user-select: none; cursor: pointer; }
+  .redacted::after { content: attr(data-type); color: #fff; font-size: 10px; letter-spacing: .04em; padding: 0 4px; }
+  .redacted:hover { box-shadow: 0 0 0 2px var(--red); }
+  .revealed { background: var(--amber-bg); outline: 1px dashed var(--red); border-radius: 3px; }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; padding: 10px 16px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--text-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .swatch { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+  .banner { background: var(--amber-bg); border: 1px solid var(--amber-ul); border-radius: 10px; padding: 12px 16px; font-size: 13px; }
+  .banner strong { color: var(--amber); }
+  .banner ul, .checks ul { margin: 6px 0 0; padding-left: 18px; }
+
+  .proposal { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; font-weight: 400;
+    padding: 8px 10px; margin-bottom: 6px; }
+  .proposal.sel { border-color: var(--accent); background: var(--accent-bg); }
+  .proposal code { font: 12px var(--mono); color: var(--text-2); margin-left: auto; }
+  .chip { font: 600 11px var(--mono); padding: 1px 6px; border-radius: 4px; background: var(--bg-c); border-bottom: 2px solid var(--ul); }
+  .field { margin: 12px 0; }
+  .field label { display: block; font-size: 12px; color: var(--text-2); margin-bottom: 4px; }
+  .val { font: 12px var(--mono); background: var(--panel-2); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; }
+  .hint { font-size: 12px; color: var(--text-3); margin-top: 4px; }
+  input { width: 100%; font: 13px var(--sans); padding: 7px 9px; border: 1px solid var(--border-strong); border-radius: 7px; }
+  input:focus, button:focus-visible { outline: 2px solid var(--accent-border); outline-offset: 1px; }
+
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+  button { font: 600 13px var(--sans); padding: 9px 12px; border-radius: 8px; border: 1px solid var(--border-strong);
+    background: var(--panel); color: var(--text); cursor: pointer; }
+  button:hover:not(:disabled) { filter: brightness(.97); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  button.accept { background: var(--green); border-color: var(--green); color: #fff; }
+  button.rewrite { background: var(--accent-bg); border-color: var(--accent-border); color: var(--accent); }
+  button.skip { color: var(--text-2); }
+  button.escalate { background: var(--red-bg); border-color: var(--red); color: var(--red); grid-column: 1 / -1; }
+
+  .checks { font-size: 12px; color: var(--text-2); }
+  .checks div { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; border-bottom: 1px dashed var(--border); }
+  .checks div:last-child { border: 0; }
+  .pass { color: var(--green); font-weight: 600; }
+  .fail { color: var(--red); font-weight: 600; white-space: nowrap; }
+
+  .empty { max-width: 420px; margin: 15vh auto; text-align: center; padding: 32px; }
+  .empty h1 { font-size: 18px; margin: 12px 0 4px; }
+  .empty p { color: var(--text-2); margin: 0; }
+  #toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: var(--text); color: #fff;
+    padding: 8px 14px; border-radius: 8px; font-size: 13px; box-shadow: 0 6px 20px rgba(0,0,0,.18); display: none; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } .stack { position: static; } }
 </style>
 </head>
 <body>
-<main id="doc">Loading…</main>
-<aside id="panel"></aside>
+<header>
+  <div class="logo"></div>
+  <div>
+    <div class="title">Context-Sanitizer · Annotation &amp; Review</div>
+    <div class="sub" id="sub">loading…</div>
+  </div>
+  <div class="spacer"></div>
+  <span id="pills"></span>
+</header>
+<div id="app"></div>
+<div id="toast" role="status"></div>
 <script>
 // Everything goes through textContent: log text is untrusted and must never be parsed as HTML.
-const doc = document.getElementById("doc"), panel = document.getElementById("panel");
-const button = (label, onclick) => { const b = document.createElement("button"); b.textContent = label; b.onclick = onclick; return b; };
+const $ = id => document.getElementById(id);
+function h(tag, props = {}, ...kids) {
+  const el = Object.assign(document.createElement(tag), props);
+  for (const [k, v] of Object.entries(props.data || {})) el.dataset[k] = v;
+  if (props.style) el.style.cssText = props.style;
+  el.append(...kids.filter(k => k != null));
+  return el;
+}
+function toast(msg) {
+  const t = $("toast"); t.textContent = msg; t.style.display = "block";
+  clearTimeout(toast.t); toast.t = setTimeout(() => t.style.display = "none", 4000);
+}
+
+// Entity colors (bg / underline) from the mockup; unknown labels get a neutral pair.
+const COLORS = {PERSON: ["#e9f9ee", "#30a46c"], SERVICE: ["#e6f4fe", "#0d74ce"], TIMESTAMP: ["#f3eeff", "#8e4ec6"],
+                EVIDENCE: ["#fff4d5", "#ffb224"]};
+const color = label => { const [bg, ul] = COLORS[label] || ["#f1f3f5", "#889096"]; return `--bg-c:${bg};--ul:${ul}`; };
 
 // DOM selection point -> code-point offset into the raw text (JS offsets are UTF-16 units).
 function rawOffset(node, off) {
@@ -29,69 +132,144 @@ function rawOffset(node, off) {
   return Number(seg.dataset.start) + [...node.data.slice(0, off)].length;
 }
 
-async function decide(docId, body) {
-  const r = await fetch(`/records/${docId}/decision`, {method: "POST", headers: {"content-type": "application/json"},
+async function post(url, body) {
+  const r = await fetch(url, {method: "POST", cache: "no-store", headers: {"content-type": "application/json"},
     body: JSON.stringify(body)});
-  if (!r.ok) { alert(`Refused (${r.status}): ${(await r.json()).detail}`); return; }
-  load();
+  if (!r.ok) { toast(`Refused (${r.status}): ${(await r.json()).detail}`); return null; }
+  return r.json();
+}
+
+async function decide(docId, body) {
+  const res = await post(`/records/${docId}/decision`, body);
+  if (res) { toast(`${body.action} → ${res.status}`); load(); }
 }
 
 // Explicit, logged view_unredacted. The text lives only in this element; a reload shows the bar again.
 async function reveal(docId, i, el) {
-  const reason = prompt(`Reason for viewing unredacted ${el.title}:`);
+  const reason = prompt(`Reason for viewing unredacted ${el.dataset.type}:`);
   if (!reason) return;
-  const r = await fetch(`/records/${docId}/spans/${i}/unredacted`, {method: "POST", cache: "no-store",
-    headers: {"content-type": "application/json"}, body: JSON.stringify({reason})});
-  if (!r.ok) { alert(`Refused (${r.status}): ${(await r.json()).detail}`); return; }
-  el.className = "revealed"; el.textContent = (await r.json()).text; el.onclick = null;
+  const res = await post(`/records/${docId}/spans/${i}/unredacted`, {reason});
+  if (!res) return;
+  el.className = "revealed"; el.textContent = res.text; el.onclick = null;
+}
+
+// Plain segment -> text pieces, wrapping the parts covered by proposals in <mark>. Every piece keeps its own
+// code-point data-start so selections inside marks still map back to raw offsets.
+function renderText(seg, proposals, onPick) {
+  const chars = [...seg.text], end = seg.start + chars.length, out = [];
+  let pos = seg.start;
+  const piece = (tag, a, b, props = {}) => out.push(h(tag, {...props, data: {start: a}},
+    chars.slice(a - seg.start, b - seg.start).join("")));
+  proposals.forEach((p, i) => {
+    const a = Math.max(p.start, pos), b = Math.min(p.end, end);
+    if (a >= b) return;
+    if (a > pos) piece("span", pos, a);
+    piece("mark", a, b, {title: `${p.label} [${p.start}, ${p.end})`, style: color(p.label), className: `p${i}`,
+                         onclick: () => onPick(i)});
+    pos = b;
+  });
+  if (pos < end) piece("span", pos, end);
+  return out;
 }
 
 async function load() {
-  doc.replaceChildren(); panel.replaceChildren();
-  const r = await fetch("/records/next");
-  if (!r.ok) { doc.textContent = "No records pending review."; return; }
-  const rec = await r.json();
+  const app = $("app"); app.replaceChildren(); $("pills").replaceChildren();
+  const r = await fetch("/records/next", {cache: "no-store"});
+  if (!r.ok) {
+    $("sub").textContent = "queue empty";
+    app.append(h("div", {className: "card empty"}, h("div", {className: "logo", style: "margin:auto"}),
+      h("h1", {textContent: "Nothing to review"}), h("p", {textContent: "No records are pending review. Run the pipeline to queue more."})));
+    return;
+  }
+  const rec = await r.json(), id = rec.doc_id;
+  const order = rec.proposals.map((p, i) => ({...p, i})).sort((a, b) => a.start - b.start);
+  let sel = rec.proposals.length ? 0 : null, newSpan = null;
+
+  $("sub").replaceChildren("record ", h("b", {textContent: id}), " · offsets: code-point");
+  const nRed = rec.segments.filter(s => "redacted" in s).length;
+  $("pills").append(
+    rec.needs_second_look ? h("span", {className: "pill warn", textContent: "⚑ Needs second look"}) : "", " ",
+    h("span", {className: "pill", textContent: `${nRed} redacted`}), " ",
+    h("span", {className: "pill", textContent: `${rec.proposals.length} proposed`}));
+
+  // Left: redacted document with proposal marks.
+  const doc = h("pre", {id: "doc"});
   let ri = 0;  // i-th redaction, matching the server's {i}
   for (const s of rec.segments) {
-    const el = document.createElement("span");
     if ("redacted" in s) {
       const i = ri++;
-      el.className = "redacted"; el.title = s.redacted; el.textContent = "█".repeat(8);
-      el.onclick = () => reveal(rec.doc_id, i, el);
-    }
-    else { el.textContent = s.text; el.dataset.start = s.start; }
-    doc.append(el);
+      doc.append(h("span", {className: "redacted", title: `${s.redacted} · click to request unredacted text`,
+        textContent: "█".repeat(8), data: {type: s.redacted}, onclick: e => reveal(id, i, e.currentTarget)}));
+    } else doc.append(...renderText(s, order, k => pick(order[k].i)));
   }
-  const list = (title, items, cls) => {
-    const box = document.createElement("div"); box.className = cls;
-    const t = document.createElement("strong"); t.textContent = title; box.append(t);
-    const ul = document.createElement("ul");
-    for (const it of items) { const li = document.createElement("li"); li.textContent = it; ul.append(li); }
-    box.append(ul); panel.append(box);
+  const labels = [...new Set(rec.proposals.map(p => p.label))];
+  const legend = h("div", {className: "legend"},
+    ...labels.map(l => h("span", {}, h("i", {className: "swatch", style: `background:var(--ul);${color(l)}`}), l)),
+    h("span", {}, h("i", {className: "swatch", style: "background:var(--text)"}), "redacted (no text in DOM)"));
+  app.append(h("div", {className: "layout"},
+    h("section", {className: "card"}, h("h2", {textContent: "Source record — redacted view"}),
+      h("div", {className: "meta"}, h("span", {}, "doc: ", h("b", {textContent: id})),
+        h("span", {}, "status: ", h("b", {textContent: rec.needs_second_look ? "adjudicate" : "pending review"})),
+        h("span", {}, "tip: ", h("b", {textContent: "select text to propose a new span"}))),
+      doc, legend),
+    h("div", {className: "stack", id: "rail"})));
+
+  // Capture the selection on mouseup: focusing the label input later would otherwise clear it.
+  doc.onmouseup = () => {
+    const s = getSelection(), range = s.rangeCount && s.getRangeAt(0);
+    if (!range || range.collapsed) return;
+    const a = rawOffset(range.startContainer, range.startOffset), b = rawOffset(range.endContainer, range.endOffset);
+    newSpan = a != null && b != null && a < b ? [a, b] : null;
+    if (!newSpan) toast("Selection must start and end in visible (non-redacted) text.");
+    rail();
   };
-  if (rec.needs_second_look) list("Needs second look", rec.adjudication_reasons, "flag");
-  const h = document.createElement("h3"); h.textContent = "Proposals for " + rec.doc_id; panel.append(h);
-  rec.proposals.forEach((p, i) => {
-    const row = document.createElement("p");
-    row.textContent = `${p.label} [${p.start}, ${p.end}) `;
-    row.append(button("Accept", () => decide(rec.doc_id, {action: "accept", span_index: i})),
-      button("Rewrite", () => {
-        const sel = getSelection();
-        const range = sel.rangeCount && sel.getRangeAt(0);
-        const start = range && rawOffset(range.startContainer, range.startOffset);
-        const end = range && rawOffset(range.endContainer, range.endOffset);
-        if (start == null || end == null || start >= end) { alert("Select the new span in the document text first."); return; }
-        const label = prompt(`Label for [${start}, ${end})`, p.label);
-        if (label) decide(rec.doc_id, {action: "rewrite", span_index: i, new_start: start, new_end: end, new_label: label});
-      }));
-    panel.append(row);
-  });
-  if (rec.validation.length) list("Validation: will fail", rec.validation, "invalid");
-  else { const ok = document.createElement("p"); ok.textContent = "Validation: all proposals pass"; panel.append(ok); }
-  const actions = document.createElement("p");
-  for (const a of ["skip", "reject", "escalate"])
-    actions.append(button(a[0].toUpperCase() + a.slice(1), () => decide(rec.doc_id, {action: a})), " ");
-  panel.append(actions);
+
+  function pick(i) { sel = i; newSpan = null; rail(); }
+
+  // Right rail: adjudication flag, proposal review, validation.
+  function rail() {
+    doc.querySelectorAll("mark").forEach(m => m.classList.toggle("sel", sel != null && m.classList.contains(`p${order.findIndex(p => p.i === sel)}`)));
+    const p = sel == null ? null : rec.proposals[sel];
+    const label = h("input", {value: p ? p.label : "", disabled: !p, placeholder: "label"});
+    label.setAttribute("list", "labels");
+    const hasChange = () => p && (newSpan || label.value.trim() !== p.label);
+    const rewrite = h("button", {className: "rewrite", textContent: "✎ Rewrite", disabled: !hasChange(), onclick: () => {
+      const [a, b] = newSpan || [p.start, p.end];
+      decide(id, {action: "rewrite", span_index: sel, new_start: a, new_end: b, new_label: label.value.trim() || p.label});
+    }});
+    label.oninput = () => rewrite.disabled = !hasChange();
+
+    const reviewBody = h("div", {className: "body"},
+      ...(p ? [] : [h("p", {className: "hint", textContent: "No proposed labels for this record."})]),
+      ...order.map(q => h("button", {className: "proposal" + (q.i === sel ? " sel" : ""), onclick: () => pick(q.i)},
+        h("span", {className: "chip", style: color(q.label), textContent: q.label}),
+        h("span", {className: "hint", style: "margin:0", textContent: q.source}),
+        h("code", {textContent: `[${q.start}, ${q.end})`}))),
+      p ? h("div", {className: "field"}, h("label", {textContent: "Span · code-point chars"}),
+        h("div", {className: "val"}, `[${p.start}, ${p.end})`, newSpan ? h("b", {style: "color:var(--accent)"}, `  →  [${newSpan[0]}, ${newSpan[1]})`) : null),
+        h("div", {className: "hint", textContent: newSpan ? "New span from your selection; Rewrite to apply." : "Select text in the document to move this span."})) : null,
+      p ? h("div", {className: "field"}, h("label", {textContent: "Entity type"}), label,
+        h("datalist", {id: "labels"}, ...[...new Set([...Object.keys(COLORS), "UNKNOWN", ...labels])].map(v => h("option", {value: v})))) : null,
+      h("div", {className: "actions"},
+        h("button", {className: "accept", textContent: "✓ Accept", disabled: !p, onclick: () => decide(id, {action: "accept", span_index: sel})}),
+        rewrite,
+        h("button", {className: "skip", textContent: "Skip", onclick: () => decide(id, {action: "skip"})}),
+        h("button", {textContent: "Reject", onclick: () => decide(id, {action: "reject"})}),
+        h("button", {className: "escalate", textContent: "⚑ Escalate to adjudicator", onclick: () => decide(id, {action: "escalate"})})));
+
+    const checks = h("div", {className: "body checks"},
+      ...(rec.validation.length
+        ? rec.validation.map(v => h("div", {}, h("span", {textContent: v}), h("span", {className: "fail", textContent: "fail"})))
+        : [h("div", {}, h("span", {textContent: "offsets in bounds · start < end · non-overlap · evidence"}), h("span", {className: "pass", textContent: "pass"}))]),
+      h("div", {}, h("span", {textContent: "audit"}), h("b", {textContent: "append-only · HMAC"})));
+
+    $("rail").replaceChildren(
+      rec.needs_second_look ? h("div", {className: "banner"}, h("strong", {textContent: "⚑ Needs second look"}),
+        h("ul", {}, ...rec.adjudication_reasons.map(t => h("li", {textContent: t})))) : "",
+      h("section", {className: "card"}, h("h2", {textContent: "Proposed labels (SLM)"}), reviewBody),
+      h("section", {className: "card"}, h("h2", {textContent: "Validation & audit"}), checks));
+  }
+  rail();
 }
 load();
 </script>
