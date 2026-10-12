@@ -1,6 +1,6 @@
 # labelpipe
 
-A privacy-first, human-in-the-loop labeling pipeline. It turns raw incident and log dumps into a versioned, audit-stamped training dataset for a small (1.5B) context-distillation model.
+A privacy-first, human-in-the-loop labeling pipeline. It turns raw incident and log dumps into a versioned, audit-stamped training dataset for a small (3 to 8B) context-distillation model.
 
 Raw dumps are full of API keys, bearer tokens, and personal data. labelpipe finds and hides them before a person ever sees the text, lets a reviewer check the labels a model proposes, and exports only reviewed, validated records. Everything runs locally; no dump text is sent to a third-party service.
 
